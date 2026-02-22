@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TechVibe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Internal CSS for About Page */
+        .about-hero { text-align: center; padding: 50px 20px; background: #fff; border-radius: 10px; margin-bottom: 40px; border: 1px solid #eaeaea; }
+        .about-hero h1 { font-size: 2.5rem; color: #0066cc; margin-bottom: 15px; }
+        .about-hero p { max-width: 700px; margin: 0 auto; color: #555; font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .feature-box { background: #fff; padding: 30px; border-radius: 8px; text-align: center; border: 1px solid #eaeaea; transition: transform 0.3s; }
+        .feature-box:hover { transform: translateY(-5px); border-color: #0066cc; }
+        .feature-box i { font-size: 2rem; color: #0066cc; margin-bottom: 15px; }
+        @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><h1>TechVibe</h1></div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tech.html">Tech</a></li>
+                        <li><a href="latest-news.html">Latest News</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <div class="about-hero">
+            <h1>About TechVibe</h1>
+            <p>Your number one source for all things Tech. We're dedicated to giving you the very best of news, with a focus on smartphones, gadgets, and software updates.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast Updates</h3>
+                <p>We provide the quickest tech news to keep you ahead of the curve.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-check-circle"></i>
+                <h3>Trusted Reviews</h3>
+                <p>Our reviews are unbiased, detailed, and tested by experts.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-users"></i>
+                <h3>Community First</h3>
+                <p>We believe in building a community of tech enthusiasts.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+             <div class="footer-socials">
+                <a href="#" class="share-btn btn-fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="share-btn btn-tw"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="share-btn btn-in"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="share-btn btn-wa"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="share-btn btn-tg"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="dmca.html">DMCA</a>
+                <a href="editorial.html">Editorial Policy</a>
+            </div>
+            <div class="copyright"><p>&copy; 2026 TechVibe</p></div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

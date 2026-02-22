@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | TechVibe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .contact-info h1 { font-size: 2rem; margin-bottom: 20px; color: #222; }
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .info-item i { width: 40px; height: 40px; background: #e8f4ff; color: #0066cc; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; }
+        .contact-form textarea { height: 150px; resize: vertical; }
+        .send-btn { background: #0066cc; color: #fff; border: none; padding: 12px 30px; border-radius: 5px; cursor: pointer; font-weight: 600; }
+        @media (max-width: 768px) { .contact-wrapper { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><h1>TechVibe</h1></div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tech.html">Tech</a></li>
+                        <li><a href="latest-news.html">Latest News</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h1>Get in Touch</h1>
+                <p style="margin-bottom: 30px; color: #666;">Have questions? Fill out the form or contact us directly.</p>
+                <div class="info-item"><i class="fas fa-envelope"></i><div><strong>Email Us</strong><p>contact@ayushcollege.com</p></div></div>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Location</strong><p>Tech Hub, Digital City</p></div></div>
+            </div>
+            <div class="contact-form">
+                <form onsubmit="event.preventDefault(); alert('Message Sent Successfully!'); this.reset();">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="send-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+             <div class="footer-socials">
+                <a href="#" class="share-btn btn-fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="share-btn btn-tw"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="share-btn btn-in"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="share-btn btn-wa"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="share-btn btn-tg"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <br>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="dmca.html">DMCA</a>
+            </div>
+            
+            <div class="copyright"><p>&copy; 2026 TechVibe</p></div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
