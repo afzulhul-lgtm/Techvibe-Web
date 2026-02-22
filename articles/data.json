@@ -8,35 +8,5 @@
         "category": "Tech",
         "image": "image1.jpg",
         "filename": "article1.html"
-    },
-    {
-        "id": 2,
-        "title": "Eclipse of the century: nearly six full minutes of darkness when it will happen and the best places to watch mapped out",
-        "date": "23 Feb, 2026",
-        "author": "Sarah Mitchell",
-        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
-        "category": "Tech",
-        "image": "image1.jpg",
-        "filename": "article2.html"
-    },
-    {
-        "id": 3,
-        "title": "Eclipse of the century: nearly six full minutes of darkness when it will happen and the best places to watch mapped out",
-        "date": "23 Feb, 2026",
-        "author": "Sarah Mitchell",
-        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
-        "category": "Tech",
-        "image": "image1.jpg",
-        "filename": "article3.html"
-    },
-    {
-        "id": 4,
-        "title": "Eclipse of the century: nearly six full minutes of darkness when it will happen and the best places to watch mapped out",
-        "date": "23 Feb, 2026",
-        "author": "Sarah Mitchell",
-        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
-        "category": "Tech",
-        "image": "image1.jpg",
-        "filename": "article4.html"
     }
 ]
