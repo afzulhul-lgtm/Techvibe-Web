@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "Walking with Hands Behind Your Back: Psychology Reveals the Hidden Power & Social Meaning",
+        "date": "23 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image1.jpg",
+        "filename": "article1.html"
+    },
+    {
+        "id": 2,
+        "title": "Polar Vortex Disruption 2026: Forecasters Warn of Widespread Travel Paralysis & Extreme Weather",
+        "date": "23 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image2.jpg",
+        "filename": "article2.html"
+    },
+    {
+        "id": 3,
+        "title": "Unprecedented Atmospheric Shift: Polar Vortex Magnitude Reaches Historic Highs This February",
+        "date": "23 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image3.jpg",
+        "filename": "article3.html"
+    },
+    {
+        "id": 4,
+        "title": "Doctors Identify Leisure Migraine: The New Type of Headache That Only Strikes When You Relax",
+        "date": "23 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image4.jpg",
+        "filename": "article4.html"
+    },
+    {
+        "id": 5,
+        "title": "Sweet Potatoes vs. Regular Potatoes: Why Science Says They Aren't Closely Related at All",
+        "date": "23 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image5.jpg",
+        "filename": "article5.html"
+    },
+    {
+        "id": 6,
+        "title": "Vets Issue Urgent Warning: The One Silent Health Issue Every Cat Owner Must Monitor Now",
+        "date": "23 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image6.jpg",
+        "filename": "article6.html"
+    },
+    {
+        "id": 7,
+        "title": "Plant Evolution Unmasked: How Cauliflower Broccoli and Cabbage Are Actually the Same Plant",
+        "date": "23 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image7.jpg",
+        "filename": "article7.html"
+    },
+    {
+        "id": 8,
+        "title": "Over 65 and Feeling Stiff? New Research Shows It May Not Be Your Muscles at Fault",
+        "date": "23 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image8.jpg",
+        "filename": "article8.html"
+    },
+    {
+        "id": 9,
+        "title": "USS Gerald R. Ford Deployments: U.S. Weighs Strategic Options Amid Rising Iran Tensions in Europe",
+        "date": "23 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image9.jpg",
+        "filename": "article9.html"
+    }
+]
