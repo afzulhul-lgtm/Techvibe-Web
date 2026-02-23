@@ -126,43 +126,73 @@ a { text-decoration: none; color: inherit; }
 .submit-btn { background-color: #0066cc; color: white; padding: 12px 30px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
 .comments-list { margin-top: 40px; border-top: 2px solid #f0f0f0; padding-top: 20px; }
 
+
 /* =========================================
-   NEW VIP FEATURES: TOP BAR & DARK MODE
+   UPDATED VIP FEATURES: FULL TICKER & UTILITY BAR
    ========================================= */
-.top-bar { background-color: #111; color: #fff; font-size: 0.85rem; border-bottom: 1px solid #333; position: relative; z-index: 100; }
-.top-bar-inner { display: flex; justify-content: space-between; align-items: center; padding: 8px 20px; height: 40px; }
-.top-bar-left, .top-bar-right { display: flex; align-items: center; height: 100%; }
-.date-display { color: #aaa; margin-right: 15px; white-space: nowrap; font-weight: 500; }
-.breaking-news-ticker { display: flex; align-items: center; overflow: hidden; white-space: nowrap; max-width: 500px; background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; border: 1px solid #333; }
-.ticker-label { background: #e1306c; color: #fff; padding: 2px 8px; font-size: 0.75rem; font-weight: 700; border-radius: 3px; margin-right: 15px; position: relative; z-index: 2; box-shadow: 2px 0 5px rgba(0,0,0,0.5); }
-.ticker-content { display: inline-block; animation: ticker 20s linear infinite; padding-left: 100%; }
+
+/* 1. Full Width Ticker at Top */
+.top-ticker-bar { background-color: #111; color: #fff; font-size: 0.85rem; border-bottom: 2px solid #e1306c; position: relative; z-index: 100; padding: 6px 0; }
+.ticker-container { display: flex; align-items: center; }
+.ticker-label { background: #e1306c; color: #fff; padding: 3px 10px; font-size: 0.8rem; font-weight: 700; border-radius: 3px; margin-right: 15px; flex-shrink: 0; box-shadow: 2px 0 5px rgba(0,0,0,0.3); z-index: 2; position: relative; }
+.ticker-content-wrapper { flex: 1; overflow: hidden; white-space: nowrap; position: relative; }
+.ticker-content { display: inline-block; animation: ticker 25s linear infinite; padding-left: 100%; }
 .ticker-content:hover { animation-play-state: paused; }
-.ticker-content a { color: #fff; text-decoration: none; margin-right: 40px; font-weight: 500; transition: color 0.3s; }
+.ticker-content a { color: #fff; text-decoration: none; margin-right: 50px; font-weight: 500; transition: color 0.3s; font-size: 0.95rem; }
 .ticker-content a:hover { color: #ffcc00; text-decoration: underline; }
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-.top-links { display: flex; gap: 15px; border-right: 1px solid #444; padding-right: 15px; margin-right: 15px; }
-.top-links a { color: #aaa; text-decoration: none; transition: 0.3s; }
-.top-links a:hover { color: #fff; }
-.top-actions { display: flex; gap: 10px; }
-.top-actions button { background: transparent; border: 1px solid #444; color: #fff; width: 28px; height: 28px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-.top-actions button:hover { background: #333; color: #0066cc; }
 
-@media (max-width: 900px) {
-    .top-bar-inner { flex-direction: column; height: auto; padding: 10px; gap: 10px; }
+/* 2. Utility Bar (Below Header) */
+.utility-bar { background-color: #fff; border-bottom: 1px solid #eaeaea; padding: 10px 0; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+.utility-bar-inner { display: flex; justify-content: space-between; align-items: center; }
+.date-display { color: #666; font-weight: 600; font-size: 0.9rem; }
+.top-links { display: flex; gap: 20px; }
+.top-links a { color: #555; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+.top-links a:hover { color: #0066cc; }
+.top-actions { display: flex; gap: 10px; align-items: center; }
+.top-actions button { background: #f4f4f4; border: 1px solid #ddd; color: #333; height: 32px; padding: 0 12px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
+.top-actions button:hover { background: #0066cc; color: #fff; border-color: #0066cc; }
+#dark-mode-toggle { padding: 0; width: 32px; justify-content: center; }
+
+@media (max-width: 768px) {
+    .utility-bar-inner { flex-direction: column; gap: 15px; }
     .top-links { display: none; }
-    .breaking-news-ticker { max-width: 100%; }
+    .utility-right, .utility-left { width: 100%; display: flex; justify-content: center; }
+    .ticker-label { font-size: 0.7rem; padding: 3px 6px; }
+    .ticker-content a { font-size: 0.85rem; }
 }
 
+/* --- DARK MODE OVERRIDES --- */
 [data-theme="dark"] body { background-color: #121212 !important; color: #e0e0e0 !important; }
-[data-theme="dark"] .main-header, [data-theme="dark"] .footer { background-color: #1a1a1a !important; border-color: #333 !important; }
+[data-theme="dark"] .main-header, [data-theme="dark"] .footer, [data-theme="dark"] .utility-bar { background-color: #1a1a1a !important; border-color: #333 !important; }
 [data-theme="dark"] .logo h1 { color: #fff !important; }
-[data-theme="dark"] .main-nav a { color: #ccc !important; }
+[data-theme="dark"] .main-nav a, [data-theme="dark"] .top-links a, [data-theme="dark"] .date-display { color: #ccc !important; }
 [data-theme="dark"] .news-card, [data-theme="dark"] .article-content, [data-theme="dark"] .sidebar-widget, [data-theme="dark"] .legal-content, [data-theme="dark"] .contact-wrapper, [data-theme="dark"] .search-modal, [data-theme="dark"] .notify-popup { background-color: #1e1e1e !important; box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; border: 1px solid #333 !important; }
 [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] .news-title, [data-theme="dark"] .section-title { color: #fff !important; }
-[data-theme="dark"] .news-title:hover, [data-theme="dark"] .main-nav a:hover, [data-theme="dark"] .main-nav a.active { color: #1da1f2 !important; }
+[data-theme="dark"] .news-title:hover, [data-theme="dark"] .main-nav a:hover, [data-theme="dark"] .main-nav a.active, [data-theme="dark"] .top-links a:hover { color: #1da1f2 !important; }
 [data-theme="dark"] p, [data-theme="dark"] .breadcrumb, [data-theme="dark"] .date, [data-theme="dark"] .by-text { color: #bbb !important; }
 [data-theme="dark"] .author-bio, [data-theme="dark"] .also-read { background: #2a2a2a !important; border-color: #444 !important; }
 [data-theme="dark"] .article-table th { background-color: #333 !important; color: #fff !important; border-color: #444 !important; }
 [data-theme="dark"] .article-table td { border-bottom: 1px solid #444 !important; color: #ddd !important; }
 [data-theme="dark"] .article-table tbody tr:hover { background-color: #2a2a2a !important; }
 [data-theme="dark"] input, [data-theme="dark"] textarea { background-color: #2a2a2a !important; color: #fff !important; border-color: #555 !important; }
+[data-theme="dark"] .top-actions button { background: #2a2a2a; border-color: #444; color: #ccc; }
+[data-theme="dark"] .top-actions button:hover { background: #0066cc; color: #fff; border-color: #0066cc; }
+
+
+/* =========================================
+   NEW FIXES: PROGRESS BAR, SCROLL TO TOP & DARK MODE
+   ========================================= */
+
+/* Reading Progress Bar (Scroll Line) */
+.reading-progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: transparent; z-index: 99999; }
+.reading-progress-bar { height: 100%; background: #e1306c; width: 0%; transition: width 0.1s ease-out; box-shadow: 0 0 5px #e1306c; }
+
+/* Scroll To Top Button */
+#scroll-to-top { position: fixed; bottom: 90px; right: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #0066cc, #004c99); color: #fff; border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: none; z-index: 1000; transition: 0.3s; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; }
+#scroll-to-top.show { opacity: 1; pointer-events: auto; }
+#scroll-to-top:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+
+/* Fix: Dark Mode for Featured Articles Section */
+[data-theme="dark"] .page-title { background-color: #1a1a1a !important; border-bottom: 1px solid #333 !important; }
+[data-theme="dark"] .page-title h2 { color: #fff !important; }

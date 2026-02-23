@@ -6,7 +6,6 @@
     <title>About Us | TechVibe - Latest Tech News & Reviews</title>
     <meta name="robots" content="max-image-preview:large">
     <meta name="description" content="Discover TechVibe's mission to bring you the most accurate technology news, in-depth gadget reviews, and expert tech analysis.">
-    <meta name="keywords" content="about TechVibe, tech news website, gadget reviews, technology blog, tech experts">
     <meta property="og:title" content="About Us | TechVibe">
     <meta property="og:type" content="website">
 
@@ -30,30 +29,16 @@
 <body>
     <script>if(localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');</script>
 
-    <div class="top-bar">
-        <div class="container top-bar-inner">
-            <div class="top-bar-left">
-                <span id="current-date-display" class="date-display"></span>
-                <div class="breaking-news-ticker">
-                    <span class="ticker-label">HOT NEWS</span>
-                    <div class="ticker-content" id="hot-news-ticker"></div>
-                </div>
-            </div>
-            <div class="top-bar-right">
-                <div class="top-links">
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="privac.html">Privacy</a>
-                </div>
-                <div class="top-actions">
-                    <button id="random-article-btn" title="Read Random Article"><i class="fas fa-random"></i></button>
-                    <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
-                </div>
+    <div class="top-ticker-bar">
+        <div class="container ticker-container">
+            <span class="ticker-label"><i class="fas fa-bolt"></i> HOT NEWS</span>
+            <div class="ticker-content-wrapper">
+                <div class="ticker-content" id="hot-news-ticker"></div>
             </div>
         </div>
     </div>
 
-    <header class="main-header">
+    <header class="main-header" style="margin-bottom: 0;">
         <div class="container">
             <div class="header-content">
                 <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;"><h1>TechVibe</h1></a></div>
@@ -69,6 +54,27 @@
         </div>
     </header>
 
+    <div class="utility-bar">
+        <div class="container utility-bar-inner">
+            <div class="utility-left">
+                <span id="current-date-display" class="date-display"></span>
+            </div>
+            <div class="utility-center">
+                <div class="top-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privac.html">Privacy</a>
+                </div>
+            </div>
+            <div class="utility-right">
+                <div class="top-actions">
+                    <button id="random-article-btn" title="Read Random Article"><i class="fas fa-random"></i> Random</button>
+                    <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="container main-content">
         <div class="about-hero">
             <h1>About TechVibe</h1>
@@ -76,7 +82,7 @@
         </div>
         <div class="about-content-section">
             <h2>Our Mission</h2>
-            <p>At TechVibe, our mission is simple: to make technology accessible, understandable, and exciting for everyone. Whether you are a hardcore tech enthusiast, a professional developer, or just someone looking for advice on their next smartphone purchase, we are here to provide unbiased, accurate, and highly researched content.</p>
+            <p>At TechVibe, our mission is simple: to make technology accessible, understandable, and exciting for everyone. We are here to provide unbiased, accurate, and highly researched content.</p>
         </div>
         <div class="features-grid">
             <div class="feature-box">
@@ -97,16 +103,18 @@
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" style="background: #f8f9fa; padding: 40px 0 20px; margin-top: 60px; border-top: 1px solid #eee;">
         <div class="container">
             <div class="footer-links" style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 20px; font-weight: 500;">
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="privac.html">Privacy Policy</a>
-                <a href="terms.html">Terms</a>
-                <a href="dmca.html">DMCA</a>
+                <a href="about.html" style="color: #555;">About Us</a>
+                <a href="contact.html" style="color: #555;">Contact Us</a>
+                <a href="privac.html" style="color: #555;">Privacy Policy</a>
+                <a href="terms.html" style="color: #555;">Terms & Conditions</a>
+                <a href="dmca.html" style="color: #555;">DMCA</a>
             </div>
-            <div class="copyright" style="text-align: center; color: #888; font-size: 0.9rem;"><p>&copy; 2026 TechVibe Daily - All rights reserved</p></div>
+            <div class="copyright" style="text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #ddd; padding-top: 20px;">
+                <p>&copy; 2026 TechVibe Daily - All rights reserved</p>
+            </div>
         </div>
     </footer>
     <script src="script.js"></script>

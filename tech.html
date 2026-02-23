@@ -18,30 +18,16 @@
 <body>
     <script>if(localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');</script>
 
-    <div class="top-bar">
-        <div class="container top-bar-inner">
-            <div class="top-bar-left">
-                <span id="current-date-display" class="date-display"></span>
-                <div class="breaking-news-ticker">
-                    <span class="ticker-label">HOT NEWS</span>
-                    <div class="ticker-content" id="hot-news-ticker"></div>
-                </div>
-            </div>
-            <div class="top-bar-right">
-                <div class="top-links">
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="privac.html">Privacy</a>
-                </div>
-                <div class="top-actions">
-                    <button id="random-article-btn" title="Read Random Article"><i class="fas fa-random"></i></button>
-                    <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
-                </div>
+    <div class="top-ticker-bar">
+        <div class="container ticker-container">
+            <span class="ticker-label"><i class="fas fa-bolt"></i> HOT NEWS</span>
+            <div class="ticker-content-wrapper">
+                <div class="ticker-content" id="hot-news-ticker"></div>
             </div>
         </div>
     </div>
 
-    <header class="main-header">
+    <header class="main-header" style="margin-bottom: 0;">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
@@ -58,6 +44,27 @@
             </div>
         </div>
     </header>
+
+    <div class="utility-bar">
+        <div class="container utility-bar-inner">
+            <div class="utility-left">
+                <span id="current-date-display" class="date-display"></span>
+            </div>
+            <div class="utility-center">
+                <div class="top-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privac.html">Privacy</a>
+                </div>
+            </div>
+            <div class="utility-right">
+                <div class="top-actions">
+                    <button id="random-article-btn" title="Read Random Article"><i class="fas fa-random"></i> Random</button>
+                    <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="page-title">
         <div class="container">
