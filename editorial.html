@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editorial Policy | TechVibe - Our Commitment to Accuracy</title>
-    
-    <meta name="description" content="Discover TechVibe's Editorial Policy. Learn about our strict journalistic standards, fact-checking processes, and commitment to providing unbiased tech news.">
-    <meta name="keywords" content="TechVibe editorial policy, journalistic standards, tech journalism, unbiased reviews, fact-checking">
+    <title>Editorial Policy | TechVibe</title>
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="description" content="Discover TechVibe's Editorial Policy and our strict journalistic standards.">
     <meta property="og:title" content="Editorial Policy | TechVibe">
     <meta property="og:type" content="website">
 
@@ -21,41 +20,65 @@
     </style>
 </head>
 <body>
+    <script>if(localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');</script>
+
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-left">
+                <span id="current-date-display" class="date-display"></span>
+                <div class="breaking-news-ticker">
+                    <span class="ticker-label">HOT NEWS</span>
+                    <div class="ticker-content" id="hot-news-ticker"></div>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privac.html">Privacy</a>
+                </div>
+                <div class="top-actions">
+                    <button id="random-article-btn" title="Read Random Article"><i class="fas fa-random"></i></button>
+                    <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="main-header">
         <div class="container">
             <div class="header-content">
-                <div class="logo"><a href="index.html"><h1>TechVibe</h1></a></div>
-                <nav class="main-nav">
+                <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;"><h1>TechVibe</h1></a></div>
+                 <nav class="main-nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="tech.html">Tech</a></li>
                         <li><a href="latest-news.html">Latest News</a></li>
+                        <li class="search-icon"><a href="#"><i class="fas fa-search"></i></a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+
     <main class="container main-content">
         <div class="legal-content">
             <h1>Editorial Policy</h1>
-            <p>Our core mission at TechVibe is to provide accurate, engaging, and highly relevant technology news and gadget reviews to our readers around the globe. To maintain our readers' trust, we adhere to the strictest journalistic standards.</p>
+            <p>Our core mission at TechVibe is to provide accurate, engaging, and highly relevant technology news and gadget reviews to our readers. To maintain our readers' trust, we adhere to the strictest journalistic standards.</p>
             
             <h2>1. Independence and Objectivity</h2>
-            <p>We maintain a strict separation between our editorial content and advertising. Our writers and editors are never influenced by outside pressures, PR companies, or advertisers. When we review a smartphone, laptop, or software, the opinions expressed are 100% our own, based on rigorous testing.</p>
+            <p>We maintain a strict separation between our editorial content and advertising. Our writers and editors are never influenced by outside pressures.</p>
 
             <h2>2. Fact-Checking and Accuracy</h2>
-            <p>We strive for complete accuracy in everything we publish. Every article, news piece, and review is thoroughly fact-checked by our editorial team before publication. If a factual error is discovered after publication, we commit to correcting it immediately and transparently.</p>
-            
-            <h2>3. Sourcing and Attribution</h2>
-            <p>TechVibe respects the work of other journalists and content creators. We clearly attribute the source of our information, whether it is an official press release, an exclusive interview, or a report from another publication. We do not support plagiarism in any form.</p>
+            <p>We strive for complete accuracy in everything we publish. Every article, news piece, and review is thoroughly fact-checked by our editorial team before publication.</p>
         </div>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-links" style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 20px; font-weight: 500;">
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
-                <a href="disclaimer.html">Disclaimer</a>
                 <a href="privac.html">Privacy Policy</a>
                 <a href="terms.html">Terms</a>
                 <a href="dmca.html">DMCA</a>

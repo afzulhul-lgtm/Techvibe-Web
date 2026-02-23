@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Conditions | TechVibe</title>
-    
-    <meta name="description" content="Read the Terms and Conditions for using TechVibe. These rules and regulations outline the usage policies for our technology news and reviews website.">
-    <meta name="keywords" content="TechVibe terms and conditions, website terms of use, legal terms tech blog">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="description" content="Read the Terms and Conditions for using TechVibe. These rules outline the usage policies for our tech news website.">
     <meta property="og:title" content="Terms & Conditions | TechVibe">
     <meta property="og:type" content="website">
 
@@ -21,20 +20,47 @@
     </style>
 </head>
 <body>
+    <script>if(localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');</script>
+
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-left">
+                <span id="current-date-display" class="date-display"></span>
+                <div class="breaking-news-ticker">
+                    <span class="ticker-label">HOT NEWS</span>
+                    <div class="ticker-content" id="hot-news-ticker"></div>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privac.html">Privacy</a>
+                </div>
+                <div class="top-actions">
+                    <button id="random-article-btn" title="Read Random Article"><i class="fas fa-random"></i></button>
+                    <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="main-header">
         <div class="container">
             <div class="header-content">
-                <div class="logo"><a href="index.html"><h1>TechVibe</h1></a></div>
-                <nav class="main-nav">
+                <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;"><h1>TechVibe</h1></a></div>
+                 <nav class="main-nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="tech.html">Tech</a></li>
                         <li><a href="latest-news.html">Latest News</a></li>
+                        <li class="search-icon"><a href="#"><i class="fas fa-search"></i></a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+
     <main class="container main-content">
         <div class="legal-content">
             <h1>Terms & Conditions</h1>
@@ -47,19 +73,15 @@
             <p>You must not: Republish material from TechVibe, Sell, rent or sub-license material from TechVibe, or Reproduce, duplicate or copy material from TechVibe.</p>
 
             <h2>2. User Comments and Contributions</h2>
-            <p>Certain parts of this website offer the opportunity for users to post and exchange opinions and information in certain areas of the website. TechVibe does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of TechVibe, its agents, and/or affiliates.</p>
             <p>TechVibe reserves the right to monitor all Comments and to remove any Comments which can be considered inappropriate, offensive, or causes breach of these Terms and Conditions.</p>
-
-            <h2>3. Hyperlinking to our Content</h2>
-            <p>The following organizations may link to our Website without prior written approval: Search engines, News organizations, and Government agencies. We may consider and approve other link requests from commonly-known consumer and/or business information sources.</p>
         </div>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-links" style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 20px; font-weight: 500;">
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
-                <a href="disclaimer.html">Disclaimer</a>
                 <a href="privac.html">Privacy Policy</a>
                 <a href="terms.html">Terms</a>
                 <a href="dmca.html">DMCA</a>

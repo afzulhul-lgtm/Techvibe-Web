@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disclaimer | TechVibe</title>
-    
-    <meta name="description" content="Read the general disclaimer for TechVibe. Understand the limitations of liability and informational purposes of our tech news and reviews content.">
-    <meta name="keywords" content="TechVibe disclaimer, legal disclaimer, tech news accuracy, website liability">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="description" content="Read the general disclaimer for TechVibe. Understand the limitations of liability for our tech content.">
     <meta property="og:title" content="Disclaimer | TechVibe">
     <meta property="og:type" content="website">
 
@@ -21,42 +20,66 @@
     </style>
 </head>
 <body>
+    <script>if(localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');</script>
+
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-left">
+                <span id="current-date-display" class="date-display"></span>
+                <div class="breaking-news-ticker">
+                    <span class="ticker-label">HOT NEWS</span>
+                    <div class="ticker-content" id="hot-news-ticker"></div>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privac.html">Privacy</a>
+                </div>
+                <div class="top-actions">
+                    <button id="random-article-btn" title="Read Random Article"><i class="fas fa-random"></i></button>
+                    <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="main-header">
         <div class="container">
             <div class="header-content">
-                <div class="logo"><a href="index.html"><h1>TechVibe</h1></a></div>
-                <nav class="main-nav">
+                <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;"><h1>TechVibe</h1></a></div>
+                 <nav class="main-nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="tech.html">Tech</a></li>
                         <li><a href="latest-news.html">Latest News</a></li>
+                        <li class="search-icon"><a href="#"><i class="fas fa-search"></i></a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+
     <main class="container main-content">
         <div class="legal-content">
             <h1>Website Disclaimer</h1>
             <p><strong>Last Updated:</strong> January 2026</p>
-            <p>The information provided by TechVibe ("we," "us," or "our") on techvibedetails.online (the "Site") is for general informational and educational purposes only. All information on the Site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.</p>
+            <p>The information provided by TechVibe ("we," "us," or "our") on techvibedetails.online (the "Site") is for general informational and educational purposes only. All information on the Site is provided in good faith.</p>
             
             <h2>1. External Links Disclaimer</h2>
-            <p>The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability, or completeness by us.</p>
+            <p>The Site may contain links to other websites. Such external links are not investigated, monitored, or checked for accuracy by us.</p>
 
             <h2>2. Professional Advice Disclaimer</h2>
-            <p>The tech, gadget, and software information provided on this platform cannot replace professional technical advice. While we strive to provide accurate and up-to-date reviews and tutorials, reliance on any information provided by TechVibe, our employees, or others appearing on the Site is solely at your own risk.</p>
-            
-            <h2>3. Affiliate Disclaimer</h2>
-            <p>TechVibe may contain links to affiliate websites, and we may receive an affiliate commission for any purchases made by you on the affiliate website using such links. Our editorial content is not influenced by advertisers or affiliate partnerships.</p>
+            <p>The tech, gadget, and software information provided on this platform cannot replace professional technical advice. Reliance on any information provided by TechVibe is solely at your own risk.</p>
         </div>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-links" style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 20px; font-weight: 500;">
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
-                <a href="disclaimer.html">Disclaimer</a>
                 <a href="privac.html">Privacy Policy</a>
                 <a href="terms.html">Terms</a>
                 <a href="dmca.html">DMCA</a>

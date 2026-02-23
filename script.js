@@ -1,4 +1,4 @@
-// ===== UNIVERSAL AUTO SYSTEM (Optimized with Fast JSON Loading) =====
+// ===== UNIVERSAL AUTO SYSTEM (Optimized with Fast JSON Loading & VIP Features) =====
 
 const config = {
     folderName: 'articles',      
@@ -7,18 +7,16 @@ const config = {
     defaultAuthorImg: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80' 
 };
 
-// State Variables
 let allArticles = [];
 let currentPage = 1;
 let currentFilter = 'all'; 
 
-// Location & Path Logic
 const isArticlePage = window.location.pathname.includes(`/${config.folderName}/`);
 const basePath = isArticlePage ? '' : `${config.folderName}/`; 
 const linkPrefix = isArticlePage ? '' : `${config.folderName}/`; 
 const rootPrefix = isArticlePage ? '../' : ''; 
 
-// --- CSS INJECTION (Sidebar, Pagination, Notifications, Author, Search) ---
+// CSS INJECTION
 const style = document.createElement('style');
 style.innerHTML = `
     .sidebar-card { display: flex; gap: 12px; align-items: start; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
@@ -29,28 +27,21 @@ style.innerHTML = `
     .sidebar-info a { color: #fff; font-size: 0.9rem; font-weight: 500; line-height: 1.4; margin-bottom: 5px; text-decoration: none; }
     .sidebar-info a:hover { text-decoration: underline; color: #0066cc; }
     .sidebar-date { font-size: 0.75rem; color: rgba(255,255,255,0.7); }
-    
     .mini-avatar { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; vertical-align: middle; margin-right: 6px; border: 1px solid #ddd; }
     .author-link { cursor: pointer; transition: color 0.2s; text-decoration: none; color: inherit; font-weight:600; }
     .author-link:hover { color: #0066cc; }
     .verified-tick { color: #1da1f2; margin-left: 4px; font-size: 0.8em; }
-
     .card-author-img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; margin-right: 8px; border: 1px solid #ddd; }
     .news-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin-top:10px; }
-
     .pagination-controls { grid-column: 1 / -1; display: flex; justify-content: center; gap: 10px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
     .page-btn { padding: 8px 16px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 4px; font-weight: 500; transition: all 0.3s ease; }
     .page-btn:hover { background: #f0f0f0; }
     .page-btn.active { background: #0066cc; color: white; border-color: #0066cc; }
-
-    .notification-bell { z-index: 10001 !important; cursor: pointer; touch-action: manipulation; }
-    .sub-toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 10px 20px; border-radius: 20px; z-index: 10002; display: none; }
     .notify-popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; display: flex; justify-content: center; align-items: center; }
     .notify-popup { background: #fff; padding: 30px; border-radius: 12px; text-align: center; max-width: 400px; width: 90%; }
     .notify-icon { width: 60px; height: 60px; background: #e8f4ff; color: #0066cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 15px; }
     .btn-allow { background: #0066cc; color: #fff; border: none; padding: 10px 25px; border-radius: 6px; cursor: pointer; font-weight: 600; }
     .btn-deny { background: #f1f1f1; color: #555; border: none; padding: 10px 25px; border-radius: 6px; cursor: pointer; font-weight: 600; }
-
     #search-full-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); z-index: 20000; display: none; justify-content: center; align-items: flex-start; padding-top: 80px; }
     .search-modal { width: 90%; max-width: 650px; background: #fff; border-radius: 15px; overflow: hidden; }
     .search-header { display: flex; align-items: center; padding: 15px 20px; border-bottom: 2px solid #f0f0f0; }
@@ -64,19 +55,17 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-// --- MAIN INIT ---
+// MAIN INIT
 document.addEventListener('DOMContentLoaded', async function() {
     highlightActiveMenu();
     updateInnerArticleDate();
     
-    await loadArticlesFast();
+    await loadArticlesFast(); // Extremely Fast JSON Fetch
     
     const homeContainer = document.getElementById('articles-container');
     if (homeContainer) { currentFilter = 'all'; renderArticles(homeContainer, 'all'); }
-
     const techContainer = document.getElementById('tech-page-container');
     if (techContainer) { currentFilter = 'Tech'; renderArticles(techContainer, 'Tech'); }
-
     const latestContainer = document.getElementById('latest-page-container');
     if (latestContainer) { currentFilter = 'all'; renderArticles(latestContainer, 'all'); }
 
@@ -89,11 +78,55 @@ document.addEventListener('DOMContentLoaded', async function() {
     injectNotificationBell();
     setupCopyLinkButtons();
     initLiveSearchSystem(); 
+    initTopBarFeatures(); // <--- NAYA VIP FEATURE
     
     setTimeout(initNotificationPopup, 3000);
 });
 
-// --- DATE LOGIC ---
+// VIP TOP BAR FEATURES (Date, Hot News, Dark Mode, Random Article)
+function initTopBarFeatures() {
+    const dateDisplay = document.getElementById('current-date-display');
+    if(dateDisplay) {
+        const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+        dateDisplay.innerHTML = `<i class="far fa-calendar-alt"></i> ${new Date().toLocaleDateString('en-US', options)}`;
+    }
+
+    const tickerContainer = document.getElementById('hot-news-ticker');
+    if(tickerContainer && allArticles.length > 0) {
+        const latestNews = allArticles.slice(0, 5);
+        tickerContainer.innerHTML = latestNews.map(art => `<a href="${linkPrefix}${art.filename}"><i class="fas fa-bolt" style="color:#ffcc00; margin-right:5px;"></i>${art.title}</a>`).join('');
+    }
+
+    const randomBtn = document.getElementById('random-article-btn');
+    if(randomBtn) {
+        randomBtn.addEventListener('click', () => {
+            if(allArticles.length > 0) {
+                const randomArt = allArticles[Math.floor(Math.random() * allArticles.length)];
+                window.location.href = `${linkPrefix}${randomArt.filename}`;
+            }
+        });
+    }
+
+    const darkBtn = document.getElementById('dark-mode-toggle');
+    if(darkBtn) {
+        if(localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            darkBtn.innerHTML = '<i class="fas fa-sun" style="color:#ffcc00;"></i>';
+        }
+        darkBtn.addEventListener('click', () => {
+            if(document.documentElement.getAttribute('data-theme') === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                darkBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                darkBtn.innerHTML = '<i class="fas fa-sun" style="color:#ffcc00;"></i>';
+            }
+        });
+    }
+}
+
 function getTodayDate() {
     const d = new Date();
     return `${d.getDate()} ${d.toLocaleString('default', { month: 'short' })}, ${d.getFullYear()}`;
@@ -106,7 +139,7 @@ function updateInnerArticleDate() {
     }
 }
 
-// --- OPTIMIZED: JSON LOADER ---
+// OPTIMIZED FAST FETCH
 async function loadArticlesFast() {
     try {
         const response = await fetch(basePath + 'data.json');
@@ -119,7 +152,6 @@ async function loadArticlesFast() {
     }
 }
 
-// --- RENDER ARTICLES ---
 function renderArticles(container, filter) {
     container.innerHTML = '';
     let displayList = allArticles;
@@ -127,7 +159,6 @@ function renderArticles(container, filter) {
     
     const totalItems = displayList.length;
     const totalPages = Math.ceil(totalItems / config.itemsPerPage);
-    
     if (currentPage > totalPages) currentPage = 1;
 
     const start = (currentPage - 1) * config.itemsPerPage;
@@ -135,8 +166,7 @@ function renderArticles(container, filter) {
     const paginatedItems = displayList.slice(start, end);
 
     if (paginatedItems.length === 0) { 
-        container.innerHTML = '<div style="padding:40px; text-align:center; grid-column:1/-1;"><h3>No articles found</h3></div>'; 
-        return; 
+        container.innerHTML = '<div style="padding:40px; text-align:center; grid-column:1/-1;"><h3>No articles found</h3></div>'; return; 
     }
 
     const articlesHTML = paginatedItems.map(art => {
@@ -162,19 +192,15 @@ function renderArticles(container, filter) {
     if (totalPages > 1) renderPaginationControls(container, totalPages);
 }
 
-// --- PAGINATION ---
 function renderPaginationControls(container, totalPages) {
     const paginationDiv = document.createElement('div');
     paginationDiv.className = 'pagination-controls';
-
     if (currentPage > 1) paginationDiv.appendChild(createPageBtn('< Prev', () => changePage(currentPage - 1, container)));
-
     for (let i = 1; i <= totalPages; i++) {
         const btn = createPageBtn(i, () => changePage(i, container));
         if (i === currentPage) btn.classList.add('active');
         paginationDiv.appendChild(btn);
     }
-
     if (currentPage < totalPages) paginationDiv.appendChild(createPageBtn('Next >', () => changePage(currentPage + 1, container)));
     container.appendChild(paginationDiv);
 }
@@ -195,7 +221,6 @@ function changePage(newPage, container) {
     window.scrollTo({top: y, behavior: 'smooth'});
 }
 
-// --- LIVE SEARCH SYSTEM ---
 function initLiveSearchSystem() {
     const overlay = document.createElement('div');
     overlay.id = 'search-full-overlay';
@@ -229,11 +254,7 @@ function initLiveSearchSystem() {
         if(val.length < 1) return;
 
         const filtered = allArticles.filter(a => a.title.toLowerCase().includes(val) || a.category.toLowerCase().includes(val));
-        
-        if(filtered.length === 0) {
-            resultsList.innerHTML = '<p style="text-align:center; padding:20px; color:#666;">No results found.</p>';
-            return;
-        }
+        if(filtered.length === 0) { resultsList.innerHTML = '<p style="text-align:center; padding:20px; color:#666;">No results found.</p>'; return; }
 
         resultsList.innerHTML = filtered.map(art => {
             let imgSrc = art.image.startsWith('http') ? art.image : `${linkPrefix}${art.image}`;
@@ -249,7 +270,6 @@ function initLiveSearchSystem() {
     });
 }
 
-// --- SIDEBAR ---
 function updateSidebar(sidebar) {
     sidebar.innerHTML = '';
     const currentFile = window.location.pathname.split('/').pop();
@@ -270,7 +290,6 @@ function updateSidebar(sidebar) {
     }).join('');
 }
 
-// --- NOTIFICATIONS ---
 function initNotificationPopup() {
     if (localStorage.getItem('notify_status')) return;
     const overlay = document.createElement('div');
@@ -356,7 +375,6 @@ function highlightActiveMenu() {
     });
 }
 
-// --- COMMENTS SYSTEM ---
 function initCommentSystem() {
     const commentForm = document.getElementById('comment-form');
     if (!commentForm) return;
@@ -384,7 +402,7 @@ function loadComments() {
 function renderSingleComment(comment) {
     const displayArea = document.getElementById('comments-display-area');
     if(!displayArea) return;
-    const html = `<div style="display:flex; gap:15px; margin-bottom:20px; background:#f9f9f9; padding:15px; border-radius:8px;">
+    const html = `<div class="single-comment" style="display:flex; gap:15px; margin-bottom:20px; background:#f9f9f9; padding:15px; border-radius:8px;">
         <div style="width:40px; height:40px; background:#ddd; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fas fa-user"></i></div>
         <div>
             <div style="font-weight:bold;">${comment.name} <span style="font-size:0.8rem; color:#888; font-weight:normal; margin-left:10px;">${comment.date}</span></div>

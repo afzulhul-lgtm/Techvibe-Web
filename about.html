@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | TechVibe - Latest Tech News & Reviews</title>
-    
-    <meta name="description" content="Discover TechVibe's mission to bring you the most accurate technology news, in-depth gadget reviews, and expert tech analysis. Learn more about our tech-driven team.">
-    <meta name="keywords" content="about TechVibe, tech news website, gadget reviews, technology blog, tech experts, software updates, latest tech 2026">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="description" content="Discover TechVibe's mission to bring you the most accurate technology news, in-depth gadget reviews, and expert tech analysis.">
+    <meta name="keywords" content="about TechVibe, tech news website, gadget reviews, technology blog, tech experts">
     <meta property="og:title" content="About Us | TechVibe">
-    <meta property="og:description" content="Your ultimate destination for the latest tech news, mobile reviews, and gadget updates.">
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="style.css">
@@ -22,24 +21,48 @@
         .about-content-section h2 { font-size: 1.8rem; color: #0066cc; margin-bottom: 20px; }
         .about-content-section p { font-size: 1.05rem; color: #444; margin-bottom: 20px; line-height: 1.8; }
         .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
-        .feature-box { background: #fff; padding: 30px; border-radius: 8px; text-align: center; border: 1px solid #eaeaea; transition: transform 0.3s, box-shadow 0.3s; }
+        .feature-box { background: #fff; padding: 30px; border-radius: 8px; text-align: center; border: 1px solid #eaeaea; transition: transform 0.3s; }
         .feature-box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,102,204,0.1); border-color: #0066cc; }
         .feature-box i { font-size: 2.5rem; color: #0066cc; margin-bottom: 15px; }
-        .feature-box h3 { margin-bottom: 10px; color: #222; }
-        .feature-box p { color: #666; font-size: 0.95rem; }
         @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
+    <script>if(localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');</script>
+
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-left">
+                <span id="current-date-display" class="date-display"></span>
+                <div class="breaking-news-ticker">
+                    <span class="ticker-label">HOT NEWS</span>
+                    <div class="ticker-content" id="hot-news-ticker"></div>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privac.html">Privacy</a>
+                </div>
+                <div class="top-actions">
+                    <button id="random-article-btn" title="Read Random Article"><i class="fas fa-random"></i></button>
+                    <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="main-header">
         <div class="container">
             <div class="header-content">
-                <div class="logo"><a href="index.html"><h1>TechVibe</h1></a></div>
-                <nav class="main-nav">
+                <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;"><h1>TechVibe</h1></a></div>
+                 <nav class="main-nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="tech.html">Tech</a></li>
                         <li><a href="latest-news.html">Latest News</a></li>
+                        <li class="search-icon"><a href="#"><i class="fas fa-search"></i></a></li>
                     </ul>
                 </nav>
             </div>
@@ -49,32 +72,27 @@
     <main class="container main-content">
         <div class="about-hero">
             <h1>About TechVibe</h1>
-            <p>Welcome to TechVibe, your premier destination for the latest breaking news, comprehensive gadget reviews, and deep dives into the ever-evolving world of technology. We decode the future, one byte at a time.</p>
+            <p>Welcome to TechVibe, your premier destination for the latest breaking news, comprehensive gadget reviews, and deep dives into the ever-evolving world of technology.</p>
         </div>
-
         <div class="about-content-section">
             <h2>Our Mission</h2>
-            <p>At TechVibe, our mission is simple: to make technology accessible, understandable, and exciting for everyone. Whether you are a hardcore tech enthusiast, a professional developer, or just someone looking for advice on their next smartphone purchase, we are here to provide unbiased, accurate, and highly researched content. In an era where digital transformation is shaping our lives, we strive to be your most trusted digital compass.</p>
-            
-            <h2>What We Cover</h2>
-            <p>We specialize in bringing you real-time updates from the tech universe. Our dedicated editorial team works around the clock to cover mobile technology, software updates, artificial intelligence, cybersecurity, and global tech events. From exclusive unboxing reviews to addressing everyday tech troubleshooting, TechVibe is built to be your daily tech companion.</p>
+            <p>At TechVibe, our mission is simple: to make technology accessible, understandable, and exciting for everyone. Whether you are a hardcore tech enthusiast, a professional developer, or just someone looking for advice on their next smartphone purchase, we are here to provide unbiased, accurate, and highly researched content.</p>
         </div>
-
         <div class="features-grid">
             <div class="feature-box">
                 <i class="fas fa-bolt"></i>
                 <h3>Lightning Fast Updates</h3>
-                <p>We ensure you get the most accurate and quickest tech news updates to keep you ahead of the digital curve.</p>
+                <p>We ensure you get the most accurate and quickest tech news updates.</p>
             </div>
             <div class="feature-box">
                 <i class="fas fa-microchip"></i>
                 <h3>Unbiased Reviews</h3>
-                <p>Our gadget reviews are authentic, detailed, and rigorously tested by industry experts before publication.</p>
+                <p>Our gadget reviews are authentic, detailed, and rigorously tested.</p>
             </div>
             <div class="feature-box">
                 <i class="fas fa-users"></i>
                 <h3>Community First</h3>
-                <p>We don't just write articles; we build a community of tech lovers sharing knowledge and insights.</p>
+                <p>We build a community of tech lovers sharing knowledge and insights.</p>
             </div>
         </div>
     </main>
@@ -84,7 +102,6 @@
             <div class="footer-links" style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 20px; font-weight: 500;">
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
-                <a href="disclaimer.html">Disclaimer</a>
                 <a href="privac.html">Privacy Policy</a>
                 <a href="terms.html">Terms</a>
                 <a href="dmca.html">DMCA</a>
