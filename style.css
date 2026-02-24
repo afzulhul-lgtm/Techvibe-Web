@@ -172,11 +172,18 @@ a {
     margin-bottom: 10px;
     line-height: 1.4;
     color: #222;
-    flex: 1;
 }
 
+/* 🔴 NAYA EXCERPT (2-LINE) STYLE 🔴 */
 .news-excerpt {
-    display: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
 }
 
 .news-meta {
@@ -746,6 +753,10 @@ a {
     gap: 15px;
 }
 
+@media (max-width: 1024px) {
+    .floating-share { display: none !important; }
+}
+
 /* ===== COMMENT SECTION ===== */
 .comments-section {
     padding: 30px 0;
@@ -1169,7 +1180,7 @@ a {
     color: #fff !important;
 }
 
-/* 🔴 NEW FIXES: ALSO READ TEXT & AUTHOR IMAGE IN DARK MODE 🔴 */
+/* 🔴 NEW FIXES: ALSO READ TEXT, EXCERPT & AUTHOR IMAGE IN DARK MODE 🔴 */
 [data-theme="dark"] .also-read a {
     color: #fff !important;
     transition: 0.3s;
@@ -1191,6 +1202,6 @@ a {
     border-color: #444 !important;
 }
 
-@media (max-width: 1024px) {
-    .floating-share { display: none !important; } /* Mobile par floating hide ho jayenge taake screen block na ho */
+[data-theme="dark"] .news-excerpt {
+    color: #aaa !important;
 }

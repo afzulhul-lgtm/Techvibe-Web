@@ -178,6 +178,9 @@ function renderArticles(container, filter) {
                 </div>
                 <div class="news-content">
                     <h3 class="news-title" onclick="window.location.href='${linkPrefix}${art.filename}'" style="cursor:pointer">${art.title}</h3>
+                    
+                    <p class="news-excerpt">${art.excerpt || 'Click here to read the full breaking news and detailed updates...'}</p>
+                    
                     <div class="news-meta">
                         <img src="${art.authorImg}" class="card-author-img" alt="author" loading="lazy">
                         <span class="author-link">${art.author} <i class="fas fa-check-circle verified-tick"></i></span>
