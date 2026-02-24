@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     highlightActiveMenu();
     updateInnerArticleDate();
     
-    await loadArticlesFast(); // Extremely Fast JSON Fetch
+    await loadArticlesFast(); 
     
     const homeContainer = document.getElementById('articles-container');
     if (homeContainer) { currentFilter = 'all'; renderArticles(homeContainer, 'all'); }
@@ -78,12 +78,11 @@ document.addEventListener('DOMContentLoaded', async function() {
     injectNotificationBell();
     setupCopyLinkButtons();
     initLiveSearchSystem(); 
-    initTopBarFeatures(); // <--- NAYA VIP FEATURE
+    initTopBarFeatures(); 
     
     setTimeout(initNotificationPopup, 3000);
 });
 
-// VIP TOP BAR FEATURES (Date, Hot News, Dark Mode, Random Article)
 function initTopBarFeatures() {
     const dateDisplay = document.getElementById('current-date-display');
     if(dateDisplay) {
@@ -139,7 +138,6 @@ function updateInnerArticleDate() {
     }
 }
 
-// OPTIMIZED FAST FETCH
 async function loadArticlesFast() {
     try {
         const response = await fetch(basePath + 'data.json?v=' + new Date().getTime());
@@ -414,25 +412,19 @@ function renderSingleComment(comment) {
     </div>`;
     displayArea.insertAdjacentHTML('beforeend', html);
 }
-// =========================================
-// NEW FIXES: READING PROGRESS & SCROLL TO TOP
-// =========================================
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Inject Scroll To Top Button
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.id = 'scroll-to-top';
     scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
     scrollTopBtn.title = "Go to top";
     document.body.appendChild(scrollTopBtn);
 
-    // Click Event to Scroll Up
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Scroll Event Listener
     window.addEventListener('scroll', () => {
-        // 1. Progress Bar Logic
         const progress = document.getElementById('reading-progress');
         if (progress) {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -441,7 +433,6 @@ document.addEventListener('DOMContentLoaded', () => {
             progress.style.width = scrolled + "%";
         }
 
-        // 2. Scroll to Top Button Logic
         if (window.scrollY > 300) {
             scrollTopBtn.classList.add('show');
         } else {

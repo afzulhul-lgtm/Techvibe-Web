@@ -139,6 +139,8 @@ a {
     width: 100%;
     height: 180px;
     overflow: hidden;
+    background-color: #f0f0f0;
+    aspect-ratio: 16 / 9;
 }
 
 .article-image img {
@@ -1204,4 +1206,25 @@ a {
 
 [data-theme="dark"] .news-excerpt {
     color: #aaa !important;
+}
+
+/* 🔴 FIXED MISSED BLACK TEXT IN DARK MODE (Legal Pages, Lists, Contact) 🔴 */
+[data-theme="dark"] ul, 
+[data-theme="dark"] li, 
+[data-theme="dark"] .legal-content, 
+[data-theme="dark"] .legal-content ul, 
+[data-theme="dark"] .legal-content li,
+[data-theme="dark"] .contact-info-box p,
+[data-theme="dark"] .contact-info-box h3,
+[data-theme="dark"] .toc-box li,
+[data-theme="dark"] .toc-box a {
+    color: #bbb !important;
+}
+
+[data-theme="dark"] .legal-content a {
+    color: #1da1f2 !important;
+}
+
+[data-theme="dark"] .toc-box a:hover {
+    color: #fff !important;
 }
