@@ -142,7 +142,7 @@ function updateInnerArticleDate() {
 // OPTIMIZED FAST FETCH
 async function loadArticlesFast() {
     try {
-        const response = await fetch(basePath + 'data.json');
+        const response = await fetch(basePath + 'data.json?v=' + new Date().getTime());
         if (response.ok) {
             allArticles = await response.json();
             allArticles.sort((a, b) => b.id - a.id); 
