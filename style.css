@@ -1190,3 +1190,7 @@ a {
 [data-theme="dark"] .author-header-img {
     border-color: #444 !important;
 }
+
+@media (max-width: 1024px) {
+    .floating-share { display: none !important; } /* Mobile par floating hide ho jayenge taake screen block na ho */
+}
