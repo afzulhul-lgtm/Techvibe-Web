@@ -1,27 +1,5 @@
 [
     {
-        "id": 1,
-        "title": "2026 Ford Mustang Revealed: Bold Muscle Design Specs & Modern Tech",
-        "date": "24 Feb, 2026",
-        "author": "Sarah Mitchell",
-        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
-        "category": "Tech",
-        "image": "image1.webp",
-        "filename": "2026-ford-mustang-revealed-bold-muscle-design-specs-modern-tech-1.html",
-        "excerpt": "2026 Ford Mustang: Discover the bold new design, specs, and modern tech of the latest Mustang model."
-    },
-    {
-        "id": 2,
-        "title": "2026 Royal Enfield Hunter 350 Debuts: Smoother Engine & Sporty Upgrades",
-        "date": "24 Feb, 2026",
-        "author": "Sarah Mitchell",
-        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
-        "category": "Tech",
-        "image": "image2.webp",
-        "filename": "2026-royal-enfield-hunter-350-debuts-smoother-engine-sporty-upgrades-2.html",
-        "excerpt": "2026 Royal Enfield Hunter 350 debuts with smoother engine and sporty upgrades."
-    },
-    {
         "id": 3,
         "title": "2026 Maserati Quattroporte Review: 430 HP Luxury Sedan Specs & Price",
         "date": "24 Feb, 2026",
@@ -163,5 +141,115 @@
         "image": "image15.webp",
         "filename": "why-mediterranean-gardeners-never-prune-oleanders-like-we-do-15.html",
         "excerpt": "Discover the secret to pruning oleanders like a Mediterranean gardener, learn the tips and tricks for beautiful blooms and healthy plants."
+    },
+    {
+        "id": 16,
+        "title": "2026 BMW M5 Revealed: Hybrid Power & Ultimate Track-Ready Luxury",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image16.webp",
+        "filename": "2026-bmw-m5-revealed-hybrid-power-ultimate-track-ready-luxury-16.html",
+        "excerpt": "Experience the 2026 BMW M5, a hybrid luxury performance sedan with ultimate track-ready features."
+    },
+    {
+        "id": 17,
+        "title": "2026 Chevrolet Bel Air: The Ultimate Modern Classic with Premium Luxury",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image17.webp",
+        "filename": "2026-chevrolet-bel-air-the-ultimate-modern-classic-with-premium-luxury-17.html",
+        "excerpt": "Get ready to experience the ultimate modern classic with the 2026 Chevrolet Bel Air, featuring premium luxury and sleek design."
+    },
+    {
+        "id": 18,
+        "title": "2026 Kia Motorhome Unveiled: Ultra-Luxury, High Mileage & Comfort",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image18.webp",
+        "filename": "2026-kia-motorhome-unveiled-ultra-luxury-high-mileage-comfort-18.html",
+        "excerpt": "Unveil the 2026 Kia Motorhome, a fusion of ultra-luxury, high mileage, and comfort, redefining RV experiences."
+    },
+    {
+        "id": 19,
+        "title": "2026 Corvette Stingray Revealed: Modern Design & Advanced Safety on a Budget",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image19.webp",
+        "filename": "2026-corvette-stingray-revealed-modern-design-advanced-safety-on-a-bud-19.html",
+        "excerpt": "2026 Corvette Stingray: Discover the latest design, safety features, and specs of the new Corvette, a budget-friendly sports car with advanced technology."
+    },
+    {
+        "id": 20,
+        "title": "2026 Cadillac V16 Returns: Iconic Design Meets Ultimate Advanced Luxury",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image20.webp",
+        "filename": "2026-cadillac-v16-returns-iconic-design-meets-ultimate-advanced-luxury-20.html",
+        "excerpt": "2026 Cadillac V16 returns with iconic design and advanced luxury features, offering a unique driving experience with its powerful V16 engine."
+    },
+    {
+        "id": 21,
+        "title": "2026 BMW Z4 Debuts: Unmatched Power, Smart Tech & Pure Luxury",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image21.webp",
+        "filename": "2026-bmw-z4-debuts-unmatched-power-smart-tech-pure-luxury-21.html",
+        "excerpt": "Unleash the 2026 BMW Z4's unmatched power, smart tech, and pure luxury, redefining the luxury sports roadster experience."
+    },
+    {
+        "id": 22,
+        "title": "Porsche Design Magic 7 (2026): The Ultimate Luxury Phone with Massive Features",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image22.webp",
+        "filename": "porsche-design-magic-7-2026-the-ultimate-luxury-phone-with-massive-fea-22.html",
+        "excerpt": "Experience the ultimate luxury with Porsche Design Magic 7, the 2026 flagship phone featuring massive specs and premium tech."
+    },
+    {
+        "id": 23,
+        "title": "2026 Lexus LC 500 Revealed: The Updated Luxury Sports Coupe",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image23.webp",
+        "filename": "2026-lexus-lc-500-revealed-the-updated-luxury-sports-coupe-23.html",
+        "excerpt": "2026 Lexus LC 500 revealed with updated design, specs, and features, setting a new standard for luxury sports coupes."
+    },
+    {
+        "id": 24,
+        "title": "2026 Toyota Venza Revealed: Premium Hybrid SUV with High Efficiency & Comfort",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image24.webp",
+        "filename": "2026-toyota-venza-revealed-premium-hybrid-suv-with-high-efficiency-com-24.html",
+        "excerpt": "Discover the 2026 Toyota Venza, a premium hybrid SUV with high fuel efficiency and luxury comfort, perfect for those seeking a balance between performance and eco-friendliness."
+    },
+    {
+        "id": 25,
+        "title": "2026 Mercedes X-Class Pickup Revealed: The Ultimate Luxury Truck Updated",
+        "date": "25 Feb, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+        "category": "Tech",
+        "image": "image25.webp",
+        "filename": "2026-mercedes-x-class-pickup-revealed-the-ultimate-luxury-truck-update-25.html",
+        "excerpt": "2026 Mercedes X-Class: Unveiling the ultimate luxury pickup truck with updated specs and premium off-road capabilities."
     }
 ]
