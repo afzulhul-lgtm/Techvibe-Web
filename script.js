@@ -55,10 +55,28 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
+// 🔥 YAHAN DATE FORCE KARNE WALA FUNCTION ADD KIYA HAI 🔥
+function forceCurrentDate() {
+    const dateElements = document.querySelectorAll('.publish-date span, .date-display');
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const today = new Date().toLocaleDateString('en-US', options);
+
+    dateElements.forEach(el => {
+        if (el.innerHTML.includes('Published:')) {
+            el.innerHTML = '<i class="far fa-calendar-alt"></i> Published: ' + today;
+        } else if (el.innerHTML.includes('Updated:')) {
+            el.innerHTML = '<i class="fas fa-sync-alt"></i> Updated: ' + today;
+        } else if (el.classList.contains('date-display')) {
+            el.innerHTML = '<i class="far fa-calendar-alt"></i> ' + today;
+        }
+    });
+}
+
 // MAIN INIT
 document.addEventListener('DOMContentLoaded', async function() {
     highlightActiveMenu();
     updateInnerArticleDate();
+    forceCurrentDate(); // 🔥 Isey call kar diya taake page load hote hi date update ho jaye
     
     await loadArticlesFast(); 
     
