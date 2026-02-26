@@ -161,6 +161,13 @@ async function loadArticlesFast() {
         const response = await fetch(basePath + 'data.json?v=' + new Date().getTime());
         if (response.ok) {
             allArticles = await response.json();
+            
+            // 🔥 NAYA VIP TRICK: Home Page aur JSON ki dates ko override kar do 🔥
+            const todayStr = getTodayDate();
+            allArticles.forEach(art => {
+                art.date = todayStr;
+            });
+
             allArticles.sort((a, b) => b.id - a.id); 
         }
     } catch (e) {
