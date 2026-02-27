@@ -7,8 +7,10 @@ const config = {
     defaultAuthorImg: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80' 
 };
 
+const pageKey = window.location.pathname.split('/').pop() || 'index.html';
+
 let allArticles = [];
-let currentPage = 1;
+let currentPage = parseInt(sessionStorage.getItem('page_' + pageKey)) || 1;
 let currentFilter = 'all'; 
 
 const isArticlePage = window.location.pathname.includes(`/${config.folderName}/`);
@@ -52,10 +54,36 @@ style.innerHTML = `
     .search-result-item img { width: 60px; height: 45px; object-fit: cover; border-radius: 4px; }
     .search-result-info h4 { margin: 0; font-size: 1rem; color: #222; }
     .search-result-info p { margin: 4px 0 0; font-size: 0.8rem; color: #0066cc; font-weight: 600; }
+    
+    /* 🔥 NEW: YOU MAY ALSO LIKE SECTION CSS (With Hover Effects) 🔥 */
+    .related-section { margin-top: 50px; padding-top: 30px; border-top: 2px solid #eee; }
+    .related-section h2 { font-size: 1.5rem; margin-bottom: 20px; color: #111; border-left: 4px solid #0066cc; padding-left: 10px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; }
+    .related-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: all 0.3s ease; cursor: pointer; border: 1px solid #f0f0f0; }
+    .related-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .related-card img { width: 100%; height: 140px; object-fit: cover; }
+    .related-card-content { padding: 15px; }
+    
+    /* Title Color aur Transition */
+    .related-card-title { font-size: 0.95rem; font-weight: 600; color: #222; margin: 0 0 8px; line-height: 1.4; transition: color 0.3s ease; }
+    
+    /* Hover effect for title */
+    .related-card:hover .related-card-title { color: #0066cc; } 
+    
+    .related-card-date { font-size: 0.75rem; color: #888; }
+    
+    /* 🔥 Dark Mode Styling 🔥 */
+    [data-theme="dark"] .related-section { border-color: #333; }
+    [data-theme="dark"] .related-section h2 { color: #fff; }
+    [data-theme="dark"] .related-card { background: #1e1e1e; border-color: #333; }
+    [data-theme="dark"] .related-card-title { color: #eee; }
+    
+    /* 🔥 FIX: Force Hover effect for title in Dark Mode using !important 🔥 */
+    [data-theme="dark"] .related-card:hover .related-card-title { color: #4da6ff !important; }
+    [data-theme="dark"] .related-card:hover { border-color: #4da6ff !important; box-shadow: 0 5px 15px rgba(77, 166, 255, 0.15); }
 `;
 document.head.appendChild(style);
 
-// 🔥 YAHAN DATE FORCE KARNE WALA FUNCTION ADD KIYA HAI 🔥
 function forceCurrentDate() {
     const dateElements = document.querySelectorAll('.publish-date span, .date-display');
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -76,10 +104,12 @@ function forceCurrentDate() {
 document.addEventListener('DOMContentLoaded', async function() {
     highlightActiveMenu();
     updateInnerArticleDate();
-    forceCurrentDate(); // 🔥 Isey call kar diya taake page load hote hi date update ho jaye
+    forceCurrentDate(); 
     
     await loadArticlesFast(); 
     
+    injectRelatedArticles();
+
     const homeContainer = document.getElementById('articles-container');
     if (homeContainer) { currentFilter = 'all'; renderArticles(homeContainer, 'all'); }
     const techContainer = document.getElementById('tech-page-container');
@@ -98,8 +128,71 @@ document.addEventListener('DOMContentLoaded', async function() {
     initLiveSearchSystem(); 
     initTopBarFeatures(); 
     
+    if (isArticlePage) {
+        const goBackBtn = document.querySelector('.breadcrumb a[onclick*="history.back"]');
+        if (goBackBtn) {
+            goBackBtn.removeAttribute('onclick');
+            goBackBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (document.referrer.includes(window.location.hostname)) {
+                    window.history.back(); 
+                } else {
+                    window.location.href = '../index.html'; 
+                }
+            });
+        }
+    }
+
+    setTimeout(() => {
+        const savedScroll = sessionStorage.getItem('scroll_' + pageKey);
+        if (savedScroll && !isArticlePage) {
+            window.scrollTo({ top: parseInt(savedScroll), behavior: 'auto' });
+        }
+    }, 200);
+
     setTimeout(initNotificationPopup, 3000);
 });
+
+window.addEventListener('beforeunload', () => {
+    if (!isArticlePage) {
+        sessionStorage.setItem('scroll_' + pageKey, window.scrollY);
+    }
+});
+
+// 🔥 FUNCTION: "You May Also Like" Grid Maker 🔥
+function injectRelatedArticles() {
+    if (!isArticlePage) return; 
+    
+    const commentsSection = document.querySelector('.comments-section');
+    if (!commentsSection) return;
+
+    const currentFile = window.location.pathname.split('/').pop();
+    const otherArticles = allArticles.filter(art => art.filename !== currentFile);
+    
+    const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 3);
+    
+    if (selected.length === 0) return;
+
+    const relatedDiv = document.createElement('div');
+    relatedDiv.className = 'related-section';
+    
+    let cardsHtml = selected.map(art => {
+        let imgSrc = art.image.startsWith('http') ? art.image : art.image;
+        return `
+        <div class="related-card" onclick="window.location.href='${art.filename}'">
+            <img src="${imgSrc}" loading="lazy" alt="${art.title}">
+            <div class="related-card-content">
+                <h4 class="related-card-title">${art.title}</h4>
+                <span class="related-card-date"><i class="far fa-clock"></i> ${art.date}</span>
+            </div>
+        </div>`;
+    }).join('');
+
+    relatedDiv.innerHTML = `<h2><i class="fas fa-layer-group" style="color:#0066cc;"></i> You May Also Like</h2><div class="related-grid">${cardsHtml}</div>`;
+    
+    commentsSection.parentNode.insertBefore(relatedDiv, commentsSection.nextSibling);
+}
 
 function initTopBarFeatures() {
     const dateDisplay = document.getElementById('current-date-display');
@@ -162,7 +255,6 @@ async function loadArticlesFast() {
         if (response.ok) {
             allArticles = await response.json();
             
-            // 🔥 NAYA VIP TRICK: Home Page aur JSON ki dates ko override kar do 🔥
             const todayStr = getTodayDate();
             allArticles.forEach(art => {
                 art.date = todayStr;
@@ -221,13 +313,43 @@ function renderArticles(container, filter) {
 function renderPaginationControls(container, totalPages) {
     const paginationDiv = document.createElement('div');
     paginationDiv.className = 'pagination-controls';
-    if (currentPage > 1) paginationDiv.appendChild(createPageBtn('< Prev', () => changePage(currentPage - 1, container)));
-    for (let i = 1; i <= totalPages; i++) {
-        const btn = createPageBtn(i, () => changePage(i, container));
-        if (i === currentPage) btn.classList.add('active');
-        paginationDiv.appendChild(btn);
+    
+    if (currentPage > 1) {
+        paginationDiv.appendChild(createPageBtn('< Prev', () => changePage(currentPage - 1, container)));
     }
-    if (currentPage < totalPages) paginationDiv.appendChild(createPageBtn('Next >', () => changePage(currentPage + 1, container)));
+
+    let pages = [];
+    if (totalPages <= 5) {
+        for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+        if (currentPage <= 3) {
+            pages = [1, 2, 3, 4, '...', totalPages];
+        } else if (currentPage >= totalPages - 2) {
+            pages = [1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+        } else {
+            pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+        }
+    }
+
+    pages.forEach(p => {
+        if (p === '...') {
+            const dots = document.createElement('span');
+            dots.innerText = '...';
+            dots.style.padding = '8px 12px';
+            dots.style.color = '#888';
+            dots.style.fontWeight = 'bold';
+            paginationDiv.appendChild(dots);
+        } else {
+            const btn = createPageBtn(p, () => changePage(p, container));
+            if (p === currentPage) btn.classList.add('active');
+            paginationDiv.appendChild(btn);
+        }
+    });
+
+    if (currentPage < totalPages) {
+        paginationDiv.appendChild(createPageBtn('Next >', () => changePage(currentPage + 1, container)));
+    }
+    
     container.appendChild(paginationDiv);
 }
 
@@ -241,6 +363,7 @@ function createPageBtn(text, onClick) {
 
 function changePage(newPage, container) {
     currentPage = newPage;
+    sessionStorage.setItem('page_' + pageKey, currentPage);
     renderArticles(container, currentFilter);
     const yOffset = -100; 
     const y = container.getBoundingClientRect().top + window.pageYOffset + yOffset;
