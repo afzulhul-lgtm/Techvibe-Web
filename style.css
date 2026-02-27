@@ -1228,3 +1228,49 @@ a {
 [data-theme="dark"] .toc-box a:hover {
     color: #fff !important;
 }
+
+
+/* =========================================
+   🔴 VIP MOBILE RESPONSIVE FIXES (IMAGES & TABLES) 🔴
+   ========================================= */
+
+/* Har image ko screen ke andar rakhne ke liye */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Article ke andar wali images ki setting */
+.article-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    object-fit: cover;
+}
+
+/* Agar koi lamba link ya word ho toh usay line todne ka hukum */
+.article-body {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* 🔴 Table (Specs/Pricing) Mobile Scroll Fix 🔴 */
+/* Is se table mobile se bahar nahi jayega balkay usme horizontal scroll aa jayega */
+.article-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Mobile par smooth scroll ke liye */
+    white-space: nowrap; /* Table ki shakal kharab hone se bachayega */
+}
+
+@media (max-width: 768px) {
+    /* Mobile par padding thori kam karne ke liye taake jagah zyada mile */
+    .article-content {
+        padding: 20px 15px;
+    }
+    .main-article {
+        margin-bottom: 20px;
+    }
+}
