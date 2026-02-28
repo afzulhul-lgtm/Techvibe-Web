@@ -1389,9 +1389,9 @@ html, body {
 }
 
 /* 🔴 AUTHOR IMAGE ROUND SHAPE FIX 🔴 */
-.author-bio img {
-    height: 45px !important; /* Width ke barabar height force karna */
-    width: 45px !important;
+.author-header-img, .card-author-img, .mini-avatar, .author-bio img {
+    height: 35px !important; /* Width ke barabar height force karna */
+    width: 35px !important;
     aspect-ratio: 1 / 1 !important; /* Perfect square lock karne ke liye */
     object-fit: cover !important; /* Image ko stretch hone se bachane ke liye */
     border-radius: 50% !important; /* Hamesha round rakhne ke liye */
