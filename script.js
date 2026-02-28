@@ -35,10 +35,18 @@ style.innerHTML = `
     .verified-tick { color: #1da1f2; margin-left: 4px; font-size: 0.8em; }
     .card-author-img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; margin-right: 8px; border: 1px solid #ddd; }
     .news-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin-top:10px; }
-    .pagination-controls { grid-column: 1 / -1; display: flex; justify-content: center; gap: 10px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
-    .page-btn { padding: 8px 16px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 4px; font-weight: 500; transition: all 0.3s ease; }
-    .page-btn:hover { background: #f0f0f0; }
+    
+    /* 🔥 UPDATED: COMPACT RESPONSIVE PAGINATION 🔥 */
+    .pagination-controls { grid-column: 1 / -1; display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; flex-wrap: wrap; }
+    .page-btn { padding: 6px 12px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; font-size: 0.9rem; min-width: 38px; display: flex; align-items: center; justify-content: center; }
+    .page-btn:hover { background: #f0f0f0; border-color: #bbb; }
     .page-btn.active { background: #0066cc; color: white; border-color: #0066cc; }
+    
+    @media (max-width: 600px) {
+        .pagination-controls { gap: 5px; }
+        .page-btn { padding: 5px 8px; font-size: 0.8rem; min-width: 32px; height: 32px; }
+    }
+
     .notify-popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; display: flex; justify-content: center; align-items: center; }
     .notify-popup { background: #fff; padding: 30px; border-radius: 12px; text-align: center; max-width: 400px; width: 90%; }
     .notify-icon { width: 60px; height: 60px; background: #e8f4ff; color: #0066cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 15px; }
@@ -55,7 +63,6 @@ style.innerHTML = `
     .search-result-info h4 { margin: 0; font-size: 1rem; color: #222; }
     .search-result-info p { margin: 4px 0 0; font-size: 0.8rem; color: #0066cc; font-weight: 600; }
     
-    /* 🔥 NEW: YOU MAY ALSO LIKE SECTION CSS (With Hover Effects) 🔥 */
     .related-section { margin-top: 50px; padding-top: 30px; border-top: 2px solid #eee; }
     .related-section h2 { font-size: 1.5rem; margin-bottom: 20px; color: #111; border-left: 4px solid #0066cc; padding-left: 10px; }
     .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; }
@@ -63,22 +70,13 @@ style.innerHTML = `
     .related-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     .related-card img { width: 100%; height: 140px; object-fit: cover; }
     .related-card-content { padding: 15px; }
-    
-    /* Title Color aur Transition */
     .related-card-title { font-size: 0.95rem; font-weight: 600; color: #222; margin: 0 0 8px; line-height: 1.4; transition: color 0.3s ease; }
-    
-    /* Hover effect for title */
     .related-card:hover .related-card-title { color: #0066cc; } 
-    
     .related-card-date { font-size: 0.75rem; color: #888; }
-    
-    /* 🔥 Dark Mode Styling 🔥 */
     [data-theme="dark"] .related-section { border-color: #333; }
     [data-theme="dark"] .related-section h2 { color: #fff; }
     [data-theme="dark"] .related-card { background: #1e1e1e; border-color: #333; }
     [data-theme="dark"] .related-card-title { color: #eee; }
-    
-    /* 🔥 FIX: Force Hover effect for title in Dark Mode using !important 🔥 */
     [data-theme="dark"] .related-card:hover .related-card-title { color: #4da6ff !important; }
     [data-theme="dark"] .related-card:hover { border-color: #4da6ff !important; box-shadow: 0 5px 15px rgba(77, 166, 255, 0.15); }
 `;
@@ -159,7 +157,6 @@ window.addEventListener('beforeunload', () => {
     }
 });
 
-// 🔥 FUNCTION: "You May Also Like" Grid Maker 🔥
 function injectRelatedArticles() {
     if (!isArticlePage) return; 
     
@@ -254,12 +251,10 @@ async function loadArticlesFast() {
         const response = await fetch(basePath + 'data.json?v=' + new Date().getTime());
         if (response.ok) {
             allArticles = await response.json();
-            
             const todayStr = getTodayDate();
             allArticles.forEach(art => {
                 art.date = todayStr;
             });
-
             allArticles.sort((a, b) => b.id - a.id); 
         }
     } catch (e) {
@@ -293,9 +288,7 @@ function renderArticles(container, filter) {
                 </div>
                 <div class="news-content">
                     <h3 class="news-title" onclick="window.location.href='${linkPrefix}${art.filename}'" style="cursor:pointer">${art.title}</h3>
-                    
                     <p class="news-excerpt">${art.excerpt || 'Click here to read the full breaking news and detailed updates...'}</p>
-                    
                     <div class="news-meta">
                         <img src="${art.authorImg}" class="card-author-img" alt="author" loading="lazy">
                         <span class="author-link">${art.author} <i class="fas fa-check-circle verified-tick"></i></span>
@@ -310,24 +303,27 @@ function renderArticles(container, filter) {
     if (totalPages > 1) renderPaginationControls(container, totalPages);
 }
 
+// 🔥 UPDATED: SMART COMPACT PAGINATION LOGIC 🔥
 function renderPaginationControls(container, totalPages) {
     const paginationDiv = document.createElement('div');
     paginationDiv.className = 'pagination-controls';
     
+    // Prev Button
     if (currentPage > 1) {
-        paginationDiv.appendChild(createPageBtn('< Prev', () => changePage(currentPage - 1, container)));
+        paginationDiv.appendChild(createPageBtn('«', () => changePage(currentPage - 1, container)));
     }
 
     let pages = [];
     if (totalPages <= 5) {
         for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
-        if (currentPage <= 3) {
-            pages = [1, 2, 3, 4, '...', totalPages];
-        } else if (currentPage >= totalPages - 2) {
-            pages = [1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+        // Logic for "1 2 3 ... Last" visual style
+        if (currentPage <= 2) {
+            pages = [1, 2, 3, '...', totalPages];
+        } else if (currentPage >= totalPages - 1) {
+            pages = [1, '...', totalPages - 2, totalPages - 1, totalPages];
         } else {
-            pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+            pages = [1, '...', currentPage, '...', totalPages];
         }
     }
 
@@ -335,7 +331,7 @@ function renderPaginationControls(container, totalPages) {
         if (p === '...') {
             const dots = document.createElement('span');
             dots.innerText = '...';
-            dots.style.padding = '8px 12px';
+            dots.style.padding = '5px';
             dots.style.color = '#888';
             dots.style.fontWeight = 'bold';
             paginationDiv.appendChild(dots);
@@ -346,8 +342,9 @@ function renderPaginationControls(container, totalPages) {
         }
     });
 
+    // Next Button
     if (currentPage < totalPages) {
-        paginationDiv.appendChild(createPageBtn('Next >', () => changePage(currentPage + 1, container)));
+        paginationDiv.appendChild(createPageBtn('»', () => changePage(currentPage + 1, container)));
     }
     
     container.appendChild(paginationDiv);

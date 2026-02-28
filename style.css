@@ -1321,91 +1321,78 @@ img, video, iframe {
 
 
 /* =========================================
-   🌍 ULTIMATE UNIVERSAL RESPONSIVE FIXES (SAFE MODE) 🌍
+   🌍 ULTIMATE GALAXY Z-FOLD & MOBILE CARD FIX 🌍
    ========================================= */
 
-/* 1. Sidebar Sticky Fix & Horizontal Lock */
-/* overflow-x: clip use kiya hai taake screen lock rahe aur sticky sidebar chalta rahe */
+/* 1. Screen Lock & Sidebar Sticky Support */
 html, body {
-    overflow-x: clip !important; 
+    overflow-x: clip !important; /* Screen lock aur sidebar sticky fix */
     width: 100% !important;
     max-width: 100vw !important;
 }
 
-/* 2. Text & Image Safety Lock */
-* {
+/* 2. Card aur Grid Fix (Right side cutting ka hal) */
+@media (max-width: 768px) {
+    /* Container ki padding ko strictly control karna */
+    .container {
+        width: 100% !important;
+        padding: 0 15px !important; /* Dono taraf barabar gap */
+        box-sizing: border-box !important;
+    }
+
+    /* Grid ko Block mein tabdeel karna (Simplified calculation) */
+    .news-articles, .related-grid {
+        display: block !important; 
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Card ko container ke andar fit karna */
+    .news-card {
+        width: 100% !important; /* Ab card container ki width se bahar nahi jayega */
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 25px !important; /* Do cards ke darmiyan gap */
+        display: flex !important;
+        flex-direction: column !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Image aur Content ki width lock karna */
+    .article-image, .news-content {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* 3. Galaxy Z Fold Special Alignment (< 350px width) */
+@media (max-width: 350px) {
+    .container {
+        padding: 0 10px !important; /* Patli screen par side gaps thore kam */
+    }
+    .news-card {
+        border-radius: 6px !important;
+    }
+    .news-title {
+        font-size: 1rem !important; /* Text size adjust taake box se bahar na nikle */
+    }
+}
+
+/* 4. Table aur Long Content Protection */
+.article-table, .article-body {
+    width: 100% !important;
+    overflow-x: auto !important;
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
 }
 
-img, video, iframe {
-    max-width: 100% !important;
-    height: auto !important;
-}
-
-/* 3. Global Mobile Responsive (768px and below) */
-@media (max-width: 768px) {
-    .container {
-        width: 100% !important;
-        padding: 0 15px !important;
-    }
-
-    /* Navbar & Logo Center Fix */
-    .header-content {
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 15px !important;
-    }
-    
-    .main-nav ul {
-        justify-content: center !important;
-        gap: 15px !important;
-        flex-wrap: wrap !important;
-    }
-
-    /* News Grid Responsive */
-    .news-articles {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-        justify-items: center !important;
-    }
-
-    /* Article Content Padding */
-    .article-content {
-        padding: 20px 15px !important;
-        width: 100% !important;
-    }
-
-    /* "You May Also Like" Grid Fix */
-    .related-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-        width: 100% !important;
-    }
-}
-
-/* 4. Galaxy Z Fold Special Fix (Screens < 350px) */
-@media (max-width: 350px) {
-    .article-header h1 {
-        font-size: 1.4rem !important;
-    }
-    
-    .news-card {
-        width: 100% !important;
-        margin: 0 auto !important;
-    }
-    
-    .logo h1 {
-        font-size: 1.5rem !important;
-    }
-}
-
-/* 5. Table Mobile Scroll Fix */
-.article-table {
-    display: block !important;
-    width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    white-space: nowrap !important;
+/* 🔴 AUTHOR IMAGE ROUND SHAPE FIX 🔴 */
+.author-bio img {
+    height: 45px !important; /* Width ke barabar height force karna */
+    width: 45px !important;
+    aspect-ratio: 1 / 1 !important; /* Perfect square lock karne ke liye */
+    object-fit: cover !important; /* Image ko stretch hone se bachane ke liye */
+    border-radius: 50% !important; /* Hamesha round rakhne ke liye */
 }
