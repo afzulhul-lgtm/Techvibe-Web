@@ -10,6 +10,9 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    overflow-x: clip !important; /* Sidebar Sticky Support */
+    width: 100% !important;
+    max-width: 100vw !important;
 }
 
 .container {
@@ -115,12 +118,13 @@ a {
     color: #333;
 }
 
-/* ===== NEWS ARTICLES GRID ===== */
+/* ===== NEWS ARTICLES GRID (CLS FIXED) ===== */
 .news-articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-bottom: 40px;
+    min-height: 800px;
 }
 
 .news-card {
@@ -135,18 +139,39 @@ a {
     flex-direction: column;
 }
 
+/* 🔴 IMAGE & TRENDING BADGE FIXED 🔴 */
 .article-image {
     width: 100%;
     height: 180px;
     overflow: hidden;
     background-color: #f0f0f0;
     aspect-ratio: 16 / 9;
+    position: relative;
 }
 
 .article-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.trending-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .news-content {
@@ -176,7 +201,6 @@ a {
     color: #222;
 }
 
-/* 🔴 NAYA EXCERPT (2-LINE) STYLE 🔴 */
 .news-excerpt {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -210,20 +234,7 @@ a {
 }
 
 .date {
-    color: #888;
-}
-
-/* Responsive Grid */
-@media (max-width: 900px) {
-    .news-articles {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .news-articles {
-        grid-template-columns: 1fr;
-    }
+    color: #555; /* Contrast Fix */
 }
 
 /* ===== FOOTER ===== */
@@ -331,20 +342,20 @@ a {
     border-bottom: 1px solid #eee;
 }
 
-/* Author Header & Size Fix */
+/* 🔴 Author Header & Size Fix 🔴 */
 .author-info-header {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.author-header-img {
+.author-header-img, .card-author-img, .mini-avatar, .author-bio img {
     width: 45px !important;
     height: 45px !important;
-    border-radius: 50%;
-    object-fit: cover;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
     border: 2px solid #eaeaea;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .author-text {
@@ -536,12 +547,14 @@ a {
     font-size: 0.9rem;
 }
 
-/* Sidebar */
+/* 🔴 Sidebar Sticky Fix 🔴 */
 .sidebar {
     width: 320px;
     flex-shrink: 0;
-    position: sticky;
+    position: -webkit-sticky !important;
+    position: sticky !important;
     top: 20px;
+    align-self: flex-start;
 }
 
 .sidebar-widget {
@@ -603,51 +616,6 @@ a {
 .latest-date {
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.8);
-}
-
-@media (max-width: 900px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        position: static;
-    }
-    .news-articles {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .article-content {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    .main-nav ul {
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-    .news-articles {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    .article-image {
-        height: 180px;
-    }
-    .article-header h1 {
-        font-size: 1.8rem;
-    }
-    .article-meta,
-    .social-share {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
 }
 
 /* ===== NOTIFICATION BELL & SHARE BUTTONS ===== */
@@ -753,10 +721,6 @@ a {
     display: flex;
     justify-content: center;
     gap: 15px;
-}
-
-@media (max-width: 1024px) {
-    .floating-share { display: none !important; }
 }
 
 /* ===== COMMENT SECTION ===== */
@@ -961,29 +925,6 @@ a {
     justify-content: center;
 }
 
-@media (max-width: 768px) {
-    .utility-bar-inner {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .top-links {
-        display: none;
-    }
-    .utility-right,
-    .utility-left {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .ticker-label {
-        font-size: 0.7rem;
-        padding: 3px 6px;
-    }
-    .ticker-content a {
-        font-size: 0.85rem;
-    }
-}
-
 /* =========================================
    FIXES: PROGRESS BAR, SCROLL TO TOP
    ========================================= */
@@ -1038,6 +979,12 @@ a {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* 🔴 SEARCH SUGGESTION WIDTH FIX 🔴 */
+.search-modal { width: 95% !important; max-width: 600px !important; margin: 0 auto; }
+.search-result-item { display: flex !important; align-items: center !important; gap: 12px !important; padding: 12px !important; width: 100% !important; box-sizing: border-box !important; border-bottom: 1px solid #eee; }
+.search-result-info { flex: 1 !important; min-width: 0 !important; }
+.search-result-info h4 { margin: 0; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #222; }
+
 /* =========================================
    DARK MODE OVERRIDES (100% FIXED FOR ALL PAGES)
    ========================================= */
@@ -1063,7 +1010,6 @@ a {
     color: #ccc !important;
 }
 
-/* 🔴 HAR WHITE BOX KO DARK KAREGI 🔴 */
 [data-theme="dark"] .article-content,
 [data-theme="dark"] .news-card,
 [data-theme="dark"] .sidebar-widget,
@@ -1087,13 +1033,13 @@ a {
     border: none !important;
 }
 
-/* 🔴 TEXT SETTINGS 🔴 */
 [data-theme="dark"] h1,
 [data-theme="dark"] h2,
 [data-theme="dark"] h3,
 [data-theme="dark"] h4,
 [data-theme="dark"] .news-title,
-[data-theme="dark"] .section-title {
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .search-result-info h4 {
     color: #fff !important;
 }
 
@@ -1182,7 +1128,6 @@ a {
     color: #fff !important;
 }
 
-/* 🔴 NEW FIXES: ALSO READ TEXT, EXCERPT & AUTHOR IMAGE IN DARK MODE 🔴 */
 [data-theme="dark"] .also-read a {
     color: #fff !important;
     transition: 0.3s;
@@ -1208,7 +1153,6 @@ a {
     color: #aaa !important;
 }
 
-/* 🔴 FIXED MISSED BLACK TEXT IN DARK MODE (Legal Pages, Lists, Contact) 🔴 */
 [data-theme="dark"] ul, 
 [data-theme="dark"] li, 
 [data-theme="dark"] .legal-content, 
@@ -1240,7 +1184,7 @@ html, body {
     max-width: 100vw !important;
 }
 
-/* 2. Universal Text Wrapping (Prevents long links from breaking layout) */
+/* 2. Universal Text Wrapping */
 * {
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
@@ -1274,6 +1218,8 @@ img, video, iframe {
 @media (max-width: 992px) {
     .content-wrapper { flex-direction: column !important; }
     .sidebar { width: 100% !important; position: static !important; }
+    .news-articles { grid-template-columns: repeat(2, 1fr); }
+    .floating-share { display: none !important; }
 }
 
 @media (max-width: 768px) {
@@ -1306,41 +1252,35 @@ img, video, iframe {
         gap: 15px !important;
     }
     
-    /* News Grid Fix */
-    .news-articles {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
+    /* Utility Bar Mobile Fix */
+    .utility-bar-inner {
+        flex-direction: column;
+        gap: 15px;
     }
-    
-    /* Adjust article header text size */
-    .article-header h1 {
-        font-size: 1.6rem !important;
-        line-height: 1.4 !important;
+    .top-links {
+        display: none;
     }
-}
+    .utility-right,
+    .utility-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .ticker-label {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+    .ticker-content a {
+        font-size: 0.85rem;
+    }
 
-
-/* =========================================
-   🌍 ULTIMATE GALAXY Z-FOLD & MOBILE CARD FIX 🌍
-   ========================================= */
-
-/* 1. Screen Lock & Sidebar Sticky Support */
-html, body {
-    overflow-x: clip !important; /* Screen lock aur sidebar sticky fix */
-    width: 100% !important;
-    max-width: 100vw !important;
-}
-
-/* 2. Card aur Grid Fix (Right side cutting ka hal) */
-@media (max-width: 768px) {
-    /* Container ki padding ko strictly control karna */
+    /* 🔴 GALAXY Z FOLD / MOBILE CARD CUTTING FIX 🔴 */
     .container {
         width: 100% !important;
-        padding: 0 15px !important; /* Dono taraf barabar gap */
+        padding: 0 15px !important; 
         box-sizing: border-box !important;
     }
 
-    /* Grid ko Block mein tabdeel karna (Simplified calculation) */
     .news-articles, .related-grid {
         display: block !important; 
         width: 100% !important;
@@ -1348,51 +1288,43 @@ html, body {
         margin: 0 !important;
     }
 
-    /* Card ko container ke andar fit karna */
     .news-card {
-        width: 100% !important; /* Ab card container ki width se bahar nahi jayega */
+        width: 100% !important; 
         max-width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
-        margin-bottom: 25px !important; /* Do cards ke darmiyan gap */
+        margin-bottom: 25px !important; 
         display: flex !important;
         flex-direction: column !important;
         box-sizing: border-box !important;
     }
 
-    /* Image aur Content ki width lock karna */
     .article-image, .news-content {
         width: 100% !important;
         box-sizing: border-box !important;
     }
+
+    .article-header h1 {
+        font-size: 1.6rem !important;
+        line-height: 1.4 !important;
+    }
+    .article-meta,
+    .social-share {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 }
 
-/* 3. Galaxy Z Fold Special Alignment (< 350px width) */
 @media (max-width: 350px) {
     .container {
-        padding: 0 10px !important; /* Patli screen par side gaps thore kam */
+        padding: 0 10px !important; 
     }
     .news-card {
         border-radius: 6px !important;
     }
     .news-title {
-        font-size: 1rem !important; /* Text size adjust taake box se bahar na nikle */
+        font-size: 1rem !important; 
     }
-}
-
-/* 4. Table aur Long Content Protection */
-.article-table, .article-body {
-    width: 100% !important;
-    overflow-x: auto !important;
-    overflow-wrap: break-word !important;
-    word-wrap: break-word !important;
-}
-
-/* 🔴 AUTHOR IMAGE ROUND SHAPE FIX 🔴 */
-.author-header-img, .card-author-img, .mini-avatar, .author-bio img {
-    height: 35px !important; /* Width ke barabar height force karna */
-    width: 35px !important;
-    aspect-ratio: 1 / 1 !important; /* Perfect square lock karne ke liye */
-    object-fit: cover !important; /* Image ko stretch hone se bachane ke liye */
-    border-radius: 50% !important; /* Hamesha round rakhne ke liye */
+    .logo h1 { font-size: 1.4rem !important; }
 }

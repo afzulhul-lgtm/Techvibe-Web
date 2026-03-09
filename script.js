@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const techContainer = document.getElementById('tech-page-container');
     if (techContainer) { currentFilter = 'Tech'; renderArticles(techContainer, 'Tech'); }
     const latestContainer = document.getElementById('latest-page-container');
-    if (latestContainer) { currentFilter = 'all'; renderArticles(latestContainer, 'all'); }
+    if (latestContainer) { currentFilter = 'Latest News'; renderArticles(latestContainer, 'Latest News'); }
 
     const sidebar = document.getElementById('sidebar-articles');
     if (sidebar) updateSidebar(sidebar);
@@ -132,24 +132,34 @@ async function loadArticlesFast() {
 
 function renderArticles(container, filter) {
     container.innerHTML = '';
-    let displayList = filter !== 'all' ? allArticles.filter(art => art.category.includes(filter)) : allArticles;
+    let displayList = filter !== 'all' ? allArticles.filter(art => art.category === filter || art.category.includes(filter)) : allArticles;
     const totalPages = Math.ceil(displayList.length / config.itemsPerPage);
     if (currentPage > totalPages) currentPage = 1;
     const paginatedItems = displayList.slice((currentPage - 1) * config.itemsPerPage, currentPage * config.itemsPerPage);
     
-    container.innerHTML = paginatedItems.map(art => `
+    // 🔴 TRENDING BADGE & LCP PRIORITY ADDED HERE 🔴
+    container.innerHTML = paginatedItems.map((art, index) => {
+        const priorityAttr = index < 2 ? 'fetchpriority="high"' : 'loading="lazy"';
+        const imgSrc = art.image.startsWith('http') ? art.image : linkPrefix + art.image;
+        
+        return `
         <article class="news-card" onclick="window.location.href='${linkPrefix}${art.filename}'">
-            <div class="article-image"><img src="${art.image.startsWith('http') ? art.image : linkPrefix + art.image}" loading="lazy"></div>
+            <div class="article-image">
+                <div class="trending-badge"><i class="fas fa-fire"></i> Trending</div>
+                <img src="${imgSrc}" alt="${art.title}" width="665" height="376" ${priorityAttr}>
+            </div>
             <div class="news-content">
                 <h3 class="news-title">${art.title}</h3>
                 <p class="news-excerpt">${art.excerpt || 'Read full breaking news updates...'}</p>
                 <div class="news-meta">
-                    <img src="${art.authorImg}" class="card-author-img">
+                    <img src="${art.authorImg}" class="card-author-img" alt="${art.author}">
                     <span>${art.author} <i class="fas fa-check-circle verified-tick"></i></span>
                     <span class="separator">|</span><span class="date">${art.date}</span>
                 </div>
             </div>
-        </article>`).join('');
+        </article>`
+    }).join('');
+    
     if (totalPages > 1) renderPaginationControls(container, totalPages);
 }
 
@@ -209,7 +219,7 @@ function initLiveSearchSystem() {
         const filtered = allArticles.filter(a => a.title.toLowerCase().includes(val)).slice(0, 8);
         list.innerHTML = filtered.map(art => `
             <div class="search-result-item" onclick="window.location.href='${linkPrefix}${art.filename}'">
-                <img src="${art.image.startsWith('http') ? art.image : linkPrefix + art.image}">
+                <img src="${art.image.startsWith('http') ? art.image : linkPrefix + art.image}" alt="search-thumb">
                 <div><h4 style="margin:0; font-size:0.95rem;">${art.title}</h4><small>${art.category}</small></div>
             </div>`).join('');
     };
