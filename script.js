@@ -1,4 +1,4 @@
-// ===== UNIVERSAL AUTO SYSTEM (Optimized with Fast JSON Loading & VIP Features) =====
+// ===== UNIVERSAL AUTO SYSTEM (Optimized with Instant Load, Scroll Memory & VIP Features) =====
 
 const config = {
     folderName: 'articles',      
@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     highlightActiveMenu();
     updateInnerArticleDate();
     forceCurrentDate(); 
+    
+    // 🔴 INSTANT LOAD CALL 🔴
     await loadArticlesFast(); 
     injectRelatedArticles();
 
@@ -109,23 +111,37 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     }
 
+    // 🔴 SCROLL MEMORY RESTORE (Instantly goes back to exact position) 🔴
     setTimeout(() => {
         const savedScroll = sessionStorage.getItem('scroll_' + pageKey);
-        if (savedScroll && !isArticlePage) window.scrollTo({ top: parseInt(savedScroll), behavior: 'auto' });
-    }, 200);
+        if (savedScroll && !isArticlePage) {
+            window.scrollTo({ top: parseInt(savedScroll), behavior: 'instant' });
+        }
+    }, 50);
 
     setTimeout(initNotificationPopup, 3000);
 });
 
-// JSON & RENDERING
+// JSON & RENDERING (🔴 INSTANT CACHE LOAD LOGIC 🔴)
 async function loadArticlesFast() {
     try {
+        // 1. Session Storage se fast load (0 wait time)
+        const cachedData = sessionStorage.getItem('cached_techvibe_data');
+        if (cachedData) {
+            allArticles = JSON.parse(cachedData);
+        }
+
+        // 2. Background mein network se naya data laana
         const response = await fetch(basePath + 'data.json?v=' + new Date().getTime());
         if (response.ok) {
-            allArticles = await response.json();
+            const freshArticles = await response.json();
             const todayStr = getTodayDate();
-            allArticles.forEach(art => art.date = todayStr);
-            allArticles.sort((a, b) => b.id - a.id); 
+            freshArticles.forEach(art => art.date = todayStr);
+            freshArticles.sort((a, b) => b.id - a.id); 
+            
+            allArticles = freshArticles;
+            // Cache update kar diya for next time
+            sessionStorage.setItem('cached_techvibe_data', JSON.stringify(allArticles));
         }
     } catch (e) { console.error("Data error:", e); }
 }
@@ -137,13 +153,13 @@ function renderArticles(container, filter) {
     if (currentPage > totalPages) currentPage = 1;
     const paginatedItems = displayList.slice((currentPage - 1) * config.itemsPerPage, currentPage * config.itemsPerPage);
     
-    // 🔴 TRENDING BADGE & LCP PRIORITY ADDED HERE 🔴
+    // 🔴 TRENDING BADGE, LCP PRIORITY & SCROLL SAVE ADDED HERE 🔴
     container.innerHTML = paginatedItems.map((art, index) => {
         const priorityAttr = index < 2 ? 'fetchpriority="high"' : 'loading="lazy"';
         const imgSrc = art.image.startsWith('http') ? art.image : linkPrefix + art.image;
         
         return `
-        <article class="news-card" onclick="window.location.href='${linkPrefix}${art.filename}'">
+        <article class="news-card" onclick="sessionStorage.setItem('scroll_' + pageKey, window.scrollY); window.location.href='${linkPrefix}${art.filename}'">
             <div class="article-image">
                 <div class="trending-badge"><i class="fas fa-fire"></i> Trending</div>
                 <img src="${imgSrc}" alt="${art.title}" width="665" height="376" ${priorityAttr}>
