@@ -139,20 +139,22 @@ a {
     flex-direction: column;
 }
 
-/* 🔴 IMAGE & TRENDING BADGE FIXED 🔴 */
+/* 🔴 IMAGE & TRENDING BADGE FIXED (Discover Size 16:9) 🔴 */
 .article-image {
     width: 100%;
-    height: 180px;
+    /* 🔴 Google Discover 16:9 Ratio 🔴 */
+    aspect-ratio: 16 / 9 !important; 
     overflow: hidden;
     background-color: #f0f0f0;
-    aspect-ratio: 16 / 9;
     position: relative;
 }
 
 .article-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* 🔴 Image fit karne ka behtareen tareeqa 🔴 */
+    object-fit: cover !important;
+    object-position: center;
 }
 
 .trending-badge {

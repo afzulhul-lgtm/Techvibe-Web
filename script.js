@@ -162,7 +162,7 @@ function renderArticles(container, filter) {
         <article class="news-card" onclick="sessionStorage.setItem('scroll_' + pageKey, window.scrollY); window.location.href='${linkPrefix}${art.filename}'">
             <div class="article-image">
                 <div class="trending-badge"><i class="fas fa-fire"></i> Trending</div>
-                <img src="${imgSrc}" alt="${art.title}" width="665" height="376" ${priorityAttr}>
+                <img src="${imgSrc}" alt="${art.title}" width="1200" height="675" ${priorityAttr}>
             </div>
             <div class="news-content">
                 <h3 class="news-title">${art.title}</h3>
