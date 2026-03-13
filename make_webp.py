@@ -6,19 +6,23 @@ from PIL import Image
 ARTICLES_DIR = "articles"
 JSON_FILE = os.path.join(ARTICLES_DIR, "data.json")
 
-# Articles folder mein saari JPG/PNG images dhoondo
+# Articles folder mein saari images dhoondo (including AVIF)
 images = glob.glob(os.path.join(ARTICLES_DIR, "*.jpg")) + \
          glob.glob(os.path.join(ARTICLES_DIR, "*.jpeg")) + \
-         glob.glob(os.path.join(ARTICLES_DIR, "*.png"))
+         glob.glob(os.path.join(ARTICLES_DIR, "*.png")) + \
+         glob.glob(os.path.join(ARTICLES_DIR, "*.gif")) + \
+         glob.glob(os.path.join(ARTICLES_DIR, "*.bmp")) + \
+         glob.glob(os.path.join(ARTICLES_DIR, "*.tiff")) + \
+         glob.glob(os.path.join(ARTICLES_DIR, "*.avif"))
 
 if not images:
-    print("⚠️ Koi JPG/PNG image nahi mili. Shayad sab already WebP hain!")
+    print("⚠️ Koi image nahi mili convert karne ke liye!")
 else:
-    print(f"🚀 {len(images)} heavy images ko VIP WebP format mein convert kiya ja raha hai...\n")
+    print(f"🚀 {len(images)} images ko VIP WebP format mein convert kiya ja raha hai...\n")
 
     for img_path in images:
         try:
-            # Image ko open karo
+            # Image ko open karo (AVIF bhi support hoga agar PIL latest version hai)
             img = Image.open(img_path)
             # Naya naam banao (.webp ke sath)
             webp_path = img_path.rsplit(".", 1)[0] + ".webp"
@@ -39,8 +43,8 @@ for html_file in html_files:
         with open(html_file, "r", encoding="utf-8") as f:
             content = f.read()
         
-        # Jahan jahan .jpg likha hai, usay .webp kar do
-        new_content = content.replace(".jpg", ".webp").replace(".jpeg", ".webp").replace(".png", ".webp")
+        # Jahan jahan .jpg, .jpeg, .png, .avif likha hai, usay .webp kar do
+        new_content = content.replace(".jpg", ".webp").replace(".jpeg", ".webp").replace(".png", ".webp").replace(".avif", ".webp")
         
         with open(html_file, "w", encoding="utf-8") as f:
             f.write(new_content)
@@ -53,7 +57,7 @@ if os.path.exists(JSON_FILE):
         with open(JSON_FILE, "r", encoding="utf-8") as f:
             content = f.read()
         
-        new_content = content.replace(".jpg", ".webp").replace(".jpeg", ".webp").replace(".png", ".webp")
+        new_content = content.replace(".jpg", ".webp").replace(".jpeg", ".webp").replace(".png", ".webp").replace(".avif", ".webp")
         
         with open(JSON_FILE, "w", encoding="utf-8") as f:
             f.write(new_content)

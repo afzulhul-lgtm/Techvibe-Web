@@ -286,11 +286,12 @@ a {
     object-fit: cover;
 }
 
+/* 🔴 SIDEBAR STRETCH FIX ADDED HERE 🔴 */
 .content-wrapper {
     display: flex;
     gap: 40px;
     margin-top: 30px;
-    align-items: flex-start;
+    align-items: stretch; /* Ye dono columns ki height barabar karega */
 }
 
 .article-content {
@@ -547,14 +548,14 @@ a {
     font-size: 0.9rem;
 }
 
-/* 🔴 Sidebar Sticky Fix 🔴 */
+/* 🔴 Sidebar Stretch Fix 🔴 */
 .sidebar {
     width: 320px;
     flex-shrink: 0;
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 20px;
-    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100%;
 }
 
 .sidebar-widget {
@@ -564,6 +565,7 @@ a {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     margin-bottom: 30px;
     color: #fff;
+    flex: 1; /* Ye box ko bilkul end tak kheench dega */
 }
 
 .sidebar-widget h3 {
@@ -577,8 +579,8 @@ a {
 }
 
 .latest-articles {
-    max-height: 600px;
-    overflow-y: auto;
+    max-height: none; /* Limit hata di */
+     overflow-y: visible; 
     padding-right: 10px;
 }
 

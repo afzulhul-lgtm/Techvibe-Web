@@ -326,8 +326,9 @@ function updateAlsoRead() {
     boxes.forEach((box, i) => { if (other[i]) box.innerHTML = `<h3><i class="fas fa-book-reader"></i> Also Read</h3><a href="${linkPrefix}${other[i].filename}">${other[i].title}</a>`; });
 }
 
+// 🔴 SIDEBAR MEIN 60 ARTICLES SHOW KARNE KA FIX 🔴
 function updateSidebar(sidebar) {
-    const recent = allArticles.filter(a => a.filename !== window.location.pathname.split('/').pop()).slice(0, 5);
+    const recent = allArticles.filter(a => a.filename !== window.location.pathname.split('/').pop()).slice(0, 27); 
     sidebar.innerHTML = recent.map(art => `<div class="sidebar-card"><div class="sidebar-img"><img src="${art.image}"></div><div class="sidebar-info"><a href="${linkPrefix}${art.filename}">${art.title}</a><span class="sidebar-date"><i class="far fa-clock"></i> ${art.date}</span></div></div>`).join('');
 }
 
@@ -358,3 +359,6 @@ window.addEventListener('scroll', () => {
     const topBtn = document.getElementById('scroll-to-top');
     if (topBtn) { if (window.scrollY > 300) topBtn.classList.add('show'); else topBtn.classList.remove('show'); }
 });
+
+// 🔴 PURANE ARTICLES KE LIYE ZABARDASTI CSS FIX (List limit removed) 🔴
+document.head.insertAdjacentHTML('beforeend', '<style>.content-wrapper{display:flex!important;align-items:stretch!important}.sidebar{display:flex!important;flex-direction:column!important;height:auto!important;min-height:100%!important}.sidebar-widget{flex:1!important}.latest-articles{max-height:none!important;overflow-y:visible!important}</style>');
