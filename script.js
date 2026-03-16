@@ -328,7 +328,7 @@ function updateAlsoRead() {
 
 // 🔴 SIDEBAR MEIN 60 ARTICLES SHOW KARNE KA FIX 🔴
 function updateSidebar(sidebar) {
-    const recent = allArticles.filter(a => a.filename !== window.location.pathname.split('/').pop()).slice(0, 25); 
+    const recent = allArticles.filter(a => a.filename !== window.location.pathname.split('/').pop()).slice(0, 26); 
     sidebar.innerHTML = recent.map(art => `<div class="sidebar-card"><div class="sidebar-img"><img src="${art.image}"></div><div class="sidebar-info"><a href="${linkPrefix}${art.filename}">${art.title}</a><span class="sidebar-date"><i class="far fa-clock"></i> ${art.date}</span></div></div>`).join('');
 }
 
