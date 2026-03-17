@@ -560,13 +560,15 @@ a {
     min-height: 100%;
 }
 
+/* 🔴🔴 YAHAN BACKGROUND WHITE AUR BORDER LIGHT KIYA GAYA HAI 🔴🔴 */
 .sidebar-widget {
-    background-color: #111;
+    background-color: #fff; 
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     margin-bottom: 30px;
-    color: #fff;
+    color: #333; 
+    border: 1px solid #eaeaea; 
     flex: 1; /* Ye box ko bilkul end tak kheench dega */
 }
 
@@ -577,7 +579,8 @@ a {
     font-size: 1.2rem;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid #eee; 
+    color: #222;
 }
 
 .latest-articles {

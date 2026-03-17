@@ -1,4 +1,4 @@
-// ===== UNIVERSAL AUTO SYSTEM (Optimized with Instant Load, Scroll Memory & VIP Features) =====
+// ===== UNIVERSAL AUTO SYSTEM (Optimized with VIP Features, Blue Sidebar Links & Auto Also-Read) =====
 
 const config = {
     folderName: 'articles',      
@@ -18,16 +18,16 @@ const basePath = isArticlePage ? '' : `${config.folderName}/`;
 const linkPrefix = isArticlePage ? '' : `${config.folderName}/`; 
 const rootPrefix = isArticlePage ? '../' : ''; 
 
-// CSS INJECTION (All Features Integrated)
+// CSS INJECTION (Updated for Text-Only Blue Sidebar Links)
 const style = document.createElement('style');
 style.innerHTML = `
-    .sidebar-card { display: flex; gap: 12px; align-items: start; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
-    .sidebar-card:last-child { border-bottom: none; }
-    .sidebar-img { width: 80px; height: 60px; flex-shrink: 0; border-radius: 4px; overflow: hidden; background: #ddd; }
-    .sidebar-img img { width: 100%; height: 100%; object-fit: cover; }
-    .sidebar-info a { color: #fff; font-size: 0.9rem; font-weight: 500; line-height: 1.4; text-decoration: none; }
-    .sidebar-info a:hover { color: #0066cc; }
-    .sidebar-date { font-size: 0.75rem; color: rgba(255,255,255,0.7); }
+    /* 🔴 NAYA SIDEBAR LINKS DESIGN 🔴 */
+    .sidebar-text-link { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .sidebar-text-link:last-child { border-bottom: none; }
+    .sidebar-text-link a { color: #4da6ff; font-size: 0.95rem; font-weight: 500; text-decoration: none; display: flex; align-items: flex-start; gap: 8px; transition: all 0.3s ease; line-height: 1.5; }
+    .sidebar-text-link a i { margin-top: 4px; font-size: 0.8rem; color: #ffcc00; flex-shrink: 0; }
+    .sidebar-text-link a:hover { color: #fff; transform: translateX(5px); text-decoration: underline; }
+
     .mini-avatar { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; vertical-align: middle; margin-right: 6px; }
     .author-link { font-weight:600; cursor: pointer; }
     .verified-tick { color: #1da1f2; margin-left: 4px; font-size: 0.8em; }
@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     updateInnerArticleDate();
     forceCurrentDate(); 
     
-    // 🔴 INSTANT LOAD CALL 🔴
     await loadArticlesFast(); 
     injectRelatedArticles();
 
@@ -91,7 +90,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     const sidebar = document.getElementById('sidebar-articles');
     if (sidebar) updateSidebar(sidebar);
     
-    updateAlsoRead();
+    // 🔴 4-5 ALSO READ BOXES INJECT KARNE WALA FUNCTION YAHAN CALL HUA HAI 🔴
+    injectMultipleAlsoRead();
+    
     injectHeaderAuthorPic(); 
     initCommentSystem();
     injectNotificationBell();
@@ -111,7 +112,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     }
 
-    // 🔴 SCROLL MEMORY RESTORE (Instantly goes back to exact position) 🔴
     setTimeout(() => {
         const savedScroll = sessionStorage.getItem('scroll_' + pageKey);
         if (savedScroll && !isArticlePage) {
@@ -122,16 +122,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     setTimeout(initNotificationPopup, 3000);
 });
 
-// JSON & RENDERING (🔴 INSTANT CACHE LOAD LOGIC 🔴)
+// JSON & RENDERING 
 async function loadArticlesFast() {
     try {
-        // 1. Session Storage se fast load (0 wait time)
         const cachedData = sessionStorage.getItem('cached_techvibe_data');
         if (cachedData) {
             allArticles = JSON.parse(cachedData);
         }
 
-        // 2. Background mein network se naya data laana
         const response = await fetch(basePath + 'data.json?v=' + new Date().getTime());
         if (response.ok) {
             const freshArticles = await response.json();
@@ -140,7 +138,6 @@ async function loadArticlesFast() {
             freshArticles.sort((a, b) => b.id - a.id); 
             
             allArticles = freshArticles;
-            // Cache update kar diya for next time
             sessionStorage.setItem('cached_techvibe_data', JSON.stringify(allArticles));
         }
     } catch (e) { console.error("Data error:", e); }
@@ -153,7 +150,6 @@ function renderArticles(container, filter) {
     if (currentPage > totalPages) currentPage = 1;
     const paginatedItems = displayList.slice((currentPage - 1) * config.itemsPerPage, currentPage * config.itemsPerPage);
     
-    // 🔴 TRENDING BADGE, LCP PRIORITY & SCROLL SAVE ADDED HERE 🔴
     container.innerHTML = paginatedItems.map((art, index) => {
         const priorityAttr = index < 2 ? 'fetchpriority="high"' : 'loading="lazy"';
         const imgSrc = art.image.startsWith('http') ? art.image : linkPrefix + art.image;
@@ -179,7 +175,6 @@ function renderArticles(container, filter) {
     if (totalPages > 1) renderPaginationControls(container, totalPages);
 }
 
-// SMART COMPACT PAGINATION
 function renderPaginationControls(container, totalPages) {
     const paginationDiv = document.createElement('div');
     paginationDiv.className = 'pagination-controls';
@@ -216,7 +211,6 @@ function changePage(newPage, container) {
     window.scrollTo({top: container.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth'});
 }
 
-// FEATURES: SEARCH, NOTIFICATIONS, TICKER
 function initLiveSearchSystem() {
     const overlay = document.createElement('div');
     overlay.id = 'search-full-overlay';
@@ -276,7 +270,6 @@ function injectRelatedArticles() {
     commentsSection.parentNode.insertBefore(relatedDiv, commentsSection.nextSibling);
 }
 
-// NOTIFICATION POPUP
 function initNotificationPopup() {
     if (localStorage.getItem('notify_status')) return;
     const pop = document.createElement('div');
@@ -296,7 +289,6 @@ function injectNotificationBell() {
     bell.onclick = () => alert("You are subscribed to notifications! 🔔");
 }
 
-// UTILITIES
 function getTodayDate() { const d = new Date(); return `${d.getDate()} ${d.toLocaleString('default', { month: 'short' })}, ${d.getFullYear()}`; }
 function updateInnerArticleDate() { if (isArticlePage) { const el = document.querySelector('.publish-date .date'); if (el) el.innerText = getTodayDate(); } }
 function highlightActiveMenu() {
@@ -319,17 +311,61 @@ function injectHeaderAuthorPic() {
     if (name) name.innerHTML = `${config.authorName} <i class="fas fa-check-circle verified-tick"></i>`;
 }
 
-function updateAlsoRead() {
-    const boxes = document.querySelectorAll('.also-read');
-    if (boxes.length === 0) return;
-    const other = allArticles.filter(a => a.filename !== window.location.pathname.split('/').pop());
-    boxes.forEach((box, i) => { if (other[i]) box.innerHTML = `<h3><i class="fas fa-book-reader"></i> Also Read</h3><a href="${linkPrefix}${other[i].filename}">${other[i].title}</a>`; });
+// 🔴 MULTIPLE "ALSO READ" INJECT KARNE KA NAYA FUNCTION 🔴
+function injectMultipleAlsoRead() {
+    if (!isArticlePage) return;
+    
+    const articleBody = document.querySelector('.article-body');
+    if (!articleBody) return;
+
+    // 1. Purane manually ya bot se lagaye gaye "Also Read" hata do taake duplicates na ayen
+    document.querySelectorAll('.also-read').forEach(el => el.remove());
+
+    const currentFile = window.location.pathname.split('/').pop();
+    const otherArticles = allArticles.filter(a => a.filename !== currentFile);
+    if (otherArticles.length === 0) return;
+
+    // 2. Random articles select karne ke liye array ko shuffle karo
+    const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+    
+    const headings = Array.from(articleBody.querySelectorAll('h2, h3'));
+    let boxCount = 0;
+    const maxBoxes = 5; // Kitne boxes lagane hain uski limit
+
+    // 3. Har doosri heading ke baad ek box dalo
+    headings.forEach((heading, index) => {
+        if (boxCount >= maxBoxes || index % 2 !== 0) return; 
+        if (shuffled[boxCount]) {
+            const art = shuffled[boxCount];
+            const html = `<div class="also-read"><h3><i class="fas fa-book-reader"></i> Also Read</h3><a href="${linkPrefix}${art.filename}">${art.title}</a></div>`;
+            heading.insertAdjacentHTML('afterend', html);
+            boxCount++;
+        }
+    });
+
+    // 4. Agar article chota hai aur headings kam hain, to paragraphs ke baad bhi daal do
+    if (boxCount < maxBoxes) {
+        const paragraphs = Array.from(articleBody.querySelectorAll('p'));
+        paragraphs.forEach((p, index) => {
+            if (boxCount >= maxBoxes || index < 2 || index % 3 !== 0) return; // Shuru ke 2 paras chhor kar har 3sre ke baad
+            if (shuffled[boxCount]) {
+                const art = shuffled[boxCount];
+                const html = `<div class="also-read"><h3><i class="fas fa-book-reader"></i> Also Read</h3><a href="${linkPrefix}${art.filename}">${art.title}</a></div>`;
+                p.insertAdjacentHTML('afterend', html);
+                boxCount++;
+            }
+        });
+    }
 }
 
-// 🔴 SIDEBAR MEIN 60 ARTICLES SHOW KARNE KA FIX 🔴
+// 🔴 SIDEBAR SE IMAGES KHATAM AUR SIRF BLUE TEXT LINKS KARDIE 🔴
 function updateSidebar(sidebar) {
     const recent = allArticles.filter(a => a.filename !== window.location.pathname.split('/').pop()).slice(0, 26); 
-    sidebar.innerHTML = recent.map(art => `<div class="sidebar-card"><div class="sidebar-img"><img src="${art.image}"></div><div class="sidebar-info"><a href="${linkPrefix}${art.filename}">${art.title}</a><span class="sidebar-date"><i class="far fa-clock"></i> ${art.date}</span></div></div>`).join('');
+    sidebar.innerHTML = recent.map(art => `
+        <div class="sidebar-text-link">
+            <a href="${linkPrefix}${art.filename}"><i class="fas fa-chevron-right"></i> ${art.title}</a>
+        </div>
+    `).join('');
 }
 
 function initCommentSystem() {
@@ -349,7 +385,6 @@ function renderSingleComment(c) {
     area.insertAdjacentHTML('beforeend', `<div style="display:flex; gap:15px; margin-bottom:20px; background:#f9f9f9; padding:15px; border-radius:8px;"><div style="width:40px; height:40px; background:#ddd; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fas fa-user"></i></div><div><div style="font-weight:bold;">${c.name} <span style="font-size:0.8rem; color:#888; font-weight:normal; margin-left:10px;">${c.date}</span></div><p style="margin-top:5px; font-size:0.95rem;">${c.text}</p></div></div>`);
 }
 
-// SCROLL PROGRESS & TOP BUTTON
 window.addEventListener('scroll', () => {
     const prog = document.getElementById('reading-progress');
     if (prog) {
@@ -360,5 +395,5 @@ window.addEventListener('scroll', () => {
     if (topBtn) { if (window.scrollY > 300) topBtn.classList.add('show'); else topBtn.classList.remove('show'); }
 });
 
-// 🔴 PURANE ARTICLES KE LIYE ZABARDASTI CSS FIX (List limit removed) 🔴
-document.head.insertAdjacentHTML('beforeend', '<style>.content-wrapper{display:flex!important;align-items:stretch!important}.sidebar{display:flex!important;flex-direction:column!important;height:auto!important;min-height:100%!important}.sidebar-widget{flex:1!important}.latest-articles{max-height:none!important;overflow-y:visible!important}</style>');
+// 🔴 JS STRETCH OVERRIDE FIX 🔴
+document.head.insertAdjacentHTML('beforeend', '<style>.content-wrapper{display:flex!important;align-items:flex-start!important}.sidebar{display:flex!important;flex-direction:column!important;height:fit-content!important;min-height:auto!important}.sidebar-widget{flex:none!important;height:fit-content!important}.latest-articles{max-height:none!important;overflow-y:visible!important}</style>');
