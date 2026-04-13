@@ -9,8 +9,8 @@ const config = {
 
 const pageKey = window.location.pathname.split('/').pop() || 'index.html';
 let allArticles = [];
-let currentPage = parseInt(sessionStorage.getItem('page_' + pageKey)) || 1;
-let currentFilter = 'all';
+// Per-container pagination state (fixes next-page layout bug)
+const containerState = {};
 
 const isArticlePage = window.location.pathname.includes('/' + config.folderName + '/');
 const basePath = isArticlePage ? '' : config.folderName + '/';
@@ -28,7 +28,7 @@ style.innerHTML = `
     .author-link { font-weight: 600; cursor: pointer; }
     .verified-tick { color: #1da1f2; margin-left: 4px; font-size: 0.8em; }
     .card-author-img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; margin-right: 8px; border: 1px solid #ddd; }
-    .pagination-controls { grid-column: 1 / -1; display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; flex-wrap: wrap; }
+    .pagination-controls { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; flex-wrap: wrap; }
     .page-btn { padding: 6px 12px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 4px; font-weight: 600; font-size: 0.9rem; min-width: 38px; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
     .page-btn.active { background: #0066cc; color: white; border-color: #0066cc; }
     @media (max-width: 600px) { .page-btn { padding: 5px 8px; font-size: 0.8rem; min-width: 32px; height: 32px; } }
@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     injectRelatedArticles();
 
     const homeContainer = document.getElementById('articles-container');
-    if (homeContainer) { currentFilter = 'all'; renderArticles(homeContainer, 'all'); }
+    if (homeContainer) { renderArticles(homeContainer, 'all'); }
     const techContainer = document.getElementById('tech-page-container');
-    if (techContainer) { currentFilter = 'Tech'; renderArticles(techContainer, 'Tech'); }
+    if (techContainer) { renderArticles(techContainer, 'Tech'); }
     const latestContainer = document.getElementById('latest-page-container');
-    if (latestContainer) { currentFilter = 'Latest News'; renderArticles(latestContainer, 'Latest News'); }
+    if (latestContainer) { renderArticles(latestContainer, 'Latest News'); }
 
     const sidebar = document.getElementById('sidebar-articles');
     if (sidebar) updateSidebar(sidebar);
@@ -119,19 +119,25 @@ async function loadArticlesFast() {
 }
 
 function renderArticles(container, filter) {
-    container.innerHTML = '';
+    const containerId = container.id || 'default';
+    if (!containerState[containerId]) {
+        const savedPage = parseInt(sessionStorage.getItem('page_' + containerId + '_' + pageKey)) || 1;
+        containerState[containerId] = { page: savedPage, filter: filter };
+    }
+    containerState[containerId].filter = filter;
+    let currentPage = containerState[containerId].page;
+
     let displayList = filter !== 'all'
         ? allArticles.filter(art => art.category === filter || (art.category && art.category.includes(filter)))
         : allArticles;
     const totalPages = Math.ceil(displayList.length / config.itemsPerPage);
-    if (currentPage > totalPages) currentPage = 1;
+    if (currentPage > totalPages) { currentPage = 1; containerState[containerId].page = 1; }
     const paginatedItems = displayList.slice((currentPage - 1) * config.itemsPerPage, currentPage * config.itemsPerPage);
 
-    container.innerHTML = paginatedItems.map((art, index) => {
+    const cardsHTML = paginatedItems.map((art, index) => {
         const priorityAttr = index < 2 ? 'fetchpriority="high"' : 'loading="lazy"';
         const imgSrc = art.image && art.image.startsWith('http') ? art.image : linkPrefix + (art.image || '');
-        return `
-        <article class="news-card" onclick="sessionStorage.setItem('scroll_${pageKey}', window.scrollY); window.location.href='${linkPrefix}${art.filename}'">
+        return `<article class="news-card" onclick="sessionStorage.setItem('scroll_${pageKey}', window.scrollY); window.location.href='${linkPrefix}${art.filename}'">
             <div class="article-image">
                 <div class="trending-badge"><i class="fas fa-fire"></i> Trending</div>
                 <img src="${imgSrc}" alt="${art.title}" width="1200" height="675" ${priorityAttr}>
@@ -149,13 +155,25 @@ function renderArticles(container, filter) {
         </article>`;
     }).join('');
 
-    if (totalPages > 1) renderPaginationControls(container, totalPages);
+    // Set grid cards directly as innerHTML of the container (pure grid, nothing else inside)
+    container.innerHTML = cardsHTML;
+
+    // Pagination goes into a SIBLING div OUTSIDE the grid container — never inside it
+    const paginId = 'pagination-' + containerId;
+    let paginWrapper = document.getElementById(paginId);
+    if (!paginWrapper) {
+        paginWrapper = document.createElement('div');
+        paginWrapper.id = paginId;
+        container.parentNode.insertBefore(paginWrapper, container.nextSibling);
+    }
+    paginWrapper.innerHTML = '';
+    if (totalPages > 1) renderPaginationControls(paginWrapper, totalPages, currentPage, containerId, container);
 }
 
-function renderPaginationControls(container, totalPages) {
+function renderPaginationControls(wrapper, totalPages, currentPage, containerId, gridContainer) {
     const paginationDiv = document.createElement('div');
     paginationDiv.className = 'pagination-controls';
-    if (currentPage > 1) paginationDiv.appendChild(createPageBtn('«', () => changePage(currentPage - 1, container)));
+    if (currentPage > 1) paginationDiv.appendChild(createPageBtn('«', () => changePage(currentPage - 1, containerId, gridContainer)));
     let pages = [];
     if (totalPages <= 5) pages = Array.from({ length: totalPages }, (_, i) => i + 1);
     else if (currentPage <= 2) pages = [1, 2, 3, '...', totalPages];
@@ -163,10 +181,10 @@ function renderPaginationControls(container, totalPages) {
     else pages = [1, '...', currentPage, '...', totalPages];
     pages.forEach(p => {
         if (p === '...') { const d = document.createElement('span'); d.innerText = '...'; d.style.padding = '5px'; paginationDiv.appendChild(d); }
-        else { const btn = createPageBtn(p, () => changePage(p, container)); if (p === currentPage) btn.classList.add('active'); paginationDiv.appendChild(btn); }
+        else { const btn = createPageBtn(p, () => changePage(p, containerId, gridContainer)); if (p === currentPage) btn.classList.add('active'); paginationDiv.appendChild(btn); }
     });
-    if (currentPage < totalPages) paginationDiv.appendChild(createPageBtn('»', () => changePage(currentPage + 1, container)));
-    container.appendChild(paginationDiv);
+    if (currentPage < totalPages) paginationDiv.appendChild(createPageBtn('»', () => changePage(currentPage + 1, containerId, gridContainer)));
+    wrapper.appendChild(paginationDiv);
 }
 
 function createPageBtn(text, onClick) {
@@ -174,11 +192,12 @@ function createPageBtn(text, onClick) {
     btn.className = 'page-btn'; btn.innerText = text; btn.onclick = onClick; return btn;
 }
 
-function changePage(newPage, container) {
-    currentPage = newPage;
-    sessionStorage.setItem('page_' + pageKey, currentPage);
-    renderArticles(container, currentFilter);
-    window.scrollTo({ top: container.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' });
+function changePage(newPage, containerId, gridContainer) {
+    if (!containerState[containerId]) containerState[containerId] = { page: 1, filter: 'all' };
+    containerState[containerId].page = newPage;
+    sessionStorage.setItem('page_' + containerId + '_' + pageKey, newPage);
+    renderArticles(gridContainer, containerState[containerId].filter);
+    window.scrollTo({ top: gridContainer.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' });
 }
 
 function updateSidebar(sidebar) {
