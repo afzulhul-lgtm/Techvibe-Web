@@ -1,3 +1,11 @@
+"""
+make_webp.py v2.0
+-----------------
+Articles folder ki saari images (jpg, jpeg, png, gif, bmp, tiff, avif)
+ko WebP format mein convert karta hai aur HTML + data.json mein
+extension references auto-update karta hai.
+"""
+
 import os
 import glob
 from PIL import Image

@@ -1,3 +1,13 @@
+"""
+update_cache.py v2.0
+--------------------
+Saari HTML files mein CSS/JS version bump karta hai aur
+anti-cache meta tags inject karta hai taake browser purani
+files cached na rakhe.
+
+SIRF YEH NUMBER BADLEIN jab CSS/JS mein koi change ho:
+"""
+
 import os
 import glob
 import re
