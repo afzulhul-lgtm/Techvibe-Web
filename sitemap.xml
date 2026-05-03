@@ -3,51 +3,81 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://techvibedetails.online</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://techvibedetails.online/tech.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://techvibedetails.online/latest-news.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://techvibedetails.online/about.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://techvibedetails.online/contact.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://techvibedetails.online/privac.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://techvibedetails.online/terms.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://techvibedetails.online/dmca.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://techvibedetails.online/articles/trump-casts-doubt-on-iran-peace-deal-and-says-tehran-has-not-paid-a-bi-179.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://techvibedetails.online/articles/image180.jpg</image:loc>
+      <image:title>Trump casts doubt on Iran peace deal and says Tehran has not paid a big enough price</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://techvibedetails.online/articles/m5-macbook-pro-hinge-causes-sparks-and-catches-fire-just-two-days-afte-178.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://techvibedetails.online/articles/image179.jpg</image:loc>
+      <image:title>M5 MacBook Pro Hinge Causes Sparks and Catches Fire Just Two Days After Purchase</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://techvibedetails.online/articles/israel-approves-plan-to-buy-f-35-and-f-15ia-fighter-jets-from-lockheed-177.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://techvibedetails.online/articles/image178.jpg</image:loc>
+      <image:title>Israel Approves Plan to Buy F-35 and F-15IA Fighter Jets from Lockheed and Boeing</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://techvibedetails.online/articles/galaxy-s27-could-debut-samsungs-biggest-battery-upgrade-in-years-176.html</loc>
