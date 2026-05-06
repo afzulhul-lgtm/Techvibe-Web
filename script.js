@@ -264,17 +264,21 @@ function injectHeaderAuthorPic() {
     const currentFile = window.location.pathname.split('/').pop();
     const articleData = allArticles.find(art => art.filename === currentFile);
     
+    // ━━━ TOP SECTION (By ke paas) ━━━
     const img = document.getElementById('header-author-img');
     const name = document.getElementById('header-author-name');
     
+    // ━━━ BOTTOM BIO SECTION ━━━
+    const bioImg = document.querySelector('.author-bio img');
+    const bioName = document.querySelector('.author-bio h3');
+    
     if (articleData) {
-        // data.json se author info lo
         const authorName = articleData.author || config.authorName;
         const authorImg = articleData.authorImg || config.defaultAuthorImg;
         
+        // Top section
         if (name) {
             const currentName = name.textContent.trim();
-            // Sirf tab override karo jab khaali ho ya placeholder ho
             if (!currentName || currentName.includes('{{AUTHOR_NAME}}') || currentName === '') {
                 name.innerHTML = authorName + ' <i class="fas fa-check-circle verified-tick"></i>';
             }
@@ -285,8 +289,23 @@ function injectHeaderAuthorPic() {
                 img.src = authorImg;
             }
         }
+        
+        // ━━━ Bottom bio section ━━━
+        if (bioName) {
+            const currentBioName = bioName.textContent.trim();
+            if (!currentBioName || currentBioName.includes('{{AUTHOR_NAME}}') || currentBioName === '') {
+                bioName.innerHTML = authorName + ' <i class="fas fa-check-circle verified-tick"></i>';
+            }
+        }
+        if (bioImg) {
+            const currentBioSrc = bioImg.getAttribute('src');
+            if (!currentBioSrc || currentBioSrc.includes('{{AUTHOR_IMG}}') || currentBioSrc === '') {
+                bioImg.src = authorImg;
+            }
+        }
+        
     } else {
-        // Fallback: agar article data.json mein nahi mila
+        // Fallback
         if (name) {
             const currentName = name.textContent.trim();
             if (!currentName || currentName.includes('{{AUTHOR_NAME}}') || currentName === '') {
@@ -297,6 +316,18 @@ function injectHeaderAuthorPic() {
             const currentSrc = img.getAttribute('src');
             if (!currentSrc || currentSrc.includes('{{AUTHOR_IMG}}') || currentSrc === '') {
                 img.src = config.defaultAuthorImg;
+            }
+        }
+        if (bioName) {
+            const currentBioName = bioName.textContent.trim();
+            if (!currentBioName || currentBioName.includes('{{AUTHOR_NAME}}') || currentBioName === '') {
+                bioName.innerHTML = config.authorName + ' <i class="fas fa-check-circle verified-tick"></i>';
+            }
+        }
+        if (bioImg) {
+            const currentBioSrc = bioImg.getAttribute('src');
+            if (!currentBioSrc || currentBioSrc.includes('{{AUTHOR_IMG}}') || currentBioSrc === '') {
+                bioImg.src = config.defaultAuthorImg;
             }
         }
     }
