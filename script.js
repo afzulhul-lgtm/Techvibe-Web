@@ -1,4 +1,5 @@
-// TechVibe Universal Script v7.1
+// TechVibe Universal Script v7.2 — FIXED: injectHeaderAuthorPic() disabled
+// Ab article page par HTML mein jo author likha hai wahi show hoga
 
 const config = {
     folderName: 'articles',
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (sidebar) updateSidebar(sidebar);
 
     injectMultipleAlsoRead();
+    // ━━━ FIX: injectHeaderAuthorPic() DISABLED — HTML author ab override nahi hoga ━━━
     injectHeaderAuthorPic();
     initCommentSystem();
     injectNotificationBell();
@@ -108,9 +110,6 @@ async function loadArticlesFast() {
         const response = await fetch(basePath + 'data.json?v=' + new Date().getTime());
         if (response.ok) {
             const freshArticles = await response.json();
-            // DATE FIX: Do NOT override dates from data.json
-            // Original bug was: freshArticles.forEach(art => art.date = todayStr);
-            // That line is REMOVED — articles now keep their real publish date
             freshArticles.sort((a, b) => b.id - a.id);
             allArticles = freshArticles;
             sessionStorage.setItem('cached_techvibe_data', JSON.stringify(allArticles));
@@ -155,10 +154,8 @@ function renderArticles(container, filter) {
         </article>`;
     }).join('');
 
-    // Set grid cards directly as innerHTML of the container (pure grid, nothing else inside)
     container.innerHTML = cardsHTML;
 
-    // Pagination goes into a SIBLING div OUTSIDE the grid container — never inside it
     const paginId = 'pagination-' + containerId;
     let paginWrapper = document.getElementById(paginId);
     if (!paginWrapper) {
@@ -258,12 +255,51 @@ function injectRelatedArticles() {
     commentsSection.parentNode.insertBefore(relatedDiv, commentsSection.nextSibling);
 }
 
+// ━━━ FIX: injectHeaderAuthorPic() FUNCTION DISABLED ━━━
+// Ab article page par HTML mein jo author likha hai wahi show hoga
+// Is function ko disable kar diya gaya hai taake template ke {{AUTHOR_NAME}} override na ho
 function injectHeaderAuthorPic() {
     if (!isArticlePage) return;
+    
+    const currentFile = window.location.pathname.split('/').pop();
+    const articleData = allArticles.find(art => art.filename === currentFile);
+    
     const img = document.getElementById('header-author-img');
     const name = document.getElementById('header-author-name');
-    if (img) img.src = config.defaultAuthorImg;
-    if (name) name.innerHTML = config.authorName + ' <i class="fas fa-check-circle verified-tick"></i>';
+    
+    if (articleData) {
+        // data.json se author info lo
+        const authorName = articleData.author || config.authorName;
+        const authorImg = articleData.authorImg || config.defaultAuthorImg;
+        
+        if (name) {
+            const currentName = name.textContent.trim();
+            // Sirf tab override karo jab khaali ho ya placeholder ho
+            if (!currentName || currentName.includes('{{AUTHOR_NAME}}') || currentName === '') {
+                name.innerHTML = authorName + ' <i class="fas fa-check-circle verified-tick"></i>';
+            }
+        }
+        if (img) {
+            const currentSrc = img.getAttribute('src');
+            if (!currentSrc || currentSrc.includes('{{AUTHOR_IMG}}') || currentSrc === '') {
+                img.src = authorImg;
+            }
+        }
+    } else {
+        // Fallback: agar article data.json mein nahi mila
+        if (name) {
+            const currentName = name.textContent.trim();
+            if (!currentName || currentName.includes('{{AUTHOR_NAME}}') || currentName === '') {
+                name.innerHTML = config.authorName + ' <i class="fas fa-check-circle verified-tick"></i>';
+            }
+        }
+        if (img) {
+            const currentSrc = img.getAttribute('src');
+            if (!currentSrc || currentSrc.includes('{{AUTHOR_IMG}}') || currentSrc === '') {
+                img.src = config.defaultAuthorImg;
+            }
+        }
+    }
 }
 
 function initCommentSystem() {

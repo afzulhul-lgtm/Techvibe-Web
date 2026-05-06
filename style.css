@@ -119,7 +119,6 @@ a {
 }
 
 /* ===== NEWS ARTICLES GRID ===== */
-/* Pure grid — only article cards are direct children, pagination is a SIBLING outside */
 .news-articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -140,10 +139,8 @@ a {
     flex-direction: column;
 }
 
-/* 🔴 IMAGE & TRENDING BADGE FIXED (Discover Size 16:9) 🔴 */
 .article-image {
     width: 100%;
-    /* 🔴 Google Discover 16:9 Ratio 🔴 */
     aspect-ratio: 16 / 9 !important; 
     overflow: hidden;
     background-color: #f0f0f0;
@@ -153,7 +150,6 @@ a {
 .article-image img {
     width: 100%;
     height: 100%;
-    /* 🔴 Image fit karne ka behtareen tareeqa 🔴 */
     object-fit: cover !important;
     object-position: center;
 }
@@ -237,7 +233,7 @@ a {
 }
 
 .date {
-    color: #555; /* Contrast Fix */
+    color: #555;
 }
 
 /* ===== FOOTER ===== */
@@ -289,12 +285,11 @@ a {
     object-fit: cover;
 }
 
-/* 🔴 SIDEBAR STRETCH FIX ADDED HERE 🔴 */
 .content-wrapper {
     display: flex;
     gap: 40px;
     margin-top: 30px;
-    align-items: stretch; /* Ye dono columns ki height barabar karega */
+    align-items: stretch;
 }
 
 .article-content {
@@ -346,20 +341,27 @@ a {
     border-bottom: 1px solid #eee;
 }
 
-/* 🔴 Author Header & Size Fix 🔴 */
+/* ━━━ FIX: Author Header Image Size ━━━ */
 .author-info-header {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.author-header-img, .card-author-img, .mini-avatar, .author-bio img {
+/* ━━━ FIX: Round author images with proper size ━━━ */
+.author-header-img,
+.card-author-img,
+.mini-avatar,
+.author-bio img,
+.team-card img {
     width: 45px !important;
     height: 45px !important;
     aspect-ratio: 1 / 1 !important;
     border-radius: 50% !important;
     object-fit: cover !important;
+    object-position: center !important;
     border: 2px solid #eaeaea;
+    display: block;
 }
 
 .author-text {
@@ -551,7 +553,6 @@ a {
     font-size: 0.9rem;
 }
 
-/* 🔴 Sidebar Stretch Fix 🔴 */
 .sidebar {
     width: 320px;
     flex-shrink: 0;
@@ -561,7 +562,6 @@ a {
     min-height: 100%;
 }
 
-/* 🔴🔴 YAHAN BACKGROUND WHITE AUR BORDER LIGHT KIYA GAYA HAI 🔴🔴 */
 .sidebar-widget {
     background-color: #fff; 
     border-radius: 12px;
@@ -570,7 +570,7 @@ a {
     margin-bottom: 30px;
     color: #333; 
     border: 1px solid #eaeaea; 
-    flex: 1; /* Ye box ko bilkul end tak kheench dega */
+    flex: 1;
 }
 
 .sidebar-widget h3 {
@@ -585,8 +585,8 @@ a {
 }
 
 .latest-articles {
-    max-height: none; /* Limit hata di */
-     overflow-y: visible; 
+    max-height: none;
+    overflow-y: visible; 
     padding-right: 10px;
 }
 
@@ -796,7 +796,7 @@ a {
 }
 
 /* =========================================
-   UPDATED VIP FEATURES: FULL TICKER & UTILITY BAR
+   TICKER & UTILITY BAR
    ========================================= */
 .top-ticker-bar {
     background-color: #111;
@@ -934,7 +934,7 @@ a {
 }
 
 /* =========================================
-   FIXES: PROGRESS BAR, SCROLL TO TOP
+   PROGRESS BAR, SCROLL TO TOP
    ========================================= */
 .reading-progress-container {
     position: fixed;
@@ -987,14 +987,13 @@ a {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* 🔴 SEARCH SUGGESTION WIDTH FIX 🔴 */
 .search-modal { width: 95% !important; max-width: 600px !important; margin: 0 auto; }
 .search-result-item { display: flex !important; align-items: center !important; gap: 12px !important; padding: 12px !important; width: 100% !important; box-sizing: border-box !important; border-bottom: 1px solid #eee; }
 .search-result-info { flex: 1 !important; min-width: 0 !important; }
 .search-result-info h4 { margin: 0; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #222; }
 
 /* =========================================
-   DARK MODE OVERRIDES (100% FIXED FOR ALL PAGES)
+   DARK MODE OVERRIDES
    ========================================= */
 [data-theme="dark"] body {
     background-color: #121212 !important;
@@ -1182,23 +1181,19 @@ a {
 }
 
 /* =========================================
-   🌍 ULTIMATE UNIVERSAL RESPONSIVE FIXES 🌍
+   🌍 RESPONSIVE FIXES
    ========================================= */
-
-/* 1. Global Overflow & Width Fix (100% Lock for all devices) */
 html, body {
     overflow-x: hidden !important;
     width: 100% !important;
     max-width: 100vw !important;
 }
 
-/* 2. Universal Text Wrapping */
 * {
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
 }
 
-/* 3. Bulletproof Image Handling */
 img, video, iframe {
     max-width: 100% !important;
     height: auto !important;
@@ -1212,7 +1207,6 @@ img, video, iframe {
     object-fit: cover !important;
 }
 
-/* 4. Scrollable Tables for Mobile */
 .article-table {
     display: block !important;
     width: 100% !important;
@@ -1222,7 +1216,6 @@ img, video, iframe {
     white-space: nowrap !important;
 }
 
-/* 5. Mobile & Tablet Specific Layout Fixes */
 @media (max-width: 992px) {
     .content-wrapper { flex-direction: column !important; }
     .sidebar { width: 100% !important; position: static !important; }
@@ -1231,7 +1224,6 @@ img, video, iframe {
 }
 
 @media (max-width: 768px) {
-    /* Fix padding to maximize mobile screen space */
     .article-content {
         padding: 20px 15px !important;
         width: 100% !important;
@@ -1240,8 +1232,6 @@ img, video, iframe {
     .main-article {
         margin-bottom: 20px !important;
     }
-    
-    /* Navbar & Header Center Fix */
     .header-content {
         flex-direction: column !important;
         gap: 15px !important;
@@ -1252,15 +1242,11 @@ img, video, iframe {
         gap: 15px !important;
         flex-wrap: wrap !important;
     }
-
-    /* "You May Also Like" Grid Fix (Force 1 Column) */
     .related-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 15px !important;
     }
-    
-    /* Utility Bar Mobile Fix */
     .utility-bar-inner {
         flex-direction: column;
         gap: 15px;
@@ -1281,16 +1267,12 @@ img, video, iframe {
     .ticker-content a {
         font-size: 0.85rem;
     }
-
-    /* 🔴 GALAXY Z FOLD / MOBILE CARD CUTTING FIX 🔴 */
     .container {
         width: 100% !important;
         padding: 0 15px !important; 
         box-sizing: border-box !important;
     }
-
     .news-articles, .related-grid { display: block !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
-
     .news-card {
         width: 100% !important; 
         max-width: 100% !important;
@@ -1301,12 +1283,10 @@ img, video, iframe {
         flex-direction: column !important;
         box-sizing: border-box !important;
     }
-
     .article-image, .news-content {
         width: 100% !important;
         box-sizing: border-box !important;
     }
-
     .article-header h1 {
         font-size: 1.6rem !important;
         line-height: 1.4 !important;
@@ -1333,7 +1313,7 @@ img, video, iframe {
 }
 
 /* =========================================
-   NOTIFICATION POPUP CENTER FIX
+   NOTIFICATION POPUP
    ========================================= */
 .notify-popup-overlay {
     position: fixed;
@@ -1371,10 +1351,8 @@ img, video, iframe {
 }
 
 /* =========================================
-   🔴 TOC, KEY TAKEAWAYS & LINKS DARK MODE FIX 🔴
+   TOC, KEY TAKEAWAYS & LINKS DARK MODE
    ========================================= */
-
-/* Main Box ka background aur border black/grey karna */
 [data-theme="dark"] .toc-box,
 [data-theme="dark"] .key-takeaways,
 [data-theme="dark"] .related-internal-links {
@@ -1383,7 +1361,6 @@ img, video, iframe {
     color: #ddd !important;
 }
 
-/* Headings ka color change karke light blue karna */
 [data-theme="dark"] .toc-box h2,
 [data-theme="dark"] .key-takeaways h3,
 [data-theme="dark"] .related-internal-links h4,
@@ -1391,14 +1368,12 @@ img, video, iframe {
     color: #4da6ff !important;
 }
 
-/* Links aur list items ka color theek karna */
 [data-theme="dark"] .toc-box a,
 [data-theme="dark"] .key-takeaways li,
 [data-theme="dark"] .related-internal-links a {
     color: #bbb !important;
 }
 
-/* Hover effect light blue karna */
 [data-theme="dark"] .toc-box a:hover,
 [data-theme="dark"] .related-internal-links a:hover {
     color: #4da6ff !important;

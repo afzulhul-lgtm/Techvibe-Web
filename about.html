@@ -17,11 +17,29 @@
     <style>
         .legal-content { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-top: 20px; margin-bottom: 40px; }
         .legal-content h1 { font-size: 2rem; color: #111; margin-bottom: 20px; border-bottom: 2px solid #0066cc; padding-bottom: 10px; display: inline-block; }
-        .legal-content h2 { font-size: 1.4rem; color: #222; margin: 30px 0 15px; }
+        .legal-content h2 { font-size: 1.5rem; color: #222; margin: 35px 0 20px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
         .legal-content p { margin-bottom: 15px; color: #444; line-height: 1.8; font-size: 1.05rem; }
         .legal-content ul { margin: 0 0 20px 20px; color: #444; line-height: 1.8; }
         .legal-content li { margin-bottom: 10px; }
+        
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .team-card { background: #fafafa; padding: 25px 20px; border-radius: 12px; text-align: center; border: 1px solid #eee; transition: all 0.3s ease; }
+        .team-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-color: #cce5ff; background: #fff; }
+        .team-card img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #eef7ff; }
+        .team-card h3 { font-size: 1.15rem; color: #111; margin-bottom: 4px; }
+        .team-card .role { color: #0066cc; font-weight: 600; font-size: 0.85rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .team-card .bio { font-size: 0.9rem; color: #666; line-height: 1.6; }
+        .verified-tick { color: #1da1f2; font-size: 0.8rem; margin-left: 3px; }
+        
+        [data-theme="dark"] .legal-content { background: #1a1a1a; }
+        [data-theme="dark"] .legal-content h1, [data-theme="dark"] .legal-content h2 { color: #e0e0e0; }
+        [data-theme="dark"] .legal-content p, [data-theme="dark"] .legal-content ul { color: #bbb; }
+        [data-theme="dark"] .team-card { background: #1e1e1e; border-color: #333; }
+        [data-theme="dark"] .team-card:hover { border-color: #4da6ff; background: #222; }
+        [data-theme="dark"] .team-card h3 { color: #e0e0e0; }
+        [data-theme="dark"] .team-card .bio { color: #aaa; }
     </style>
+
 
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
@@ -35,7 +53,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html" style="text-decoration: none; color: inherit;"><h1>TechVibe</h1></a>
+                    <a href="index.html" style="text-decoration: none; color: inherit;"><h1>⚡ TechVibe</h1></a>
                 </div>
                  <nav class="main-nav">
                     <ul>
@@ -51,22 +69,113 @@
     <main class="container">
         <div class="legal-content">
             <h1>About TechVibe</h1>
-            <p>Welcome to <strong>TechVibe</strong>, your ultimate destination for everything related to technology, gadgets, and automotive innovations. We are deeply committed to providing you with the most accurate, breaking, and well-researched news in the tech industry.</p>
+            <p>Welcome to <strong>TechVibe</strong>, your ultimate destination for everything related to technology, gadgets, automotive innovations, and breaking news. We are deeply committed to providing you with the most accurate, breaking, and well-researched stories in the tech industry and beyond.</p>
             
             <h2>Our Mission & Vision</h2>
-            <p>Founded with the goal of making complex technological advancements accessible to everyone, TechVibe bridges the gap between hardcore tech enthusiasts and everyday consumers. We believe that technology empowers lives, and our mission is to keep you informed, educated, and ahead of the curve.</p>
+            <p>Founded with the goal of making complex technological advancements accessible to everyone, TechVibe bridges the gap between hardcore tech enthusiasts, automotive lovers, and everyday readers. We believe that knowledge empowers lives, and our mission is to keep you informed, educated, and ahead of the curve — whether it's the latest smartphone launch, a breakthrough in science, or breaking geopolitical news.</p>
             
             <h2>Editorial Integrity & E-E-A-T Standards</h2>
-            <p>At TechVibe, we take content quality seriously. Every article published on our platform undergoes a rigorous editorial review process. Led by our Senior Tech Editor, <strong>Sarah Mitchell</strong>, our team of seasoned tech writers and analysts ensures that every claim is verified, every specification is accurate, and every review is completely unbiased.</p>
+            <p>At TechVibe, we take content quality seriously. Every article published on our platform undergoes a rigorous editorial review process. Our team of specialized editors and writers ensures that every claim is verified, every specification is accurate, and every review is completely unbiased. We adhere to Google's <strong>E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)</strong> guidelines to bring you content you can trust.</p>
             
             <h2>What We Cover</h2>
             <ul>
-                <li><strong>Emerging Technologies:</strong> Artificial Intelligence, Machine Learning, and Cloud Computing.</li>
-                <li><strong>Consumer Electronics:</strong> In-depth reviews of the latest smartphones, laptops, and wearables.</li>
-                <li><strong>Automotive Tech:</strong> The shift towards Electric Vehicles (EVs) and smart mobility solutions.</li>
+                <li><strong>Emerging Technologies:</strong> Artificial Intelligence, Machine Learning, Cloud Computing, and consumer gadgets.</li>
+                <li><strong>Consumer Electronics:</strong> In-depth reviews of the latest smartphones, laptops, wearables, and smart home devices.</li>
+                <li><strong>Automotive Tech:</strong> The shift towards Electric Vehicles (EVs), hybrid technology, and the latest car launches.</li>
+                <li><strong>Breaking News:</strong> Geopolitical updates, US politics, Middle East developments, and global events.</li>
+                <li><strong>Science & Health:</strong> Discoveries, medical breakthroughs, wellness trends, and research updates.</li>
+                <li><strong>Gaming & Entertainment:</strong> Industry news, game reviews, and entertainment coverage.</li>
+                <li><strong>Business & Finance:</strong> Market trends, tax updates, benefits, and economic analysis.</li>
             </ul>
 
-            <h2>Get In Touch</h2>
+            <h2>Meet Our Editorial Team</h2>
+            <p>Our diverse team of specialized journalists brings decades of combined experience across technology, automotive, science, and news reporting. Each editor is an expert in their respective field, ensuring you get authoritative coverage on every topic.</p>
+
+            <div class="team-grid">
+                
+                <!-- Sarah Mitchell - News -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Sarah Mitchell">
+                    <h3>Sarah Mitchell <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Senior News Editor</div>
+                    <p class="bio">With 8+ years in digital journalism, Sarah leads our breaking news and geopolitical coverage. Formerly with Reuters, she ensures every story meets the highest standards of accuracy and timeliness.</p>
+                </div>
+
+                <!-- James Carter - Tech -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="James Carter">
+                    <h3>James Carter <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Senior Tech Reviewer</div>
+                    <p class="bio">James has spent over 10 years reviewing smartphones, laptops, and consumer gadgets. His work has appeared in The Verge and CNET. He's passionate about helping readers make informed tech decisions.</p>
+                </div>
+
+                <!-- Mike Reynolds - Automobile -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Mike Reynolds">
+                    <h3>Mike Reynolds <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Automotive Editor</div>
+                    <p class="bio">A lifelong car enthusiast, Mike brings 12 years of automotive journalism experience. From luxury sedans to rugged pickup trucks, he delivers detailed reviews and expert analysis on all things automotive.</p>
+                </div>
+
+                <!-- Dr. Amara Singh - Science -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Dr. Amara Singh">
+                    <h3>Dr. Amara Singh <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Science Correspondent</div>
+                    <p class="bio">Dr. Singh holds a PhD in Environmental Science and has contributed to Nature and Scientific American. She translates complex research into accessible, engaging stories for our readers.</p>
+                </div>
+
+                <!-- Dr. Lisa Park - Health -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Dr. Lisa Park">
+                    <h3>Dr. Lisa Park <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Health & Wellness Editor</div>
+                    <p class="bio">A certified medical writer with a background in public health, Dr. Park covers medical breakthroughs, wellness trends, and fitness. Her work is trusted by readers seeking evidence-based health information.</p>
+                </div>
+
+                <!-- Alex Rodriguez - Gaming -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Alex Rodriguez">
+                    <h3>Alex Rodriguez <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Gaming Editor</div>
+                    <p class="bio">Alex has been covering the gaming industry for 7 years, from AAA titles to indie gems. Previously at IGN, he brings insider knowledge and genuine enthusiasm to every review and news piece.</p>
+                </div>
+
+                <!-- Rachel Wong - Business -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Rachel Wong">
+                    <h3>Rachel Wong <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Business & Finance Editor</div>
+                    <p class="bio">With a background in economics and 9 years at Bloomberg, Rachel covers market trends, tax policies, benefits updates, and startup news with precision and clarity.</p>
+                </div>
+
+                <!-- Marcus Webb - Sports -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Marcus Webb">
+                    <h3>Marcus Webb <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Sports Editor</div>
+                    <p class="bio">Marcus brings 11 years of sports journalism experience, covering everything from cricket and football to tennis and the Olympics. His work has been featured on ESPN and BBC Sport.</p>
+                </div>
+
+                <!-- Zoe Williams - Entertainment -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Zoe Williams">
+                    <h3>Zoe Williams <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Entertainment Editor</div>
+                    <p class="bio">Zoe has been covering movies, TV, music, and celebrity news for 8 years. Formerly at Variety, she brings industry insight and a fresh perspective to entertainment journalism.</p>
+                </div>
+
+                <!-- Prof. Emily Grant - Education -->
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Prof. Emily Grant">
+                    <h3>Prof. Emily Grant <i class="fas fa-check-circle verified-tick"></i></h3>
+                    <div class="role">Education Editor</div>
+                    <p class="bio">Professor Grant has 15 years of experience in higher education and academic research. She writes about educational developments, policy changes, and learning innovations with authority and insight.</p>
+                </div>
+
+            </div>
+
+            <h2 style="margin-top: 40px;">Get In Touch</h2>
             <p>We are always eager to hear from our readers. Whether you have a tip, a query, or feedback regarding our content, please feel free to reach out to us via our <a href="contact.html" style="color: #0066cc; font-weight: 500;">Contact Page</a>.</p>
             
             <p>Stay Connected. Stay Updated.<br><strong>— The TechVibe Team</strong></p>
