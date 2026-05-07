@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
-    overflow-x: clip !important; /* Sidebar Sticky Support */
+    overflow-x: clip !important;
     width: 100% !important;
     max-width: 100vw !important;
 }
@@ -24,30 +24,6 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-}
-
-/* ===== TOP NAVIGATION BAR ===== */
-.top-nav {
-    background-color: #f1f1f1;
-    padding: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 0.85rem;
-}
-
-.top-nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.top-nav-links a {
-    color: #555;
-    transition: color 0.3s;
-}
-
-.top-nav-links a:hover {
-    color: #0066cc;
 }
 
 /* ===== MAIN HEADER ===== */
@@ -141,7 +117,7 @@ a {
 
 .article-image {
     width: 100%;
-    aspect-ratio: 16 / 9 !important; 
+    aspect-ratio: 16 / 9 !important;
     overflow: hidden;
     background-color: #f0f0f0;
     position: relative;
@@ -178,18 +154,6 @@ a {
     flex: 1;
     display: flex;
     flex-direction: column;
-}
-
-.article-category {
-    display: inline-block;
-    background-color: #e8f4ff;
-    color: #0066cc;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    align-self: flex-start;
 }
 
 .news-title {
@@ -341,19 +305,16 @@ a {
     border-bottom: 1px solid #eee;
 }
 
-/* ━━━ FIX: Author Header Image Size ━━━ */
 .author-info-header {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-/* ━━━ FIX: Round author images with proper size ━━━ */
 .author-header-img,
 .card-author-img,
 .mini-avatar,
-.author-bio img,
-.team-card img {
+.author-bio img {
     width: 45px !important;
     height: 45px !important;
     aspect-ratio: 1 / 1 !important;
@@ -544,15 +505,6 @@ a {
     color: #222;
 }
 
-.verified {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    color: #1da1f2;
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
 .sidebar {
     width: 320px;
     flex-shrink: 0;
@@ -563,13 +515,13 @@ a {
 }
 
 .sidebar-widget {
-    background-color: #fff; 
+    background-color: #fff;
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     margin-bottom: 30px;
-    color: #333; 
-    border: 1px solid #eaeaea; 
+    color: #333;
+    border: 1px solid #eaeaea;
     flex: 1;
 }
 
@@ -580,13 +532,13 @@ a {
     font-size: 1.2rem;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #eee; 
+    border-bottom: 1px solid #eee;
     color: #222;
 }
 
 .latest-articles {
     max-height: none;
-    overflow-y: visible; 
+    overflow-y: visible;
     padding-right: 10px;
 }
 
@@ -599,40 +551,13 @@ a {
     border-radius: 3px;
 }
 
-.latest-item {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.latest-item:last-child {
-    border-bottom: none;
-}
-
-.latest-item a {
-    display: block;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 8px;
-    line-height: 1.4;
-}
-
-.latest-item a:hover {
-    color: #f5f5f5;
-    text-decoration: underline;
-}
-
-.latest-date {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-
 /* ===== NOTIFICATION BELL & SHARE BUTTONS ===== */
 .notification-bell {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-color: #524c43;
     border-radius: 50%;
     display: flex;
@@ -662,35 +587,10 @@ a {
     border: 2px solid #524c43;
 }
 
-.sub-toast {
-    position: fixed;
-    bottom: 90px;
-    left: 20px;
-    background: #333;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    display: none;
-    z-index: 1001;
-    animation: slideInLeft 0.5s;
-}
-
 @keyframes bellPulse {
     0% { box-shadow: 0 0 0 0 rgba(82, 76, 67, 0.7); }
     70% { box-shadow: 0 0 0 15px rgba(82, 76, 67, 0); }
     100% { box-shadow: 0 0 0 0 rgba(82, 76, 67, 0); }
-}
-
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 
 .share-buttons {
@@ -795,9 +695,7 @@ a {
     margin-top: 30px;
 }
 
-/* =========================================
-   TICKER & UTILITY BAR
-   ========================================= */
+/* ===== TICKER & UTILITY BAR ===== */
 .top-ticker-bar {
     background-color: #111;
     color: #fff;
@@ -933,9 +831,7 @@ a {
     justify-content: center;
 }
 
-/* =========================================
-   PROGRESS BAR, SCROLL TO TOP
-   ========================================= */
+/* ===== PROGRESS BAR & SCROLL TO TOP ===== */
 .reading-progress-container {
     position: fixed;
     top: 0;
@@ -967,14 +863,13 @@ a {
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    display: none;
-    z-index: 1000;
-    transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
+    z-index: 1000;
+    transition: 0.3s;
 }
 
 #scroll-to-top.show {
@@ -992,9 +887,7 @@ a {
 .search-result-info { flex: 1 !important; min-width: 0 !important; }
 .search-result-info h4 { margin: 0; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #222; }
 
-/* =========================================
-   DARK MODE OVERRIDES
-   ========================================= */
+/* ===== DARK MODE OVERRIDES ===== */
 [data-theme="dark"] body {
     background-color: #121212 !important;
     color: #e0e0e0 !important;
@@ -1021,13 +914,9 @@ a {
 [data-theme="dark"] .news-card,
 [data-theme="dark"] .sidebar-widget,
 [data-theme="dark"] .legal-content,
-[data-theme="dark"] .contact-wrapper,
 [data-theme="dark"] .comments-section,
 [data-theme="dark"] .search-modal,
-[data-theme="dark"] .notify-popup,
-[data-theme="dark"] .about-hero,
-[data-theme="dark"] .about-content-section,
-[data-theme="dark"] .feature-box {
+[data-theme="dark"] .notify-popup {
     background-color: #1e1e1e !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
     border: 1px solid #333 !important;
@@ -1056,10 +945,7 @@ a {
 
 [data-theme="dark"] .article-body p,
 [data-theme="dark"] .article-body,
-[data-theme="dark"] .comment-note,
-[data-theme="dark"] .about-hero p,
-[data-theme="dark"] .about-content-section p,
-[data-theme="dark"] .feature-box p {
+[data-theme="dark"] .comment-note {
     color: #bbb !important;
 }
 
@@ -1160,10 +1046,10 @@ a {
     color: #aaa !important;
 }
 
-[data-theme="dark"] ul, 
-[data-theme="dark"] li, 
-[data-theme="dark"] .legal-content, 
-[data-theme="dark"] .legal-content ul, 
+[data-theme="dark"] ul,
+[data-theme="dark"] li,
+[data-theme="dark"] .legal-content,
+[data-theme="dark"] .legal-content ul,
 [data-theme="dark"] .legal-content li,
 [data-theme="dark"] .contact-info-box p,
 [data-theme="dark"] .contact-info-box h3,
@@ -1180,9 +1066,7 @@ a {
     color: #fff !important;
 }
 
-/* =========================================
-   🌍 RESPONSIVE FIXES
-   ========================================= */
+/* ===== RESPONSIVE FIXES ===== */
 html, body {
     overflow-x: hidden !important;
     width: 100% !important;
@@ -1269,16 +1153,16 @@ img, video, iframe {
     }
     .container {
         width: 100% !important;
-        padding: 0 15px !important; 
+        padding: 0 15px !important;
         box-sizing: border-box !important;
     }
     .news-articles, .related-grid { display: block !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
     .news-card {
-        width: 100% !important; 
+        width: 100% !important;
         max-width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
-        margin-bottom: 25px !important; 
+        margin-bottom: 25px !important;
         display: flex !important;
         flex-direction: column !important;
         box-sizing: border-box !important;
@@ -1301,20 +1185,18 @@ img, video, iframe {
 
 @media (max-width: 350px) {
     .container {
-        padding: 0 10px !important; 
+        padding: 0 10px !important;
     }
     .news-card {
         border-radius: 6px !important;
     }
     .news-title {
-        font-size: 1rem !important; 
+        font-size: 1rem !important;
     }
     .logo h1 { font-size: 1.4rem !important; }
 }
 
-/* =========================================
-   NOTIFICATION POPUP
-   ========================================= */
+/* ===== NOTIFICATION POPUP ===== */
 .notify-popup-overlay {
     position: fixed;
     top: 0;
@@ -1350,9 +1232,7 @@ img, video, iframe {
     border: 1px solid #333;
 }
 
-/* =========================================
-   TOC, KEY TAKEAWAYS & LINKS DARK MODE
-   ========================================= */
+/* ===== TOC, KEY TAKEAWAYS & LINKS DARK MODE ===== */
 [data-theme="dark"] .toc-box,
 [data-theme="dark"] .key-takeaways,
 [data-theme="dark"] .related-internal-links {
