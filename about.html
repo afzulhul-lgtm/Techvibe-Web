@@ -15,43 +15,120 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        .legal-content { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-top: 20px; margin-bottom: 40px; }
-        .legal-content h1 { font-size: 2rem; color: #111; margin-bottom: 20px; border-bottom: 2px solid #0066cc; padding-bottom: 10px; display: inline-block; }
-        .legal-content h2 { font-size: 1.5rem; color: #222; margin: 35px 0 20px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
-        .legal-content p { margin-bottom: 15px; color: #444; line-height: 1.8; font-size: 1.05rem; }
-        .legal-content ul { margin: 0 0 20px 20px; color: #444; line-height: 1.8; }
+        .legal-content { 
+            background: #fff; padding: 40px; border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-top: 20px; margin-bottom: 40px; 
+        }
+        .legal-content h1 { 
+            font-size: 2rem; color: #111; margin-bottom: 20px; 
+            border-bottom: 2px solid #0066cc; padding-bottom: 10px; display: inline-block; 
+        }
+        .legal-content h2 { 
+            font-size: 1.5rem; color: #222; margin: 35px 0 20px; 
+            padding-bottom: 8px; border-bottom: 1px solid #eee; 
+        }
+        .legal-content p { 
+            margin-bottom: 15px; color: #444; line-height: 1.8; font-size: 1.05rem; 
+        }
+        .legal-content ul { 
+            margin: 0 0 20px 20px; color: #444; line-height: 1.8; 
+        }
         .legal-content li { margin-bottom: 10px; }
         
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        .team-card { background: #fafafa; padding: 25px 20px; border-radius: 12px; text-align: center; border: 1px solid #eee; transition: all 0.3s ease; }
-        .team-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-color: #cce5ff; background: #fff; }
-        .team-card img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #eef7ff; }
-        .team-card h3 { font-size: 1.15rem; color: #111; margin-bottom: 4px; }
-        .team-card .role { color: #0066cc; font-weight: 600; font-size: 0.85rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .team-card .bio { font-size: 0.9rem; color: #666; line-height: 1.6; }
-        .verified-tick { color: #1da1f2; font-size: 0.8rem; margin-left: 3px; }
+        /* ===== IMPROVED TEAM GRID ===== */
+        .team-grid { 
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 30px; margin-top: 30px; 
+        }
+        .team-card { 
+            background: #fafafa; padding: 30px 25px; border-radius: 16px; 
+            text-align: center; border: 1px solid #eee; 
+            transition: all 0.3s ease; 
+            display: flex; flex-direction: column; align-items: center; 
+        }
+        .team-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
+            border-color: #cce5ff; background: #fff; 
+        }
         
+        /* Author Image – Critical Fix with explicit size */
+        .team-card img { 
+            width: 100px; height: 100px; border-radius: 50%; 
+            object-fit: cover; margin-bottom: 15px; 
+            border: 4px solid #eef7ff; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            display: block; /* Remove inline gap */
+        }
+        .team-card:hover img { 
+            border-color: #cce5ff; 
+        }
+        
+        /* Author Name */
+        .team-card h3 { 
+            font-size: 1.15rem; color: #111; margin-bottom: 4px; 
+            font-weight: 600; 
+        }
+        .verified-tick { 
+            color: #1da1f2; font-size: 0.8rem; margin-left: 3px; 
+        }
+        
+        /* Role Badge */
+        .team-card .role { 
+            color: #0066cc; font-weight: 600; font-size: 0.85rem; 
+            margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; 
+            background: #f0f7ff; padding: 4px 14px; border-radius: 20px; 
+        }
+        
+        /* Expertise Badge */
+        .expertise-tags { 
+            display: flex; flex-wrap: wrap; gap: 6px; 
+            justify-content: center; margin-bottom: 12px; 
+        }
+        .expertise-tags span { 
+            font-size: 0.7rem; color: #555; background: #f0f0f0; 
+            padding: 3px 10px; border-radius: 12px; 
+        }
+        .team-card:hover .expertise-tags span { 
+            background: #e8f4ff; color: #0066cc; 
+        }
+        
+        /* Bio */
+        .team-card .bio { 
+            font-size: 0.88rem; color: #666; line-height: 1.7; 
+            margin-top: auto; 
+        }
+        .team-card .bio strong { 
+            color: #333; 
+        }
+        
+        /* Dark Mode */
         [data-theme="dark"] .legal-content { background: #1a1a1a; }
-        [data-theme="dark"] .legal-content h1, [data-theme="dark"] .legal-content h2 { color: #e0e0e0; }
-        [data-theme="dark"] .legal-content p, [data-theme="dark"] .legal-content ul { color: #bbb; }
-        [data-theme="dark"] .team-card { background: #1e1e1e; border-color: #333; }
-        [data-theme="dark"] .team-card:hover { border-color: #4da6ff; background: #222; }
+        [data-theme="dark"] .legal-content h1, 
+        [data-theme="dark"] .legal-content h2 { color: #e0e0e0; }
+        [data-theme="dark"] .legal-content p, 
+        [data-theme="dark"] .legal-content ul { color: #bbb; }
+        [data-theme="dark"] .team-card { 
+            background: #1e1e1e; border-color: #333; 
+        }
+        [data-theme="dark"] .team-card:hover { 
+            border-color: #4da6ff; background: #222; 
+        }
         [data-theme="dark"] .team-card h3 { color: #e0e0e0; }
         [data-theme="dark"] .team-card .bio { color: #aaa; }
+        [data-theme="dark"] .team-card .bio strong { color: #ddd; }
+        [data-theme="dark"] .team-card .role { 
+            background: #1a2a3e; color: #4da6ff; 
+        }
+        [data-theme="dark"] .expertise-tags span { 
+            background: #2a2a2a; color: #aaa; 
+        }
+        [data-theme="dark"] .team-card:hover .expertise-tags span { 
+            background: #1a2a3e; color: #4da6ff; 
+        }
     </style>
 
-
-        <meta name="expires" content="0">
-    <meta name="pragma" content="no-cache">
-    <meta name="expires" content="0">
-    <meta name="pragma" content="no-cache">
-    <meta name="expires" content="0">
-    <meta name="pragma" content="no-cache">
-    <meta name="expires" content="0">
-    <meta name="pragma" content="no-cache">
-    <meta name="expires" content="0">
-    <meta name="pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta name="cache-control" content="no-cache, no-store, must-revalidate">
@@ -67,7 +144,7 @@
                 <div class="logo">
                     <a href="index.html" style="text-decoration: none; color: inherit;"><h1>⚡ TechVibe</h1></a>
                 </div>
-                 <nav class="main-nav">
+                <nav class="main-nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="tech.html">Tech</a></li>
@@ -107,82 +184,112 @@
                 
                 <!-- Sarah Mitchell - News -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Sarah Mitchell">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Sarah Mitchell" width="100" height="100" loading="lazy">
                     <h3>Sarah Mitchell <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Senior News Editor</div>
-                    <p class="bio">With 8+ years in digital journalism, Sarah leads our breaking news and geopolitical coverage. Formerly with Reuters, she ensures every story meets the highest standards of accuracy and timeliness.</p>
+                    <div class="expertise-tags">
+                        <span>Geopolitics</span><span>Breaking News</span><span>US Politics</span><span>Middle East</span>
+                    </div>
+                    <p class="bio">With <strong>8+ years</strong> in digital journalism, Sarah leads our <strong>breaking news and geopolitical coverage</strong>. Formerly with Reuters, she covers <strong>global conflicts, elections, diplomacy, and national security</strong>. Every story she touches meets the highest standards of accuracy and timeliness.</p>
                 </div>
 
                 <!-- James Carter - Tech -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="James Carter">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="James Carter" width="100" height="100" loading="lazy">
                     <h3>James Carter <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Senior Tech Reviewer</div>
-                    <p class="bio">James has spent over 10 years reviewing smartphones, laptops, and consumer gadgets. His work has appeared in The Verge and CNET. He's passionate about helping readers make informed tech decisions.</p>
+                    <div class="expertise-tags">
+                        <span>Smartphones</span><span>AI & ML</span><span>Laptops</span><span>Wearables</span>
+                    </div>
+                    <p class="bio"><strong>10+ years</strong> reviewing smartphones, laptops, and consumer gadgets. His work has appeared in <strong>The Verge and CNET</strong>. James covers <strong>phone launches, chip technology, AI breakthroughs, and hands-on reviews</strong>, helping readers make informed tech decisions.</p>
                 </div>
 
                 <!-- Mike Reynolds - Automobile -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Mike Reynolds">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Mike Reynolds" width="100" height="100" loading="lazy">
                     <h3>Mike Reynolds <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Automotive Editor</div>
-                    <p class="bio">A lifelong car enthusiast, Mike brings 12 years of automotive journalism experience. From luxury sedans to rugged pickup trucks, he delivers detailed reviews and expert analysis on all things automotive.</p>
+                    <div class="expertise-tags">
+                        <span>EVs & Hybrids</span><span>Car Reviews</span><span>SUVs & Trucks</span><span>Motorcycles</span>
+                    </div>
+                    <p class="bio">A lifelong car enthusiast with <strong>12 years</strong> of automotive journalism. Mike delivers <strong>detailed reviews, performance breakdowns, and expert analysis</strong> on everything from <strong>luxury sedans and rugged pickup trucks to electric vehicles and motorcycles</strong>.</p>
                 </div>
 
                 <!-- Dr. Amara Singh - Science -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Dr. Amara Singh">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Dr. Amara Singh" width="100" height="100" loading="lazy">
                     <h3>Dr. Amara Singh <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Science Correspondent</div>
-                    <p class="bio">Dr. Singh holds a PhD in Environmental Science and has contributed to Nature and Scientific American. She translates complex research into accessible, engaging stories for our readers.</p>
+                    <div class="expertise-tags">
+                        <span>Space & NASA</span><span>Climate</span><span>Biology</span><span>Research</span>
+                    </div>
+                    <p class="bio">Dr. Singh holds a <strong>PhD in Environmental Science</strong> and has contributed to <strong>Nature and Scientific American</strong>. She covers <strong>space exploration, climate science, paleontology, and breakthrough discoveries</strong>, translating complex research into accessible stories.</p>
                 </div>
 
                 <!-- Dr. Lisa Park - Health -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Dr. Lisa Park">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Dr. Lisa Park" width="100" height="100" loading="lazy">
                     <h3>Dr. Lisa Park <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Health & Wellness Editor</div>
-                    <p class="bio">A certified medical writer with a background in public health, Dr. Park covers medical breakthroughs, wellness trends, and fitness. Her work is trusted by readers seeking evidence-based health information.</p>
+                    <div class="expertise-tags">
+                        <span>Medical Research</span><span>Fitness</span><span>Nutrition</span><span>Mental Health</span>
+                    </div>
+                    <p class="bio">A <strong>certified medical writer</strong> with a background in <strong>public health</strong>. Dr. Park covers <strong>medical breakthroughs, clinical trials, wellness trends, yoga, and fitness</strong>. Her evidence-based reporting is trusted by readers seeking reliable health information.</p>
                 </div>
 
                 <!-- Alex Rodriguez - Gaming -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Alex Rodriguez">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Alex Rodriguez" width="100" height="100" loading="lazy">
                     <h3>Alex Rodriguez <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Gaming Editor</div>
-                    <p class="bio">Alex has been covering the gaming industry for 7 years, from AAA titles to indie gems. Previously at IGN, he brings insider knowledge and genuine enthusiasm to every review and news piece.</p>
+                    <div class="expertise-tags">
+                        <span>Console Gaming</span><span>PC Gaming</span><span>Esports</span><span>Game Reviews</span>
+                    </div>
+                    <p class="bio"><strong>7 years</strong> covering the gaming industry from <strong>AAA titles to indie gems</strong>. Previously at <strong>IGN</strong>, Alex brings insider knowledge to <strong>game reviews, hardware analysis, esports coverage, and industry news</strong> with genuine enthusiasm.</p>
                 </div>
 
                 <!-- Rachel Wong - Business -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Rachel Wong">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Rachel Wong" width="100" height="100" loading="lazy">
                     <h3>Rachel Wong <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Business & Finance Editor</div>
-                    <p class="bio">With a background in economics and 9 years at Bloomberg, Rachel covers market trends, tax policies, benefits updates, and startup news with precision and clarity.</p>
+                    <div class="expertise-tags">
+                        <span>Stock Markets</span><span>Crypto</span><span>Tax Policy</span><span>Startups</span>
+                    </div>
+                    <p class="bio">With a background in <strong>economics and 9 years at Bloomberg</strong>, Rachel covers <strong>market trends, tax updates, government benefits, cryptocurrency, and startup news</strong> with precision and clarity.</p>
                 </div>
 
                 <!-- Marcus Webb - Sports -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Marcus Webb">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Marcus Webb" width="100" height="100" loading="lazy">
                     <h3>Marcus Webb <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Sports Editor</div>
-                    <p class="bio">Marcus brings 11 years of sports journalism experience, covering everything from cricket and football to tennis and the Olympics. His work has been featured on ESPN and BBC Sport.</p>
+                    <div class="expertise-tags">
+                        <span>Cricket</span><span>Football</span><span>Tennis</span><span>Olympics</span>
+                    </div>
+                    <p class="bio"><strong>11 years</strong> of sports journalism, covering everything from <strong>cricket and football to tennis and the Olympics</strong>. His work has been featured on <strong>ESPN and BBC Sport</strong>. Marcus brings passion and precision to every match report and analysis.</p>
                 </div>
 
                 <!-- Zoe Williams - Entertainment -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Zoe Williams">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Zoe Williams" width="100" height="100" loading="lazy">
                     <h3>Zoe Williams <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Entertainment Editor</div>
-                    <p class="bio">Zoe has been covering movies, TV, music, and celebrity news for 8 years. Formerly at Variety, she brings industry insight and a fresh perspective to entertainment journalism.</p>
+                    <div class="expertise-tags">
+                        <span>Movies</span><span>Streaming</span><span>Music</span><span>Celebrity News</span>
+                    </div>
+                    <p class="bio"><strong>8 years</strong> covering movies, TV, music, and celebrity news. Formerly at <strong>Variety</strong>, Zoe brings <strong>industry insight, box office analysis, and streaming coverage</strong> with a fresh perspective to entertainment journalism.</p>
                 </div>
 
                 <!-- Prof. Emily Grant - Education -->
                 <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Prof. Emily Grant">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Prof. Emily Grant" width="100" height="100" loading="lazy">
                     <h3>Prof. Emily Grant <i class="fas fa-check-circle verified-tick"></i></h3>
                     <div class="role">Education Editor</div>
-                    <p class="bio">Professor Grant has 15 years of experience in higher education and academic research. She writes about educational developments, policy changes, and learning innovations with authority and insight.</p>
+                    <div class="expertise-tags">
+                        <span>Higher Education</span><span>EdTech</span><span>Policy</span><span>Scholarships</span>
+                    </div>
+                    <p class="bio"><strong>15 years</strong> of experience in <strong>higher education and academic research</strong>. Professor Grant writes about <strong>educational developments, policy changes, online learning, and career guidance</strong> with authority and insight gained from years inside academia.</p>
                 </div>
 
             </div>
