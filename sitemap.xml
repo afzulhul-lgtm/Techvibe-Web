@@ -50,6 +50,16 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://techvibedetails.online/articles/warning-hackers-are-sending-fake-jpeg-photos-that-silently-take-over-y-184.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://techvibedetails.online/articles/image185.webp</image:loc>
+      <image:title>Warning: Hackers Are Sending Fake JPEG Photos That Silently Take Over Your Windows PC</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://techvibedetails.online/articles/tiny-startup-humiliates-nvidia-and-amd-runs-700b-ai-models-on-a-0-clou-183.html</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1828,11 +1838,5 @@
       <image:loc>https://techvibedetails.online/articles/image3.webp</image:loc>
       <image:title>2026 Maserati Quattroporte Review: 430 HP Luxury Sedan Specs &amp; Price</image:title>
     </image:image>
-  </url>
-  <url>
-    <loc>https://techvibedetails.online/articles/warning-hackers-are-sending-fake-jpeg-photos-that-silently-take-over-y-184.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>
