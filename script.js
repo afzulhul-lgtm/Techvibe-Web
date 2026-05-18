@@ -5,7 +5,7 @@ const config = {
     folderName: 'articles',
     itemsPerPage: 15,
     authorName: 'Sarah Mitchell',
-    defaultAuthorImg: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80'
+    defaultAuthorImg: 'Sarah-Mitchell.webp'
 };
 
 const pageKey = window.location.pathname.split('/').pop() || 'index.html';

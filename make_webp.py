@@ -15,7 +15,7 @@ ARTICLES_DIR = "articles"
 JSON_FILE = os.path.join(ARTICLES_DIR, "data.json")
 
 # Articles folder mein saari images dhoondo (including AVIF)
-images = glob.glob(os.path.join(ARTICLES_DIR, "*.jpg")) + \
+images = glob.glob(os.path.join(ARTICLES_DIR, "*.webp")) + \
          glob.glob(os.path.join(ARTICLES_DIR, "*.jpeg")) + \
          glob.glob(os.path.join(ARTICLES_DIR, "*.png")) + \
          glob.glob(os.path.join(ARTICLES_DIR, "*.gif")) + \
@@ -51,8 +51,8 @@ for html_file in html_files:
         with open(html_file, "r", encoding="utf-8") as f:
             content = f.read()
         
-        # Jahan jahan .jpg, .jpeg, .png, .avif likha hai, usay .webp kar do
-        new_content = content.replace(".jpg", ".webp").replace(".jpeg", ".webp").replace(".png", ".webp").replace(".avif", ".webp")
+        # Jahan jahan .webp, .jpeg, .png, .avif likha hai, usay .webp kar do
+        new_content = content.replace(".webp", ".webp").replace(".jpeg", ".webp").replace(".png", ".webp").replace(".avif", ".webp")
         
         with open(html_file, "w", encoding="utf-8") as f:
             f.write(new_content)
@@ -65,7 +65,7 @@ if os.path.exists(JSON_FILE):
         with open(JSON_FILE, "r", encoding="utf-8") as f:
             content = f.read()
         
-        new_content = content.replace(".jpg", ".webp").replace(".jpeg", ".webp").replace(".png", ".webp").replace(".avif", ".webp")
+        new_content = content.replace(".webp", ".webp").replace(".jpeg", ".webp").replace(".png", ".webp").replace(".avif", ".webp")
         
         with open(JSON_FILE, "w", encoding="utf-8") as f:
             f.write(new_content)
