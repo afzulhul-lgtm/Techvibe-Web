@@ -5,7 +5,7 @@ const config = {
     folderName: 'articles',
     itemsPerPage: 15,
     authorName: 'Sarah Mitchell',
-    defaultAuthorImg: 'Sarah-Mitchell.webp'
+    defaultAuthorImg: '../Sarah-Mitchell.webp'
 };
 
 const pageKey = window.location.pathname.split('/').pop() || 'index.html';
