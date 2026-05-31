@@ -100,28 +100,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     }, 50);
 
     setTimeout(initNotificationPopup, 3000);
-
-    // ━━━ AUTO-INSERT ADSENSE ADS ━━━
-    if (isArticlePage) {
-        const featuredImage = document.querySelector('.article-featured-image');
-        if (featuredImage) {
-            const adDiv1 = document.createElement('div');
-            adDiv1.style.cssText = 'margin: 25px 0; text-align: center; min-height: 90px;';
-            adDiv1.innerHTML = '<scr' + 'ipt async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2007612527496766" crossorigin="anonymous"></scr' + 'ipt><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2007612527496766" data-ad-slot="8106603184" data-ad-format="auto" data-full-width-responsive="true"></ins><scr' + 'ipt>(adsbygoogle = window.adsbygoogle || []).push({});</scr' + 'ipt>';
-            featuredImage.parentNode.insertBefore(adDiv1, featuredImage.nextSibling);
-        }
-
-        const articleBody = document.querySelector('.article-body');
-        if (articleBody) {
-            const paragraphs = articleBody.querySelectorAll('p');
-            if (paragraphs.length >= 4) {
-                const adDiv2 = document.createElement('div');
-                adDiv2.style.cssText = 'margin: 25px 0; text-align: center; min-height: 90px;';
-                adDiv2.innerHTML = '<scr' + 'ipt async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2007612527496766" crossorigin="anonymous"></scr' + 'ipt><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2007612527496766" data-ad-slot="8431552185"></ins><scr' + 'ipt>(adsbygoogle = window.adsbygoogle || []).push({});</scr' + 'ipt>';
-                paragraphs[3].parentNode.insertBefore(adDiv2, paragraphs[4]);
-            }
-        }
-    }
 });
 
 async function loadArticlesFast() {
