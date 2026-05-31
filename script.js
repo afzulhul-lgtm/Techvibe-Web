@@ -100,6 +100,28 @@ document.addEventListener('DOMContentLoaded', async function () {
     }, 50);
 
     setTimeout(initNotificationPopup, 3000);
+
+    // ━━━ AUTO-INSERT ADSENSE ADS ━━━
+    if (isArticlePage) {
+        const featuredImage = document.querySelector('.article-featured-image');
+        if (featuredImage) {
+            const adDiv1 = document.createElement('div');
+            adDiv1.style.cssText = 'margin: 25px 0; text-align: center; min-height: 90px;';
+            adDiv1.innerHTML = '<scr' + 'ipt async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2007612527496766" crossorigin="anonymous"></scr' + 'ipt><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2007612527496766" data-ad-slot="8106603184" data-ad-format="auto" data-full-width-responsive="true"></ins><scr' + 'ipt>(adsbygoogle = window.adsbygoogle || []).push({});</scr' + 'ipt>';
+            featuredImage.parentNode.insertBefore(adDiv1, featuredImage.nextSibling);
+        }
+
+        const articleBody = document.querySelector('.article-body');
+        if (articleBody) {
+            const paragraphs = articleBody.querySelectorAll('p');
+            if (paragraphs.length >= 4) {
+                const adDiv2 = document.createElement('div');
+                adDiv2.style.cssText = 'margin: 25px 0; text-align: center; min-height: 90px;';
+                adDiv2.innerHTML = '<scr' + 'ipt async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2007612527496766" crossorigin="anonymous"></scr' + 'ipt><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2007612527496766" data-ad-slot="8431552185"></ins><scr' + 'ipt>(adsbygoogle = window.adsbygoogle || []).push({});</scr' + 'ipt>';
+                paragraphs[3].parentNode.insertBefore(adDiv2, paragraphs[4]);
+            }
+        }
+    }
 });
 
 async function loadArticlesFast() {
@@ -260,22 +282,22 @@ function injectRelatedArticles() {
 // Is function ko disable kar diya gaya hai taake template ke {{AUTHOR_NAME}} override na ho
 function injectHeaderAuthorPic() {
     if (!isArticlePage) return;
-    
+
     const currentFile = window.location.pathname.split('/').pop();
     const articleData = allArticles.find(art => art.filename === currentFile);
-    
+
     // ━━━ TOP SECTION (By ke paas) ━━━
     const img = document.getElementById('header-author-img');
     const name = document.getElementById('header-author-name');
-    
+
     // ━━━ BOTTOM BIO SECTION ━━━
     const bioImg = document.querySelector('.author-bio img');
     const bioName = document.querySelector('.author-bio h3');
-    
+
     if (articleData) {
         const authorName = articleData.author || config.authorName;
         const authorImg = articleData.authorImg || config.defaultAuthorImg;
-        
+
         // Top section
         if (name) {
             const currentName = name.textContent.trim();
@@ -289,7 +311,7 @@ function injectHeaderAuthorPic() {
                 img.src = authorImg;
             }
         }
-        
+
         // ━━━ Bottom bio section ━━━
         if (bioName) {
             const currentBioName = bioName.textContent.trim();
@@ -303,7 +325,7 @@ function injectHeaderAuthorPic() {
                 bioImg.src = authorImg;
             }
         }
-        
+
     } else {
         // Fallback
         if (name) {
