@@ -55,6 +55,28 @@
         "excerpt": "Discover the latest on PS6 PS3 emulation and why the PS5 can't handle it. Get the inside scoop on the upcoming PlayStation 6 and its potential to deliver ful..."
     },
     {
+        "id": 193,
+        "title": "Your Boss's Tracking Software Is Secretly Sharing Your Data With Google, Meta & Microsoft — Study Reveals",
+        "date": "May 25, 2026",
+        "author": "Dr. Amara Singh",
+        "authorImg": "../Dr-Amara-Singh.webp",
+        "category": "Tech",
+        "image": "image194.webp",
+        "filename": "your-bosss-tracking-software-is-secretly-sharing-your-data-with-google.html",
+        "excerpt": "Bossware privacy 2026: Workplace monitoring apps share employee data with Google, Meta, and Microsoft, raising concerns about worker privacy and autonomy."
+    },
+    {
+        "id": 192,
+        "title": "Google AI Search Backlash: Users Threaten Mass Exodus Over Misinformation & Environmental Concerns",
+        "date": "May 24, 2026",
+        "author": "James Carter",
+        "authorImg": "james-carter.webp",
+        "category": "Tech",
+        "image": "image193.webp",
+        "filename": "google-ai-search-backlash-users-threaten-mass-exodus-over-misinformati.html",
+        "excerpt": "Google AI search backlash 2026 sparks user outrage over misinformation and environmental concerns, prompting a potential mass exodus to alternative search en..."
+    },
+    {
         "id": 191,
         "title": "iPhone 18 Pro Colors Leak: Silver, Light Blue, Dark Cherry & Dark Gray Revealed via Camera Components",
         "date": "May 23, 2026",
@@ -88,6 +110,17 @@
         "excerpt": "Google I/O 2026 vs Apple WWDC 2026: Compare AI strategies and developer impact. Read more on TechVibe."
     },
     {
+        "id": 188,
+        "title": "GPT-5.6 Leak: Release Date, Features & What OpenAI Isn't Telling Us",
+        "date": "May 20, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image189.webp",
+        "filename": "gpt-56-leak-release-date-features-what-openai-isnt-telling-us.html",
+        "excerpt": "GPT-5.6 leak 2026: OpenAI's accelerated release cycle sparks competitive pressure, with a predicted June launch and double-digit gains in MATH and GPQA reaso..."
+    },
+    {
         "id": 187,
         "title": "Galaxy Z Fold 8 and 'Wide' specs leak with alleged battery and camera upgrades",
         "date": "May 19, 2026",
@@ -97,6 +130,50 @@
         "image": "image188.webp",
         "filename": "galaxy-z-fold-8-and-wide-specs-leak-with-alleged-battery-and-camera-up.html",
         "excerpt": "Galaxy Z Fold 8 specs leak 2026: Battery and camera upgrades revealed. Get the latest on Samsung's upcoming foldable."
+    },
+    {
+        "id": 186,
+        "title": "Conspiracy Charges for Protesters? The Landmark 2026 Trial Everyone is Watching",
+        "date": "May 18, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "News",
+        "image": "image187.webp",
+        "filename": "conspiracy-charges-for-protesters-the-landmark-2026-trial-everyone-is.html",
+        "excerpt": "Federal prosecutors test new strategy in trump protester conspiracy trial 2026, sparking debates on First Amendment rights and political dissent."
+    },
+    {
+        "id": 185,
+        "title": "Cisco's Deep Ties to Israeli Military Exposed in Leaked Documents",
+        "date": "May 16, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image186.webp",
+        "filename": "ciscos-deep-ties-to-israeli-military-exposed-in-leaked-documents-185.html",
+        "excerpt": "Leaked documents expose Cisco's deep ties to Israeli military through lucrative contracts, sparking controversy over the tech giant's involvement in the regi..."
+    },
+    {
+        "id": 184,
+        "title": "Warning: Hackers Are Sending Fake JPEG Photos That Silently Take Over Your Windows PC",
+        "date": "May 13, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image185.webp",
+        "filename": "warning-hackers-are-sending-fake-jpeg-photos-that-silently-take-over-y-184.html",
+        "excerpt": "Warning: Operation SilentCanvas malware spreads through fake JPEGs, taking over Windows PCs silently. Learn how to protect yourself."
+    },
+    {
+        "id": 183,
+        "title": "Tiny Startup Humiliates Nvidia and AMD: Runs 700B AI Models on a $0 Cloud Bill Using Decade-Old Chips",
+        "date": "May 11, 2026",
+        "author": "Rachel Wong",
+        "authorImg": "../Rachel-Wong.webp",
+        "category": "Tech",
+        "image": "image184.webp",
+        "filename": "tiny-startup-humiliates-nvidia-and-amd-runs-700b-ai-models-on-a-0-clou-183.html",
+        "excerpt": "Skymizer HTX301 review: Taiwanese startup humiliates Nvidia and AMD with 700B AI models on a $0 cloud bill. Discover how."
     },
     {
         "id": 182,
@@ -110,6 +187,17 @@
         "excerpt": "Meta space-based solar project aims to beam 1 GW of clean energy from space by 2030, revolutionizing data centre power with continuous solar energy."
     },
     {
+        "id": 181,
+        "title": "Dual-Use Tech: How Companies Sell the Same Tools for Aid and War",
+        "date": "May 09, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image182.webp",
+        "filename": "dual-use-tech-how-companies-sell-the-same-tools-for-aid-and-war-181.html",
+        "excerpt": "Discover the truth about dual-use technology humanitarian aid, and how it's changing the face of disaster response and military operations."
+    },
+    {
         "id": 180,
         "title": "Samsung One UI 8.5 Release Date & Eligible Galaxy Devices List 2026",
         "date": "May 08, 2026",
@@ -119,6 +207,28 @@
         "image": "image181.webp",
         "filename": "samsung-one-ui-85-release-date-eligible-galaxy-devices-list-2026-180.html",
         "excerpt": "Samsung One UI 8.5 release date confirmed for May 6, 2026, with 25 Galaxy devices eligible for the Android 16-based update, including flagship S25 and S24 se..."
+    },
+    {
+        "id": 179,
+        "title": "Trump casts doubt on Iran peace deal and says Tehran has not paid a big enough price",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image180.webp",
+        "filename": "trump-casts-doubt-on-iran-peace-deal-and-says-tehran-has-not-paid-a-bi-179.html",
+        "excerpt": "Former US President Donald Trump's comments on the Iran peace deal and Tehran's perceived lack of sufficient concessions raise questions about the future of ..."
+    },
+    {
+        "id": 178,
+        "title": "M5 MacBook Pro Hinge Causes Sparks and Catches Fire Just Two Days After Purchase",
+        "date": "May 06, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image179.webp",
+        "filename": "m5-macbook-pro-hinge-causes-sparks-and-catches-fire-just-two-days-afte-178.html",
+        "excerpt": "M5 MacBook Pro fire incidents raise concerns about laptop safety and reliability, prompting an examination of the causes and potential solutions."
     },
     {
         "id": 177,
@@ -143,6 +253,28 @@
         "excerpt": "Samsung's Galaxy S series is known for its high-end features, and the upcoming S27 could boast the largest battery upgrade in years, potentially offering use..."
     },
     {
+        "id": 175,
+        "title": "Trump Warns 'The Shootin' Starts' – Bigger, Better & Stronger Attack on Iran if They Don't Reopen Strait of Hormuz",
+        "date": "April 18, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image176.webp",
+        "filename": "trump-warns-the-shootin-starts-bigger-better-stronger-attack-on-iran-i-175.html",
+        "excerpt": "Trump warns Iran: 70% of global oil passes through the Strait of Hormuz, with prices rising 15% in 2026."
+    },
+    {
+        "id": 174,
+        "title": "Trump Warns ‘The Shootin’ Starts’ – Bigger, Better & Stronger Attack on Iran if They Don’t Reopen Strait of Hormuz",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image175.webp",
+        "filename": "trump-warns-the-shootin-starts-bigger-better-stronger-attack-on-iran-i-174.html",
+        "excerpt": "Tensions between the US and Iran escalate as Strait of Hormuz remains closed, affecting global oil supply and shipping routes."
+    },
+    {
         "id": 173,
         "title": "2026 Kawasaki Vulcan 2000 Monster: Specs, Torque, Price & Everything You Need to Know",
         "date": "May 06, 2026",
@@ -152,6 +284,28 @@
         "image": "image174.webp",
         "filename": "2026-kawasaki-vulcan-2000-monster-specs-torque-price-everything-you-ne-173.html",
         "excerpt": "Discover the 2026 Kawasaki Vulcan 2000 Monster, a powerful cruiser with impressive specs and torque, priced competitively in its class."
+    },
+    {
+        "id": 172,
+        "title": "IRS Urgent Warning 2026: $160 Million Lost to Social Media Tax Scams — Are You at Risk?",
+        "date": "May 06, 2026",
+        "author": "Rachel Wong",
+        "authorImg": "../Rachel-Wong.webp",
+        "category": "Latest News",
+        "image": "image173.webp",
+        "filename": "irs-urgent-warning-2026-160-million-lost-to-social-media-tax-scams-are-172.html",
+        "excerpt": "IRS warns of $160 million lost to social media tax scams, with estimates suggesting thousands of taxpayers affected, and provides guidance on how to protect ..."
+    },
+    {
+        "id": 171,
+        "title": "A court just ruled Meta and YouTube 'negligent' — social media may never be the same",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image172.webp",
+        "filename": "a-court-just-ruled-meta-and-youtube-negligent-social-media-may-never-b-171.html",
+        "excerpt": "Court rulings on social media negligence may impact online platforms, starting from approximately May 2026, affecting Meta and YouTube."
     },
     {
         "id": 170,
@@ -165,6 +319,50 @@
         "excerpt": "Macao's unique cultural heritage, shaped by Chinese and Portuguese influences, makes it an attractive destination for city breaks in 2026."
     },
     {
+        "id": 169,
+        "title": "'DRUG LOOT BOOBS' Airline worker ‘splashed out on boob job, Rolex & luxury goods after helping gang smuggle millions in cash to Dubai’",
+        "date": "May 06, 2026",
+        "author": "Dr. Lisa Park",
+        "authorImg": "Dr-Lisa-Park.webp",
+        "category": "Latest News",
+        "image": "image170.webp",
+        "filename": "drug-loot-boobs-airline-worker-splashed-out-on-boob-job-rolex-luxury-g-169.html",
+        "excerpt": "Airline worker's alleged involvement in cash smuggling to Dubai highlights concerns about organized crime and its impact on global security, with estimates s..."
+    },
+    {
+        "id": 168,
+        "title": "TRAVEL CHAOS Dubai airport flights suspended after terrifying Iranian drone strike sparks fire and ‘please don’t travel’ warning",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image169.webp",
+        "filename": "travel-chaos-dubai-airport-flights-suspended-after-terrifying-iranian-168.html",
+        "excerpt": "Dubai airport flights suspended due to Iranian drone strike, causing travel chaos and warnings for travelers, with estimates suggesting significant disruptio..."
+    },
+    {
+        "id": 167,
+        "title": "COUNT THE COST Costco shoppers beware – retail giant pulls popular meal from shelves over ‘serious and sometimes fatal’ infection",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Lastet News",
+        "image": "image168.webp",
+        "filename": "count-the-cost-costco-shoppers-beware-retail-giant-pulls-popular-meal-167.html",
+        "excerpt": "Costco recall due to foodborne illness risk, understanding the situation and its implications."
+    },
+    {
+        "id": 166,
+        "title": "MEATY MANIA Four big changes hitting all Outback Steakhouse locations in 2026",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image167.webp",
+        "filename": "meaty-mania-four-big-changes-hitting-all-outback-steakhouse-locations-166.html",
+        "excerpt": "Outback Steakhouse undergoes significant changes in 2026, affecting all locations, with updates to menu, service, and overall dining experience."
+    },
+    {
         "id": 165,
         "title": "Apple Shocks With Cheapest MacBook Ever at £599 – Launches Days After Bargain iPhone 17e",
         "date": "May 06, 2026",
@@ -174,6 +372,83 @@
         "image": "image166.webp",
         "filename": "apple-shocks-with-cheapest-macbook-ever-at-599-launches-days-after-bar-165.html",
         "excerpt": "Apple's latest move in the tech market with a budget-friendly MacBook and iPhone 17e is set to disrupt the industry, offering consumers more affordable optio..."
+    },
+    {
+        "id": 164,
+        "title": "Cruise Ship Horror: Over 150 Sick as Norovirus Outbreak Hits Star Princess During 7-Day Voyage",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image165.webp",
+        "filename": "cruise-ship-horror-over-150-sick-as-norovirus-outbreak-hits-star-princ-164.html",
+        "excerpt": "Norovirus outbreaks on cruise ships, like the Star Princess, pose significant health risks to passengers, with estimates suggesting that nearly 20 million ca..."
+    },
+    {
+        "id": 163,
+        "title": "SPACED OUTAsteroid the size of a bus speeding near Earth as NASA tracks chilling encounter",
+        "date": "May 06, 2026",
+        "author": "Dr. Amara Singh",
+        "authorImg": "../Dr-Amara-Singh.webp",
+        "category": "Tech",
+        "image": "image164.webp",
+        "filename": "spaced-outasteroid-the-size-of-a-bus-speeding-near-earth-as-nasa-track-163.html",
+        "excerpt": "Asteroids speeding near Earth pose significant threats, with NASA tracking a bus-sized asteroid, sparking concerns about potential impacts and the importance..."
+    },
+    {
+        "id": 162,
+        "title": "IN THE CROSSHAIRS Trump sending 2,500 Marines & invasion ships to Middle East as US announces $10MILLION reward for info on new Ayatollah",
+        "date": "May 06, 2026",
+        "author": "Rachel Wong",
+        "authorImg": "../Rachel-Wong.webp",
+        "category": "Latest News",
+        "image": "image163.webp",
+        "filename": "in-the-crosshairs-trump-sending-2500-marines-invasion-ships-to-middle-162.html",
+        "excerpt": "US military deployment to the Middle East and a reward for information on a new Ayatollah have significant implications for regional stability and global mar..."
+    },
+    {
+        "id": 161,
+        "title": "CLIMBER'S SLIP Terrifying moment mountaineer slips and uncontrollably hurtles down snowy mountain as onlookers scream in terror",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image162.webp",
+        "filename": "climbers-slip-terrifying-moment-mountaineer-slips-and-uncontrollably-h-161.html",
+        "excerpt": "Mountain climbing accidents can occur due to various factors, including equipment failure and harsh weather conditions, affecting climbers worldwide."
+    },
+    {
+        "id": 160,
+        "title": "HARD PROOF Eerie similarity between missing girl Genesis Reid & Casey Anthony case as mom faces DEATH for murder but body not found",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image161.webp",
+        "filename": "hard-proof-eerie-similarity-between-missing-girl-genesis-reid-casey-an-160.html",
+        "excerpt": "Casey Anthony and Genesis Reid cases share eerie similarities, with both involving missing children and murder charges without found bodies, raising question..."
+    },
+    {
+        "id": 159,
+        "title": "The $100 Million Mortgage Secret: Why Musk and Zuckerberg Choose Debt Over Cash",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image160.webp",
+        "filename": "the-100-million-mortgage-secret-why-musk-and-zuckerberg-choose-debt-ov-159.html",
+        "excerpt": "Billionaires like Musk and Zuckerberg choose debt over cash for mortgages, but what's behind this strategy and can regular people apply it."
+    },
+    {
+        "id": 158,
+        "title": "Texas Roadhouse Backtracks on ‘100% ID’ Alcohol Policy After Pushback Over Mandated Checks for All Ages",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image159.webp",
+        "filename": "texas-roadhouse-backtracks-on-100-id-alcohol-policy-after-pushback-ove-158.html",
+        "excerpt": "Texas Roadhouse policy change and its implications on the restaurant industry, explained in the context of latest news and trends."
     },
     {
         "id": 157,
@@ -306,6 +581,17 @@
         "image": "image146.webp",
         "filename": "toyota-solar-panel-installation-cost-2026-55000upto-10kw-system-and-40-145.html",
         "excerpt": "Toyota's solar panel installation costs and benefits for homeowners in 2026, including potential monthly savings and system specifications."
+    },
+    {
+        "id": 144,
+        "title": "Washington Quarters Worth $150K+ | Rare Coins That Look Ordinary",
+        "date": "May 06, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Latest News",
+        "image": "image145.webp",
+        "filename": "washington-quarters-worth-150k-rare-coins-that-look-ordinary-144.html",
+        "excerpt": "Rare coins like Washington quarters can be worth thousands, but what makes them valuable and how can collectors spot them."
     },
     {
         "id": 143,
@@ -869,6 +1155,61 @@
         "excerpt": "Discover the 2026 Honda Accord revealed, a hybrid luxury sedan with impressive fuel efficiency and advanced features."
     },
     {
+        "id": 91,
+        "title": "Psychologists Warn: These 9 Common Parenting Mistakes Are Guaranteed to Raise Unhappy Children",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image91.webp",
+        "filename": "psychologists-warn-these-9-common-parenting-mistakes-are-guaranteed-to-91.html",
+        "excerpt": "Psychologists warn these common parenting mistakes can raise unhappy children, and it's crucial to recognize them. Learn how to fix these habits and promote ..."
+    },
+    {
+        "id": 90,
+        "title": "Quantum Physics Shocker: Electrons Don't Entangle 'All At Once' — The Mind-Bending Truth Revealed",
+        "date": "May 21, 2026",
+        "author": "Dr. Amara Singh",
+        "authorImg": "../Dr-Amara-Singh.webp",
+        "category": "Tech",
+        "image": "image90.webp",
+        "filename": "quantum-physics-shocker-electrons-dont-entangle-all-at-once-the-mind-b-90.html",
+        "excerpt": "Quantum physics shocker: electrons don't entangle all at once. Discover the mind-bending truth revealed by scientists at institutions like Harvard University."
+    },
+    {
+        "id": 89,
+        "title": "Medical Miracle: Groundbreaking Strategy Finally Forces Cancer Cells to Reveal Themselves to the Immune System",
+        "date": "May 21, 2026",
+        "author": "Dr. Lisa Park",
+        "authorImg": "../Dr-Lisa-Park.webp",
+        "category": "Tech",
+        "image": "image89.webp",
+        "filename": "medical-miracle-groundbreaking-strategy-finally-forces-cancer-cells-to-89.html",
+        "excerpt": "Discover the latest medical miracle groundbreaking strategy to fight cancer, and learn how it's changing the face of treatment and prevention."
+    },
+    {
+        "id": 88,
+        "title": "Global Alert: USS Gerald R. Ford Deployed to Europe as US Prepares for Massive Middle East Tensions",
+        "date": "May 21, 2026",
+        "author": "Mike Reynolds",
+        "authorImg": "../Mike-Reynolds.webp",
+        "category": "Tech",
+        "image": "image88.webp",
+        "filename": "global-alert-uss-gerald-r-ford-deployed-to-europe-as-us-prepares-for-m-88.html",
+        "excerpt": "Global alert: USS Gerald R. Ford deployed to Europe amid rising Middle East tensions, what's the impact on global security and US interests?"
+    },
+    {
+        "id": 87,
+        "title": "Over 65 and Losing Flexibility? New Study Reveals It's NOT Your Muscles — Here Is The Shocking Truth",
+        "date": "May 21, 2026",
+        "author": "Dr. Amara Singh",
+        "authorImg": "../Dr-Amara-Singh.webp",
+        "category": "Tech",
+        "image": "image87.webp",
+        "filename": "over-65-and-losing-flexibility-new-study-reveals-its-not-your-muscles-87.html",
+        "excerpt": "Discover why losing flexibility after 65 isn't just about muscles, and what new research reveals about staying flexible and mobile as we age."
+    },
+    {
         "id": 86,
         "title": "The Ultimate Diet Secret: Why Broccoli, Cabbage, and Cauliflower Are Exactly the Same Plant",
         "date": "May 21, 2026",
@@ -878,6 +1219,61 @@
         "image": "image86.webp",
         "filename": "the-ultimate-diet-secret-why-broccoli-cabbage-and-cauliflower-are-exac-86.html",
         "excerpt": "Discover the ultimate diet secret broccoli and its surprising connection to cabbage and cauliflower, changing the way you think about healthy eating."
+    },
+    {
+        "id": 85,
+        "title": "Critical Alert: Vets Issue Urgent Life-Saving Warning to All Cat Owners Immediately",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image85.webp",
+        "filename": "critical-alert-vets-issue-urgent-life-saving-warning-to-all-cat-owners-85.html",
+        "excerpt": "Critical alert vets issue warning to cat owners, sparking urgent response to potential health risks, with sources citing a critical update to pet care policy."
+    },
+    {
+        "id": 84,
+        "title": "Mind-Blowing Science: Why Sweet Potatoes and Regular Potatoes Are Actually NOT Related at All",
+        "date": "May 21, 2026",
+        "author": "Dr. Amara Singh",
+        "authorImg": "../Dr-Amara-Singh.webp",
+        "category": "Tech",
+        "image": "image84.webp",
+        "filename": "mind-blowing-science-why-sweet-potatoes-and-regular-potatoes-are-actua-84.html",
+        "excerpt": "Discover the mind blowing science sweet truth about sweet potatoes and regular potatoes, and how they're not related at all, with surprising findings from sc..."
+    },
+    {
+        "id": 83,
+        "title": "Medical Breakthrough: Doctors Finally Reveal Why You Get 'Leisure Migraines' On Your Days Off",
+        "date": "May 21, 2026",
+        "author": "Dr. Lisa Park",
+        "authorImg": "../Dr-Lisa-Park.webp",
+        "category": "Tech",
+        "image": "image83.webp",
+        "filename": "medical-breakthrough-doctors-finally-reveal-why-you-get-leisure-migrai-83.html",
+        "excerpt": "Medical breakthrough doctors finally reveal the causes of leisure migraines, a common issue affecting many on their days off, and what it means for preventio..."
+    },
+    {
+        "id": 82,
+        "title": "Confirmed: A Historic February Polar Vortex Disruption is Coming — Prepare for Unprecedented Cold",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image82.webp",
+        "filename": "confirmed-a-historic-february-polar-vortex-disruption-is-coming-prepar-82.html",
+        "excerpt": "Confirmed historic February polar vortex disruption is coming - prepare for unprecedented cold and potential power outages, review the latest specs and perfo..."
+    },
+    {
+        "id": 81,
+        "title": "Urgent Warning: Massive Polar Vortex Disruption Threatens Widespread Travel Paralysis Across the US",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image81.webp",
+        "filename": "urgent-warning-massive-polar-vortex-disruption-threatens-widespread-tr-81.html",
+        "excerpt": "Urgent warning: massive polar vortex disruption to hit US, causing travel chaos and power outages. Get the latest updates and stay safe."
     },
     {
         "id": 79,
@@ -977,6 +1373,138 @@
         "image": "image71.webp",
         "filename": "2026-toyota-corolla-cross-unveiled-ultimate-hybrid-power-meets-premium-71.html",
         "excerpt": "Discover the 2026 Toyota Corolla Cross, a hybrid SUV that combines power and comfort, with impressive mpg and a premium interior."
+    },
+    {
+        "id": 70,
+        "title": "IRS $2,000 Direct Deposit Fully Explained for February 2026 — Don't Miss Out!",
+        "date": "May 21, 2026",
+        "author": "Rachel Wong",
+        "authorImg": "../Rachel-Wong.webp",
+        "category": "Tech",
+        "image": "image70.webp",
+        "filename": "irs-2000-direct-deposit-fully-explained-for-february-2026-dont-miss-ou-70.html",
+        "excerpt": "Discover the IRS $2,000 direct deposit details and eligibility criteria to maximize your benefits."
+    },
+    {
+        "id": 69,
+        "title": "$1,000 to $2,000 IRS Refunds Confirmed for 2026 — Check Eligibility & Exact Timeline",
+        "date": "May 21, 2026",
+        "author": "Rachel Wong",
+        "authorImg": "../Rachel-Wong.webp",
+        "category": "Tech",
+        "image": "image69.webp",
+        "filename": "1000-to-2000-irs-refunds-confirmed-for-2026-check-eligibility-exact-ti-69.html",
+        "excerpt": "Discover the latest on $1,000 to $2,000 IRS refunds and how to check eligibility for the 2026 tax season."
+    },
+    {
+        "id": 68,
+        "title": "Massive Relief: How to Claim Your Federal $2,000 Payment in February 2026",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image68.webp",
+        "filename": "massive-relief-how-to-claim-your-federal-2000-payment-in-february-2026-68.html",
+        "excerpt": "Discover how to claim your massive relief payment of up to $2,000 in February 2026 and get the latest update on eligibility and application process."
+    },
+    {
+        "id": 67,
+        "title": "February 2026 Social Security & SSI Payment Dates Officially Confirmed — Full Calendar",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image67.webp",
+        "filename": "february-2026-social-security-ssi-payment-dates-officially-confirmed-f-67.html",
+        "excerpt": "Discover the confirmed February 2026 Social Security and SSI payment dates and learn how to prepare for the upcoming changes."
+    },
+    {
+        "id": 66,
+        "title": "Critical Alert: The New 2026 Driving Law Affecting All 50 States — Ignore at Your Own Risk",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image66.webp",
+        "filename": "critical-alert-the-new-2026-driving-law-affecting-all-50-states-ignore-66.html",
+        "excerpt": "Critical alert new 2026 driving law: know the risks and penalties to avoid fines and stay safe on the road."
+    },
+    {
+        "id": 65,
+        "title": "Urgent Warning: Strict New February 2026 Driving Law Could Mean Fines & Jail Time",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image65.webp",
+        "filename": "urgent-warning-strict-new-february-2026-driving-law-could-mean-fines-j-65.html",
+        "excerpt": "Urgent warning: strict new driving law imposes fines and jail time, affecting millions of drivers nationwide, with a deadline looming."
+    },
+    {
+        "id": 64,
+        "title": "Massive $4,983 Direct Deposit 2026 for US Citizens: Full Eligibility & Exact Dates Revealed",
+        "date": "May 21, 2026",
+        "author": "Mike Reynolds",
+        "authorImg": "../Mike-Reynolds.webp",
+        "category": "Tech",
+        "image": "image64.webp",
+        "filename": "massive-4983-direct-deposit-2026-for-us-citizens-full-eligibility-exac-64.html",
+        "excerpt": "Massive $4,983 direct deposit for US citizens: eligibility and exact dates revealed, impacting millions of Americans, with a focus on safety rating and engin..."
+    },
+    {
+        "id": 63,
+        "title": "Shocking 2026 Social Security Update: Why Your Payment Dates Are Now Complicated",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image63.webp",
+        "filename": "shocking-2026-social-security-update-why-your-payment-dates-are-now-co-63.html",
+        "excerpt": "Shocking 2026 social security update: new payment dates and rules. Learn how it affects you and what to expect."
+    },
+    {
+        "id": 62,
+        "title": "Confirmed: Federal $2,000 Direct Deposit Coming February 2026 — What You Must Know",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image62.webp",
+        "filename": "confirmed-federal-2000-direct-deposit-coming-february-2026-what-you-mu-62.html",
+        "excerpt": "Confirmed federal $2,000 direct deposit: what you need to know about the upcoming payment and how it affects you."
+    },
+    {
+        "id": 61,
+        "title": "Officially Confirmed: Devastating Heavy Snow Begins Tonight — Major Travel Chaos Warning",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image61.webp",
+        "filename": "officially-confirmed-devastating-heavy-snow-begins-tonight-major-trave-61.html",
+        "excerpt": "Officially confirmed devastating heavy snowfall to hit tonight, causing major travel chaos - stay updated on the latest forecast and safety tips."
+    },
+    {
+        "id": 60,
+        "title": "Eclipse of the Century 2026: 6 Minutes of Total Darkness — Mapped Best Viewing Spots",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image60.webp",
+        "filename": "eclipse-of-the-century-2026-6-minutes-of-total-darkness-mapped-best-vi-60.html",
+        "excerpt": "Eclipse Century 2026: Witness 6 minutes of total darkness, mapped best viewing spots and latest updates on this rare celestial event."
+    },
+    {
+        "id": 59,
+        "title": "Urgent Alert: Federal $2,000 Payments Arriving in February 2026 — Ultimate Beneficiary Guide",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image59.webp",
+        "filename": "urgent-alert-federal-2000-payments-arriving-in-february-2026-ultimate-59.html",
+        "excerpt": "Urgent alert federal 000 payments: what you need to know about the $2,000 federal payments arriving in February 2026."
     },
     {
         "id": 58,
@@ -1144,6 +1672,28 @@
         "excerpt": "Discover the tiny gardening mindset shift that will transform your backyard forever, with expert tips and a step-by-step guide to get you started."
     },
     {
+        "id": 43,
+        "title": "Situation Critical: Looming Heavy Snow Creates Chaos Between Authorities and Local Businesses",
+        "date": "May 21, 2026",
+        "author": "Rachel Wong",
+        "authorImg": "../Rachel-Wong.webp",
+        "category": "Tech",
+        "image": "image43.webp",
+        "filename": "situation-critical-looming-heavy-snow-creates-chaos-between-authoritie-43.html",
+        "excerpt": "Situation critical looming heavy: understanding the impact of severe weather on local businesses and authorities."
+    },
+    {
+        "id": 42,
+        "title": "Check Your Pockets: The 2000 Sacagawea Dollar Rare Errors Worth Massive Money Today",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image42.webp",
+        "filename": "check-your-pockets-the-2000-sacagawea-dollar-rare-errors-worth-massive-42.html",
+        "excerpt": "Check your pockets 2000 for rare Sacagawea dollar errors, worth massive money, and learn how to identify them."
+    },
+    {
         "id": 41,
         "title": "Inside French Military Schools 2026: The Ultimate Training Paths to Serve Elite Forces",
         "date": "May 21, 2026",
@@ -1155,6 +1705,17 @@
         "excerpt": "Discover the ultimate training paths to serve elite forces with a look inside French military schools, exploring their curriculum, career opportunities, and ..."
     },
     {
+        "id": 40,
+        "title": "Businesses Refuse to Close as Authorities Beg Drivers to Avoid Deadly Snow-Covered Roads",
+        "date": "May 21, 2026",
+        "author": "Rachel Wong",
+        "authorImg": "../Rachel-Wong.webp",
+        "category": "Tech",
+        "image": "image40.webp",
+        "filename": "businesses-refuse-to-close-as-authorities-beg-drivers-to-avoid-deadly-40.html",
+        "excerpt": "Businesses refuse to close as authorities beg drivers to avoid deadly snow-covered roads, with market cap and revenue at risk."
+    },
+    {
         "id": 39,
         "title": "The #1 Bulb Planting Mistake Everyone Makes That Quietly Ruins Next Year's Bloom",
         "date": "May 21, 2026",
@@ -1164,6 +1725,105 @@
         "image": "image39.webp",
         "filename": "the-1-bulb-planting-mistake-everyone-makes-that-quietly-ruins-next-yea-39.html",
         "excerpt": "Discover the #1 bulb planting mistake everyone makes and how to avoid it for a vibrant bloom next year."
+    },
+    {
+        "id": 38,
+        "title": "Authorities Issue Urgent 'Stay Home' Warning as Heavy Snow Hits Tonight",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image38.webp",
+        "filename": "authorities-issue-urgent-stay-home-warning-as-heavy-snow-hits-tonight-38.html",
+        "excerpt": "Authorities issue urgent stay home warning due to heavy snowfall expected tonight, causing travel disruptions and power outages, with updates on response and..."
+    },
+    {
+        "id": 37,
+        "title": "Urgent Warning Issued: Bizarre February Atmospheric Signals Threaten Arctic Marine Mammals",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image37.webp",
+        "filename": "urgent-warning-issued-bizarre-february-atmospheric-signals-threaten-ar-37.html",
+        "excerpt": "Urgent warning issued bizarre atmospheric signals threaten Arctic marine mammals, prompting a government response."
+    },
+    {
+        "id": 36,
+        "title": "Winter Storm Emergency: 70 MPH Winds and 3 Feet of Snow Approaching Rapidly",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image36.webp",
+        "filename": "winter-storm-emergency-70-mph-winds-and-3-feet-of-snow-approaching-rap-36.html",
+        "excerpt": "Winter storm emergency mph: 70mph winds and 3ft snow expected, stay safe with our guide."
+    },
+    {
+        "id": 35,
+        "title": "Severe Blizzard Warning: Historic Snowfall Threatens to Cripple Transport and Wipe Out Power Grid",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image35.webp",
+        "filename": "severe-blizzard-warning-historic-snowfall-threatens-to-cripple-transpo-35.html",
+        "excerpt": "Severe blizzard warning historic: a powerful storm is threatening to cripple transport and wipe out the power grid, with severe blizzard warning historic con..."
+    },
+    {
+        "id": 34,
+        "title": "Everything We Knew is Wrong: Dinosaurs and Mammoths Were Shockingly Slower Than Believed",
+        "date": "May 21, 2026",
+        "author": "Dr. Amara Singh",
+        "authorImg": "../Dr-Amara-Singh.webp",
+        "category": "Tech",
+        "image": "image34.webp",
+        "filename": "everything-we-knew-is-wrong-dinosaurs-and-mammoths-were-shockingly-slo-34.html",
+        "excerpt": "Discover how new research on dinosaur and mammoth speeds is changing everything we knew about these prehistoric creatures, from the journal data to the lates..."
+    },
+    {
+        "id": 33,
+        "title": "Urgent Alert for U.S. Drivers: The New February 2026 Driving Law That Could Mean Jail Time",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image33.webp",
+        "filename": "urgent-alert-for-us-drivers-the-new-february-2026-driving-law-that-cou-33.html",
+        "excerpt": "Urgent alert for U.S. drivers: new law may mean jail time, so stay informed and take action now to avoid penalties."
+    },
+    {
+        "id": 32,
+        "title": "Social Security Alert: Massive Changes to Your February 2026 SSI Checks Revealed",
+        "date": "May 21, 2026",
+        "author": "Mike Reynolds",
+        "authorImg": "../Mike-Reynolds.webp",
+        "category": "Tech",
+        "image": "image32.webp",
+        "filename": "social-security-alert-massive-changes-to-your-february-2026-ssi-checks-32.html",
+        "excerpt": "Social security alert massive changes to your February 2026 SSI checks revealed, understand the impact and what to expect."
+    },
+    {
+        "id": 31,
+        "title": "$1,000 Baby Benefit Announced: Everything Parents Need to Know About the New Trump Accounts",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image31.webp",
+        "filename": "1000-baby-benefit-announced-everything-parents-need-to-know-about-the-31.html",
+        "excerpt": "Discover the $1,000 baby benefit announced and its impact on families, with key details on eligibility, application, and deadlines."
+    },
+    {
+        "id": 30,
+        "title": "Critical SNAP Update: USDA Announces Strict New Work Rules Starting February 2026",
+        "date": "May 21, 2026",
+        "author": "Rachel Wong",
+        "authorImg": "../Rachel-Wong.webp",
+        "category": "Tech",
+        "image": "image30.webp",
+        "filename": "critical-snap-update-usda-announces-strict-new-work-rules-starting-feb-30.html",
+        "excerpt": "Critical SNAP update USDA: New work rules announced, affecting millions. Learn what's changing and how to prepare."
     },
     {
         "id": 29,
@@ -1197,6 +1857,17 @@
         "image": "image27.webp",
         "filename": "the-worlds-longest-underwater-high-speed-train-revealed-linking-two-co-27.html",
         "excerpt": "Discover the world's longest underwater high-speed train, a revolutionary transportation system linking two continents beneath the sea, and explore its key s..."
+    },
+    {
+        "id": 26,
+        "title": "Scientists Shock the World: Have We Completely Miscalculated the Earth's Human Population?",
+        "date": "May 21, 2026",
+        "author": "Dr. Amara Singh",
+        "authorImg": "../Dr-Amara-Singh.webp",
+        "category": "Tech",
+        "image": "image26.webp",
+        "filename": "scientists-shock-the-world-have-we-completely-miscalculated-the-earths-26.html",
+        "excerpt": "Scientists shock world completely with new population data, challenging existing estimates and projections from institutions like the United Nations and the ..."
     },
     {
         "id": 25,
@@ -1320,6 +1991,17 @@
         "excerpt": "Mediterranean gardeners never prune oleanders like we do, and it's time to learn from their approach, with a focus on engine-like efficiency in gardening."
     },
     {
+        "id": 14,
+        "title": "Early February Climate Signals: Why the Arctic is Behaving Strangely",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image14.webp",
+        "filename": "early-february-climate-signals-why-the-arctic-is-behaving-strangely-14.html",
+        "excerpt": "Early February climate signals: What's behind the Arctic's strange behavior and its impact on the environment."
+    },
+    {
         "id": 13,
         "title": "Place Your Jade Plant Here: The Feng Shui Trick for Wealth & Happiness",
         "date": "May 21, 2026",
@@ -1331,6 +2013,28 @@
         "excerpt": "Discover the secret to wealth and happiness by learning where to place your jade plant, a simple yet effective Feng Shui trick that can bring balance and har..."
     },
     {
+        "id": 12,
+        "title": "Heavy Snow Alert: Authorities Urge Drivers to Stay Home Tonight",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image12.webp",
+        "filename": "heavy-snow-alert-authorities-urge-drivers-to-stay-home-tonight-12.html",
+        "excerpt": "Heavy snow alert authorities issue warnings as winter storms approach, causing travel disruptions and power outages, with the latest update on specs and perf..."
+    },
+    {
+        "id": 11,
+        "title": "Arctic Entering Uncharted Territory: Meteorologists Issue Early February Warning",
+        "date": "May 21, 2026",
+        "author": "Sarah Mitchell",
+        "authorImg": "../Sarah-Mitchell.webp",
+        "category": "Tech",
+        "image": "image11.webp",
+        "filename": "arctic-entering-uncharted-territory-meteorologists-issue-early-februar-11.html",
+        "excerpt": "Arctic entering uncharted territory: Meteorologists issue early warning, what does it mean for travel and power?"
+    },
+    {
         "id": 10,
         "title": "France Safran Secures Massive €1.4 Billion LEAP-1A Aircraft Engine Deal",
         "date": "May 21, 2026",
@@ -1340,6 +2044,17 @@
         "image": "image10.webp",
         "filename": "france-safran-secures-massive-14-billion-leap-1a-aircraft-engine-deal-10.html",
         "excerpt": "France Safran secures massive €1.4 billion LEAP-1A aircraft engine deal, transforming the aviation industry with cutting-edge tech."
+    },
+    {
+        "id": 9,
+        "title": "Long Before Trees Earth Was Ruled by This Mysterious Giant Lifeform",
+        "date": "May 21, 2026",
+        "author": "James Carter",
+        "authorImg": "../james-carter.webp",
+        "category": "Tech",
+        "image": "image9.webp",
+        "filename": "long-before-trees-earth-was-ruled-by-this-mysterious-giant-lifeform-9.html",
+        "excerpt": "Discover the mysterious giant lifeform that ruled Earth long before trees existed, and how this finding is changing our understanding of the planet's history."
     },
     {
         "id": 8,
