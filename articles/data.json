@@ -1,5 +1,16 @@
 [
     {
+        "id": 199,
+        "title": "Microsoft Build 2026: Project Solara AI Devices, Surface RTX Spark Dev Box, MAI Thinking-1 & Every Major Announcement",
+        "date": "June 03, 2026",
+        "author": "Mike Reynolds",
+        "authorImg": "../Mike-Reynolds.webp",
+        "category": "Tech",
+        "image": "200.webp",
+        "filename": "microsoft-build-2026-project-solara-ai-devices-surface-rtx-spark-dev-b.html",
+        "excerpt": "Microsoft Build 2026: Discover the latest AI innovations and announcements from Microsoft's annual developer conference."
+    },
+    {
         "id": 198,
         "title": "2026 Polestar 5 First Drive Review: 871 HP Electric Fastback With Bonded Aluminum Chassis & 350kW Charging",
         "date": "June 02, 2026",
@@ -59,7 +70,7 @@
         "title": "iPhone 18 Pro Colors Leak: Silver, Light Blue, Dark Cherry & Dark Gray Revealed via Camera Components",
         "date": "May 23, 2026",
         "author": "Mike Reynolds",
-        "authorImg": "Mike-Reynolds.webp",
+        "authorImg": "../Mike-Reynolds.webp",
         "category": "Tech",
         "image": "image192.webp",
         "filename": "iphone-18-pro-colors-leak-silver-light-blue-dark-cherry-dark-gray-reve.html",
