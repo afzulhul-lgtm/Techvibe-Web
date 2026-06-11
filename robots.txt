@@ -1,11 +1,41 @@
-User-agent: *
-Allow: /
-Allow: /articles/
-Allow: /sitemap.xml
+# TechVibe - Advanced Robots.txt (HTML/CSS/JS)
+# ============================================
 
+User-agent: *
+
+# Block server configuration and temporary files
 Disallow: /cgi-bin/
 Disallow: /tmp/
 
-Sitemap: https://techvibedetails.online/sitemap.xml
+# Block backup, drafts, or private folders (agar aapne banaye hain)
+Disallow: /backup/
+Disallow: /private/
+Disallow: /drafts/
+Disallow: /admin/
 
+# Block includes/components jo direct index nahi hone chahiye
+Disallow: /includes/
+Disallow: /templates/
+
+# (Optional) Agar website pe koi search feature hai jo URL mein query string banata hai
+Disallow: /search/
+Disallow: /*?q=
+
+# ============================================
+# Additional Settings for Specific Bots
+# ============================================
+
+# Bing aur Yandex thoda aggressive crawl karte hain, isliye inpe delay lagana behtar hai
+User-agent: Bingbot
 Crawl-delay: 1
+
+User-agent: Yandex
+Crawl-delay: 2
+
+User-agent: Baiduspider
+Crawl-delay: 2
+
+# ============================================
+# Sitemap Location
+# ============================================
+Sitemap: https://techvibedetails.online/sitemap.xml
